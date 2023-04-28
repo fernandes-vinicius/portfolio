@@ -2,6 +2,9 @@ import { ReactNode } from 'react'
 
 import { Montserrat } from 'next/font/google'
 
+import { Footer } from './Footer'
+import { Header } from './Header'
+
 import './globals.css'
 
 const montserrat = Montserrat({ subsets: ['latin'] })
@@ -13,8 +16,12 @@ export const metadata = {
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="en">
-      <body className={montserrat.className}>{children}</body>
+    <html lang="en" className={montserrat.className}>
+      <body className="bg-light w-full min-h-screen">
+        <Header />
+        {children}
+        <Footer />
+      </body>
     </html>
   )
 }
