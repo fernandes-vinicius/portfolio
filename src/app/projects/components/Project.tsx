@@ -17,11 +17,12 @@ export function Project(props: ProjectProps) {
   return (
     <article
       className="w-full flex flex-col items-center justify-center rounded-2xl
-      border border-solid border-dark bg-light p-6 relative"
+      border border-solid border-dark bg-light p-6 relative dark:bg-dark
+      dark:border-light"
     >
       <div
         className="absolute top-0 -right-3 -z-10 w-[101%] h-[103%]
-        rounded-[2rem] bg-dark rounded-br-3xl"
+        rounded-[2rem] bg-dark rounded-br-3xl dark:bg-light"
       />
 
       <Link
@@ -33,7 +34,9 @@ export function Project(props: ProjectProps) {
       </Link>
 
       <div className="w-full flex flex-col items-start justify-between mt-4">
-        <span className="text-primary font-medium text-xl">{type}</span>
+        <span className="text-primary font-medium text-xl dark:text-primaryDark">
+          {type}
+        </span>
 
         <Link
           href={link}

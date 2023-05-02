@@ -9,7 +9,10 @@ export const metadata = {
 
 export default function Projects() {
   return (
-    <main className="w-full mb-16 flex flex-col items-center justify-center">
+    <main
+      className="w-full mb-16 flex flex-col items-center justify-center
+      dark:text-light"
+    >
       <div className="w-full h-full inline-block z-0 p-32 pt-16">
         <AnimatedText text="Imagination Trumps Knowledge!" className="mb-16" />
 

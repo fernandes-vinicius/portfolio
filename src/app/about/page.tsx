@@ -54,11 +54,12 @@ export default function About() {
 
           <div
             className="col-span-3 relative h-max rounded-2xl border-2
-            border-solid border-dark bg-light p-8"
+            border-solid border-dark bg-light p-8 dark:bg-dark
+            dark:border-light"
           >
             <div
               className="absolute top-0 -right-3 -z-10 w-[102%] h-[103%]
-              rounded-[2rem] bg-dark"
+              rounded-[2rem] bg-dark dark:bg-light"
             />
             <Image
               src={profilePic}

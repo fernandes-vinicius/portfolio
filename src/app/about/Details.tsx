@@ -39,13 +39,13 @@ export function Details(props: DetailsProps) {
             href={companyLink}
             target="_blank"
             rel="noreferrer"
-            className="text-primary capitalize"
+            className="text-primary dark:text-primaryDark capitalize"
           >
             @{company}
           </a>
         </h3>
 
-        <span className="capitalize font-medium text-dark/75">
+        <span className="capitalize font-medium text-dark/ dark:text-light/75">
           {time} | {address}
         </span>
 

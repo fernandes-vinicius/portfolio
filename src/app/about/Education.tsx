@@ -21,7 +21,7 @@ export function Education() {
         <motion.div
           style={{ scale: scrollYProgress }}
           className="absolute left-9 top-1 w-[4px] h-full bg-dark
-          origin-top"
+          origin-top dark:bg-light"
         />
 
         <ul className="w-full flex flex-col items-start justify-between ml-4">

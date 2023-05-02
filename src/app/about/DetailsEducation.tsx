@@ -33,7 +33,10 @@ export function DetailsEducation(props: DetailsEducationProps) {
       >
         <h3 className="capitalize font-bold text-2xl">{type}</h3>
 
-        <span className="capitalize font-medium text-dark/75">
+        <span
+          className="capitalize font-medium text-dark/75
+          dark:text-light/75"
+        >
           {time} | {place}
         </span>
 
