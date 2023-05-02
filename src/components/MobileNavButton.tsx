@@ -1,28 +1,26 @@
 'use client'
 
-import { ButtonHTMLAttributes } from 'react'
+import React, { ButtonHTMLAttributes } from 'react'
 
 import clsx from 'clsx'
 import { usePathname, useRouter } from 'next/navigation'
 
-interface MobileNavLinkProps extends ButtonHTMLAttributes<HTMLElement> {
+interface MobileNavButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   href: string
-  className?: string
-  children: string
-  toggle: () => void
 }
 
-export function MobileNavLink(props: MobileNavLinkProps) {
-  const { href, className, children, toggle, ...rest } = props
+export function MobileNavButton(props: MobileNavButtonProps) {
+  const { href, className, children, onClick, ...rest } = props
 
   const pathname = usePathname()
   const router = useRouter()
 
   const isActive = pathname === href
 
-  function handleClick() {
-    toggle()
+  function handleClick(e: React.MouseEvent<HTMLButtonElement>) {
     router.push(href)
+
+    if (onClick) onClick(e)
   }
 
   return (

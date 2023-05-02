@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion'
 
-import { GithubIcon, LinkedInIcon } from './Icons'
+import { GithubIcon, InstagramIcon, LinkedInIcon } from './Icons'
 
 export function SocialLinks() {
   return (
@@ -10,21 +10,31 @@ export function SocialLinks() {
       <motion.a
         href="/"
         target="_blank"
-        className="w-6"
         whileHover={{ y: -2 }}
         whileTap={{ scale: 0.9 }}
+        className="w-6"
       >
-        <GithubIcon className="bg-light rounded-full dark:bg-dark" />
+        <GithubIcon />
       </motion.a>
 
       <motion.a
         href="/"
         target="_blank"
-        className="w-6"
         whileHover={{ y: -2 }}
         whileTap={{ scale: 0.9 }}
+        className="w-6"
       >
         <LinkedInIcon />
+      </motion.a>
+
+      <motion.a
+        href="/"
+        target="_blank"
+        whileHover={{ y: -2 }}
+        whileTap={{ scale: 0.9 }}
+        className="w-6"
+      >
+        <InstagramIcon />
       </motion.a>
     </>
   )

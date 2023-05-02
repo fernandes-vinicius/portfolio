@@ -2,7 +2,6 @@
 
 import { motion } from 'framer-motion'
 import Link from 'next/link'
-// import { HouseSimple } from 'phosphor-react'
 
 const MotionLink = motion(Link)
 
@@ -30,7 +29,6 @@ export function Logo() {
         }}
       >
         VF
-        {/* <HouseSimple weight="bold" size={24} /> */}
       </MotionLink>
     </div>
   )

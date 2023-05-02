@@ -16,7 +16,7 @@ export function Footer() {
 
         {/* <div className="flex items-center lg:py-2">
           Build with{' '}
-          <span className="text-primary dark:text-primaryDark text-2xl px-1">
+          <span className="text-primary dark:text-primary-dark text-2xl px-1">
             &#9825;
           </span>
           by &nbsp;

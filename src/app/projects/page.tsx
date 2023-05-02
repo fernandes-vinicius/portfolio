@@ -1,8 +1,8 @@
+import { AnimatedText } from '~/components/AnimatedText'
 import { Layout } from '~/components/Layout'
 import { TransitionEffect } from '~/components/TransitionEffect'
 
 import projectCrypto from '../../../public/images/crypto-screener-cover-image.jpg'
-import { AnimatedText } from '../AnimatedText'
 import { FeaturedProject } from './components/FeaturedProject'
 import { Project } from './components/Project'
 

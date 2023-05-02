@@ -26,7 +26,7 @@ export function LiIcon({ reference }: LiIconProps) {
           cx="75"
           cy="50"
           r="20"
-          className="stroke-primary dark:stroke-primaryDark stroke-1
+          className="stroke-primary dark:stroke-primary-dark stroke-1
           fill-none"
         />
         <motion.circle
@@ -41,7 +41,7 @@ export function LiIcon({ reference }: LiIconProps) {
           cy="50"
           r="10"
           className="animate-pulse stroke-1 fill-primary
-          dark:fill-primaryDark"
+          dark:fill-primary-dark"
         />
       </svg>
     </figure>

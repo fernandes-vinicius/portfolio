@@ -16,10 +16,10 @@ export function Skills() {
 
       <div
         className="w-full h-screen relative flex items-center justify-center
-        rounded-full bg-circularLight dark:bg-circularDark lg:h-[80vh]
-        sm:h-[60vh] xs:h-[50vh] lg:bg-circularLightLg lg:dark:bg-circularDarkLg
-        md:bg-circularLightMd md:dark:bg-circularDarkMd sm:bg-circularLightSm
-        sm:dark:bg-circularDarkSm"
+        rounded-full bg-circular-light dark:bg-circular-dark lg:h-[80vh]
+        sm:h-[60vh] xs:h-[50vh] lg:bg-circular-light-lg lg:dark:bg-circular-dark-lg
+        md:bg-circular-light-md md:dark:bg-circular-dark-md sm:bg-circular-light-sm
+        sm:dark:bg-circular-dark-sm"
       >
         <motion.div
           className="flex items-center justify-center rounded-full font-semibold

@@ -1,10 +1,10 @@
 import Image from 'next/image'
 
+import { AnimatedText } from '~/components/AnimatedText'
 import { Layout } from '~/components/Layout'
 import { TransitionEffect } from '~/components/TransitionEffect'
 
 import profilePic from '../../../public/images/developer-pic-2.jpg'
-import { AnimatedText } from '../AnimatedText'
 import { AnimatedNumbers } from './AnimatedNumbers'
 import { Education } from './Education'
 import { Experience } from './Experience'

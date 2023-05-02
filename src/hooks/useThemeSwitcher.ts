@@ -15,20 +15,14 @@ export function useThemeSwitcher() {
         const check: ThemeMode = userPref === 'dark' ? 'dark' : 'light'
         setMode(check)
 
-        if (check === 'dark') {
-          document.documentElement.classList.add('dark')
-        } else {
-          document.documentElement.classList.remove('dark')
-        }
+        if (check === 'dark') document.documentElement.classList.add('dark')
+        else document.documentElement.classList.remove('dark')
       } else {
         const check: ThemeMode = mediaQuery.matches ? 'dark' : 'light'
         setMode(check)
 
-        if (check === 'dark') {
-          document.documentElement.classList.add('dark')
-        } else {
-          document.documentElement.classList.remove('dark')
-        }
+        if (check === 'dark') document.documentElement.classList.add('dark')
+        else document.documentElement.classList.remove('dark')
       }
     }
 

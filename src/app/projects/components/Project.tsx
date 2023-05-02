@@ -36,7 +36,7 @@ export function Project(props: ProjectProps) {
 
       <div className="w-full flex flex-col items-start justify-between mt-4">
         <span
-          className="text-primary font-medium text-xl dark:text-primaryDark
+          className="text-primary font-medium text-xl dark:text-primary-dark
           lg:text-lg md:text-base"
         >
           {type}

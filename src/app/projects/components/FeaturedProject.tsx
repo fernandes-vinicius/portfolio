@@ -48,7 +48,7 @@ export function FeaturedProject(props: FeaturedProjectProps) {
       >
         <span
           className="text-primary font-medium text-xl
-          dark:text-primaryDark xs:text-base"
+          dark:text-primary-dark xs:text-base"
         >
           {type}
         </span>
