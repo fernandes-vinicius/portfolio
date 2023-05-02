@@ -21,11 +21,11 @@ export default function About() {
 
       <main
         className="flex w-full flex-col items-center justify-center
-      dark:text-light"
+        dark:text-light"
       >
         <Layout className="pt-16">
           <AnimatedText
-            text="Passion Fuels Purpose!"
+            text="A paixão alimenta o propósito!"
             className="mb-16 lg:!text-7xl sm:!text-6xl xs:!text-4xl sm:mb-8"
           />
 
@@ -38,29 +38,29 @@ export default function About() {
                 className="mb-4 text-lg font-bold uppercase text-dark/75
               dark:text-light/75"
               >
-                Biography
+                Biografia
               </h2>
 
               <p className="font-medium">
-                Hi, I&apos;m CodeBucks, a web developer and UI/UX designer with
-                a passion for creating beautiful, functional, and user-centered
-                digital experiences. With 4 years of experience in the field. I
-                am always looking for new and innovative ways to bring my
-                clients&apos; visions to life.
+                Olá, sou Vinícius Fernandes, um desenvolvedor web apaixonado por
+                criar experiências digitais bonitas, funcionais e centradas no
+                usuário. Com 4 anos de experiência na área. Estou sempre
+                procurando maneiras novas e inovadoras de dar vida às visões de
+                meus clientes.
               </p>
 
               <p className="my-4 font-medium">
-                I believe that design is about more than just making things look
-                pretty – it&apos;s about solving problems and creating
-                intuitive, enjoyable experiences for users.
+                Acredito que o processo de criação frontend é mais do que apenas
+                fazer as coisas parecerem bonitas — é resolver problemas e criar
+                experiências intuitivas e agradáveis para os usuários.
               </p>
 
               <p>
-                Whether I&apos;m working on a website, mobile app, or other
-                digital product, I bring my commitment to design excellence and
-                user-centered thinking to every project I work on. I look
-                forward to the opportunity to bring my skills and passion to
-                your next project.
+                Quer esteja trabalhando em um site, aplicativo móvel ou outro
+                produto digital, trago meu compromisso com a excelência em
+                design e o pensamento centrado no usuário em todos os projetos
+                em que trabalho. Estou ansioso pela oportunidade de trazer
+                minhas habilidades e paixão para o seu próximo projeto.
               </p>
             </div>
 

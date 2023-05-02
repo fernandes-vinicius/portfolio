@@ -12,7 +12,7 @@ export function Footer() {
         className="w-full h-full z-0 p-32 py-8 flex items-center
         justify-between lg:flex-col lg:py-6"
       >
-        <span>{year} &copy; All rights Reserved.</span>
+        <span>{year} &copy; Todos os direitos reservados.</span>
 
         {/* <div className="flex items-center lg:py-2">
           Build with{' '}
@@ -26,7 +26,7 @@ export function Footer() {
         </div> */}
 
         <Link href="/" target="_blank" className="underline underline-offset-2">
-          Say Hello
+          Diga olá
         </Link>
       </div>
     </footer>

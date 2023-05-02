@@ -36,16 +36,18 @@ export default function Home() {
               lg:text-center"
             >
               <AnimatedText
-                text="Turning Vision Into Reality With Code And Design."
+                text="Criando o futuro: Transformando ideias em soluções
+                inovadoras"
                 className="!text-6xl !text-left xl:!text-5xl lg:!text-center
                 lg:!text-6xl md:!text-5xl sm:!text-3xl"
               />
 
               <p className="py-4 text-base font-medium md:text-sm sm:text-xs">
-                As a skilled full-stack developer, I am dedicated to turning
-                ideas into innovative web applications. Explore my latest
-                projects and articles, showcasing my expertise in React.js and
-                web development.
+                Como um desenvolvedor frontend apaixonado por criar interfaces
+                web atraentes e responsivas, dedico-me a transformar ideias em
+                designs elegantes e intuitivos que oferecem a melhor experiência
+                do usuário possível. Explore meu portfólio para ver meus
+                projetos mais recentes.
               </p>
 
               <div className="flex items-center self-start mt-2 lg:self-center">
@@ -60,7 +62,7 @@ export default function Home() {
                   hover:dark:bg-dark hover:dark:text-light
                   hover:dark:border-light md:p-2 md:px-4 md:text-base"
                 >
-                  Resume <LinkArrow className="w-6 ml-1" />
+                  Resumo <LinkArrow className="w-6 ml-1" />
                 </Link>
 
                 <Link
@@ -69,7 +71,7 @@ export default function Home() {
                   className="ml-4 text-left font-medium capitalize text-dark
                   underline underline-offset-8 dark:text-light md:text-base"
                 >
-                  Contact
+                  Contato
                 </Link>
               </div>
             </div>

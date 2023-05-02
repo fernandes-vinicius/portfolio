@@ -4,7 +4,7 @@ import React from 'react'
 
 import { motion } from 'framer-motion'
 
-import { Logo } from './Logo'
+// import { Logo } from './Logo'
 import { MenuButton } from './MenuButton'
 import { MobileNavButton } from './MobileNavButton'
 import { NavLink } from './NavLink'
@@ -27,9 +27,9 @@ export function Header() {
 
       <div className="w-full flex justify-between items-center lg:hidden">
         <nav className="flex items-center gap-8">
-          <NavLink href="/">Home</NavLink>
-          <NavLink href="/about">About</NavLink>
-          <NavLink href="/projects">Projects</NavLink>
+          <NavLink href="/">Início</NavLink>
+          <NavLink href="/about">Sobre mim</NavLink>
+          <NavLink href="/projects">Projetos</NavLink>
         </nav>
 
         <nav className="flex items-center justify-center flex-wrap gap-6">
@@ -48,13 +48,13 @@ export function Header() {
         >
           <nav className="flex items-center flex-col justify-center gap-4">
             <MobileNavButton href="/" onClick={handleToggleMobileMenu}>
-              Home
+              Início
             </MobileNavButton>
             <MobileNavButton href="/about" onClick={handleToggleMobileMenu}>
-              About
+              Sobre mim
             </MobileNavButton>
             <MobileNavButton href="/projects" onClick={handleToggleMobileMenu}>
-              Projects
+              Projetos
             </MobileNavButton>
           </nav>
 
@@ -68,9 +68,9 @@ export function Header() {
         </motion.div>
       ) : null}
 
-      <div className="absolute left-[50%] top-2 translate-x-[-50%]">
+      {/* <div className="absolute left-[50%] top-2 translate-x-[-50%]">
         <Logo />
-      </div>
+      </div> */}
     </header>
   )
 }
