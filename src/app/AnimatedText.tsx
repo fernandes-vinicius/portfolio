@@ -41,7 +41,7 @@ export function AnimatedText({ text, className }: AnimatedTextProps) {
   return (
     <div
       className="w-full mx-auto py-2 flex items-center justify-center text-center
-      overflow-hidden"
+      overflow-hidden sm:py-0"
     >
       <motion.h1
         className={clsx(

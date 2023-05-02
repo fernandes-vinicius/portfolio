@@ -24,7 +24,7 @@ export function Details(props: DetailsProps) {
     <li
       ref={ref}
       className="my-8 first:mt-0 last:mb-0 w-[60%] mx-auto flex flex-col
-      items-center justify-between"
+      items-center justify-between md:w-[80%]"
     >
       <LiIcon reference={ref} />
 
@@ -33,7 +33,7 @@ export function Details(props: DetailsProps) {
         whileInView={{ y: 0 }}
         transition={{ duration: 0.5, type: 'spring' }}
       >
-        <h3 className="capitalize font-bold text-2xl">
+        <h3 className="capitalize font-bold text-2xl sm:text-xl xs:text-lg">
           {position}&nbsp;
           <a
             href={companyLink}
@@ -45,11 +45,14 @@ export function Details(props: DetailsProps) {
           </a>
         </h3>
 
-        <span className="capitalize font-medium text-dark/ dark:text-light/75">
+        <span
+          className="capitalize font-medium text-dark/ dark:text-light/75
+          xs:text-sm"
+        >
           {time} | {address}
         </span>
 
-        <p className="font-medium w-full">{work}</p>
+        <p className="font-medium w-full md:text-sm">{work}</p>
       </motion.div>
     </li>
   )

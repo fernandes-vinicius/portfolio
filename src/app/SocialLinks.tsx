@@ -14,7 +14,7 @@ export function SocialLinks() {
         whileHover={{ y: -2 }}
         whileTap={{ scale: 0.9 }}
       >
-        <GithubIcon />
+        <GithubIcon className="bg-light rounded-full dark:bg-dark" />
       </motion.a>
 
       <motion.a

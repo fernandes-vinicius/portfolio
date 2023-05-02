@@ -1,3 +1,5 @@
+import { Layout } from '~/components/Layout'
+
 import projectCrypto from '../../../public/images/crypto-screener-cover-image.jpg'
 import { AnimatedText } from '../AnimatedText'
 import { FeaturedProject } from './components/FeaturedProject'
@@ -13,10 +15,16 @@ export default function Projects() {
       className="w-full mb-16 flex flex-col items-center justify-center
       dark:text-light"
     >
-      <div className="w-full h-full inline-block z-0 p-32 pt-16">
-        <AnimatedText text="Imagination Trumps Knowledge!" className="mb-16" />
+      <Layout className="pt-16">
+        <AnimatedText
+          text="Imagination Trumps Knowledge!"
+          className="mb-16 lg:!text-7xl sm:mb-8 sm:!text-6xl xs:!text-4xl"
+        />
 
-        <div className="grid grid-cols-12 gap-24 gap-y-32">
+        <div
+          className="grid grid-cols-12 gap-24 gap-y-32 xl:gap-x-16 lg:gap-x-8
+          md:gap-y-24 sm:gap-x-0"
+        >
           <div className="col-span-12">
             <FeaturedProject
               title="Crypto Screener Application"
@@ -30,7 +38,8 @@ export default function Projects() {
               img={projectCrypto}
             />
           </div>
-          <div className="col-span-6">
+
+          <div className="col-span-6 sm:col-span-12">
             <Project
               title="Crypto Screener Application"
               link="/"
@@ -39,7 +48,8 @@ export default function Projects() {
               img={projectCrypto}
             />
           </div>
-          <div className="col-span-6">
+
+          <div className="col-span-6 sm:col-span-12">
             <Project
               title="Crypto Screener Application"
               link="/"
@@ -48,6 +58,7 @@ export default function Projects() {
               img={projectCrypto}
             />
           </div>
+
           <div className="col-span-12">
             <FeaturedProject
               title="Crypto Screener Application"
@@ -61,7 +72,8 @@ export default function Projects() {
               img={projectCrypto}
             />
           </div>
-          <div className="col-span-6">
+
+          <div className="col-span-6 sm:col-span-12">
             <Project
               title="Crypto Screener Application"
               link="/"
@@ -70,7 +82,8 @@ export default function Projects() {
               img={projectCrypto}
             />
           </div>
-          <div className="col-span-6">
+
+          <div className="col-span-6 sm:col-span-12">
             <Project
               title="Crypto Screener Application"
               link="/"
@@ -80,7 +93,7 @@ export default function Projects() {
             />
           </div>
         </div>
-      </div>
+      </Layout>
     </main>
   )
 }
