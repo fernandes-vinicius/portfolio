@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion'
 import Link from 'next/link'
-import { HouseSimple } from 'phosphor-react'
+// import { HouseSimple } from 'phosphor-react'
 
 const MotionLink = motion(Link)
 
@@ -12,7 +12,8 @@ export function Logo() {
       <MotionLink
         href="/"
         className="w-16 h-16 bg-dark text-light flex items-center
-        justify-center rounded-full text-2xl font-bold"
+        justify-center rounded-full text-2xl font-bold border border-solid
+        border-transparent dark:border-light"
         whileHover={{
           backgroundColor: [
             '#121212',
@@ -28,7 +29,8 @@ export function Logo() {
           },
         }}
       >
-        <HouseSimple weight="bold" size={24} />
+        VF
+        {/* <HouseSimple weight="bold" size={24} /> */}
       </MotionLink>
     </div>
   )

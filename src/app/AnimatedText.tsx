@@ -45,7 +45,8 @@ export function AnimatedText({ text, className }: AnimatedTextProps) {
     >
       <motion.h1
         className={clsx(
-          'inline-block w-full text-dark font-bold capitalize text-8xl',
+          'inline-block w-full font-bold capitalize text-8xl',
+          'text-dark dark:text-light',
           className,
         )}
         variants={quote}

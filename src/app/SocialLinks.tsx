@@ -6,7 +6,7 @@ import { GithubIcon, LinkedInIcon } from './Icons'
 
 export function SocialLinks() {
   return (
-    <nav className="flex items-center justify-center flex-wrap gap-6">
+    <>
       <motion.a
         href="/"
         target="_blank"
@@ -26,6 +26,6 @@ export function SocialLinks() {
       >
         <LinkedInIcon />
       </motion.a>
-    </nav>
+    </>
   )
 }

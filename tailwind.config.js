@@ -5,6 +5,7 @@ module.exports = {
     './src/components/**/*.{js,ts,jsx,tsx,mdx}',
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
+  darkMode: 'class',
   theme: {
     extend: {
       colors: {
@@ -15,6 +16,10 @@ module.exports = {
       },
       animation: {
         'spin-slow': 'spin 8s linear infinite',
+      },
+      backgroundImage: {
+        circularLight:
+          'repeating-radial-gradient(rgba(0,0,0,0.4) 2px, #F5F5F5 5px, #F5F5F5 100PX)',
       },
     },
   },
