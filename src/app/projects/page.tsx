@@ -2,8 +2,9 @@ import { AnimatedText } from '~/shared/components/AnimatedText'
 import { Layout } from '~/shared/components/Layout'
 import { TransitionEffect } from '~/shared/components/TransitionEffect'
 
-import projectCrypto from '../../../public/images/crypto-screener-cover-image.jpg'
-import projectQuotify from '../../../public/images/projects/quotify.png'
+import projectCoffeeDelivery from '../../../public/images/projects/coffee-delivery.png'
+import projectIgniteShop from '../../../public/images/projects/ignite-shop.png'
+import projectThatMovie from '../../../public/images/projects/that-movie.png'
 import { FeaturedProject } from './components/FeaturedProject'
 import { Project } from './components/Project'
 
@@ -32,69 +33,35 @@ export default function Projects() {
           >
             <div className="col-span-12">
               <FeaturedProject
-                title="Quotify"
-                summary="Transforme seu dia com frases inspiradoras. O Quotify
-                é uma aplicação web que consome uma API pública de frases, e
-                mostra para os usuários frases aleatórias ou de acordo com a
-                categoria escolhida."
-                link="https://quotify-two.vercel.app/"
+                title="That Movie"
+                summary="That Movie is a web application that allows you to
+                search for movies and series, and see their details. It was
+                developed using React, TypeScript, Tailwind CSS, and The Movie
+                Database API."
+                link="https://that-movie.vercel.app/"
                 type="Projeto em destaque"
-                github="https://github.com/fernandes-vinicius/quotify"
-                img={projectQuotify}
+                github="https://github.com/fernandes-vinicius/that-movie"
+                img={projectThatMovie}
               />
             </div>
 
             <div className="col-span-6 sm:col-span-12">
               <Project
-                title="Crypto Screener Application"
-                link="/"
-                type="Featured Project"
-                github="/"
-                img={projectCrypto}
+                title="Coffee Delivery"
+                link="https://coffee-delivery-react-one.vercel.app/"
+                type="Web application"
+                github="https://github.com/fernandes-vinicius/coffee-delivery-react"
+                img={projectCoffeeDelivery}
               />
             </div>
 
             <div className="col-span-6 sm:col-span-12">
               <Project
-                title="Crypto Screener Application"
-                link="/"
-                type="Featured Project"
-                github="/"
-                img={projectCrypto}
-              />
-            </div>
-
-            <div className="col-span-12">
-              <FeaturedProject
-                title="Crypto Screener Application"
-                summary="A feature-rich Crypto Screener App using React,
-              Tailwind CSS, Context API, React Router and Recharts. It shows
-              detail regarding almost all the cryptocurrency. You can easily
-              convert the price in your local currency."
-                link="/"
-                type="Featured Project"
-                github="/"
-                img={projectCrypto}
-              />
-            </div>
-
-            <div className="col-span-6 sm:col-span-12">
-              <Project
-                title="Crypto Screener Application"
-                link="/"
-                type="Featured Project"
-                github="/"
-                img={projectCrypto}
-              />
-            </div>
-
-            <div className="col-span-6 sm:col-span-12">
-              <Project
-                title="Crypto Screener Application"
-                link="/"
-                type="Featured Project"
-                github="/"
-                img={projectCrypto}
+                title="Ignite Shop"
+                link="https://coffee-delivery-react-one.vercel.app/"
+                type="Web application"
+                github="https://github.com/fernandes-vinicius/ignite-shop-2.0"
+                img={projectIgniteShop}
               />
             </div>
           </div>

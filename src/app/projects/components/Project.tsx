@@ -29,7 +29,8 @@ export function Project(props: ProjectProps) {
       <Link
         href={link}
         target="_blank"
-        className="w-full cursor-pointer overflow-hidden rounded-lg"
+        className="w-full cursor-pointer overflow-hidden rounded-lg border
+        border-solid border-dark dark:border-light"
       >
         <Image src={img} alt={title} className="w-full h-auto" />
       </Link>
