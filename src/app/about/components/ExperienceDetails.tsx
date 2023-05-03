@@ -6,17 +6,19 @@ import { motion } from 'framer-motion'
 
 import { LiIcon } from './LiIcon'
 
-interface DetailsEducationProps {
-  type: string
+interface ExperienceDetailsProps {
+  position: string
+  company: string
+  companyLink: string
   time: string
-  place: string
-  info: string
+  address: string
+  work: string
 }
 
-export function DetailsEducation(props: DetailsEducationProps) {
+export function ExperienceDetails(props: ExperienceDetailsProps) {
   const ref = React.useRef(null)
 
-  const { type, time, place, info } = props
+  const { position, company, companyLink, time, address, work } = props
 
   return (
     <li
@@ -32,17 +34,25 @@ export function DetailsEducation(props: DetailsEducationProps) {
         transition={{ duration: 0.5, type: 'spring' }}
       >
         <h3 className="capitalize font-bold text-2xl sm:text-xl xs:text-lg">
-          {type}
+          {position}&nbsp;
+          <a
+            href={companyLink}
+            target="_blank"
+            rel="noreferrer"
+            className="text-primary dark:text-primary-dark capitalize"
+          >
+            @{company}
+          </a>
         </h3>
 
         <span
-          className="capitalize font-medium text-dark/75 dark:text-light/75
+          className="capitalize font-medium text-dark/ dark:text-light/75
           xs:text-sm"
         >
-          {time} | {place}
+          {time} | {address}
         </span>
 
-        <p className="font-medium w-full md:text-sm">{info}</p>
+        <p className="font-medium w-full md:text-sm">{work}</p>
       </motion.div>
     </li>
   )

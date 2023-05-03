@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 
-import { GithubIcon } from '~/app/Icons'
+import { GithubIcon } from '~/shared/components/Icons'
 
 interface FeaturedProjectProps {
   type: string
@@ -31,7 +31,9 @@ export function FeaturedProject(props: FeaturedProjectProps) {
       <Link
         href={link}
         target="_blank"
-        className="w-1/2 cursor-pointer overflow-hidden rounded-lg lg:w-full"
+        rel="noopener noreferrer"
+        className="w-1/2 cursor-pointer overflow-hidden rounded-lg lg:w-full
+        border border-solid border-dark dark:border-light"
       >
         <Image
           src={img}
@@ -56,6 +58,7 @@ export function FeaturedProject(props: FeaturedProjectProps) {
         <Link
           href={link}
           target="_blank"
+          rel="noopener noreferrer"
           className="hover:underline underline-offset-2"
         >
           <h2
@@ -71,16 +74,22 @@ export function FeaturedProject(props: FeaturedProjectProps) {
         </p>
 
         <div className="mt-2 flex items-center">
-          <Link href={github} target="_blank" className="w-10">
+          <Link
+            href={github}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-10"
+          >
             <GithubIcon />
           </Link>
           <Link
             href={github}
             target="_blank"
+            rel="noopener noreferrer"
             className="ml-4 rounded-lg bg-dark text-light p-2 px-6 text-lg
             font-semibold dark:bg-light dark:text-dark sm:px-4 sm:text-base"
           >
-            Visit Project
+            Visite o Projeto
           </Link>
         </div>
       </div>

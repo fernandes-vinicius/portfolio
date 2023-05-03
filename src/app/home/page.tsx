@@ -1,14 +1,16 @@
 import Image from 'next/image'
 import Link from 'next/link'
 
-import profilePic from '~/assets/images/developer-pic-1.png'
-import lightBulb from '~/assets/images/miscellaneous_icons_1.svg'
-import { AnimatedText } from '~/components/AnimatedText'
-import { LinkArrow } from '~/components/Icons'
-import { Layout } from '~/components/Layout'
-import { TransitionEffect } from '~/components/TransitionEffect'
+import { AnimatedText } from '~/shared/components/AnimatedText'
+import { LinkArrow } from '~/shared/components/Icons'
+import { Layout } from '~/shared/components/Layout'
+import { TransitionEffect } from '~/shared/components/TransitionEffect'
 
-import { HireMe } from './HireMe'
+import profilePic from '../../../public/images/developer-pic-1.png'
+import lightBulb from '../../../public/images/light-bulb.svg'
+// import { HireMe } from './components/HireMe'
+
+const whatsAppURL = process.env.NEXT_PUBLIC_WHATS_APP_URL
 
 export default function Home() {
   return (
@@ -53,7 +55,7 @@ export default function Home() {
               <div className="flex items-center self-start mt-2 lg:self-center">
                 <Link
                   download
-                  href="/dummy.pdf"
+                  href="/resume.pdf"
                   target="_blank"
                   className="flex items-center bg-dark text-light p-2.5 px-6
                   rounded-lg text-lg font-semibold hover:bg-light
@@ -66,9 +68,9 @@ export default function Home() {
                 </Link>
 
                 <Link
-                  href="mailto:viniciusfernandes6991@gmail.com"
+                  href={whatsAppURL}
                   target="_blank"
-                  className="ml-4 text-left font-medium capitalize text-dark
+                  className="ml-6 text-left font-medium capitalize text-dark
                   underline underline-offset-8 dark:text-light md:text-base"
                 >
                   Contato
@@ -78,7 +80,8 @@ export default function Home() {
           </div>
         </Layout>
 
-        <HireMe />
+        {/* TODO */}
+        {/* <HireMe /> */}
 
         <div className="absolute right-8 bottom-8 inline-block w-24 md:hidden">
           <Image src={lightBulb} alt="Light bulb" className="w-full h-auto" />

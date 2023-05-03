@@ -2,8 +2,8 @@ import { ReactNode } from 'react'
 
 import { Montserrat } from 'next/font/google'
 
-import { Footer } from '~/components/Footer'
-import { Header } from '~/components/Header'
+import { Footer } from '~/shared/components/Footer'
+import { Header } from '~/shared/components/Header'
 
 import './globals.css'
 

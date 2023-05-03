@@ -4,7 +4,6 @@ import React from 'react'
 
 import { motion } from 'framer-motion'
 
-// import { Logo } from './Logo'
 import { MenuButton } from './MenuButton'
 import { MobileNavButton } from './MobileNavButton'
 import { NavLink } from './NavLink'
@@ -27,7 +26,7 @@ export function Header() {
 
       <div className="w-full flex justify-between items-center lg:hidden">
         <nav className="flex items-center gap-8">
-          <NavLink href="/">Início</NavLink>
+          <NavLink href="/home">Início</NavLink>
           <NavLink href="/about">Sobre mim</NavLink>
           <NavLink href="/projects">Projetos</NavLink>
         </nav>
@@ -46,8 +45,8 @@ export function Header() {
           fixed z-30 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2
         bg-dark/90 dark:bg-light/75 rounded-lg backdrop-blur-md py-32"
         >
-          <nav className="flex items-center flex-col justify-center gap-4">
-            <MobileNavButton href="/" onClick={handleToggleMobileMenu}>
+          <nav className="flex items-center flex-col justify-center gap-6">
+            <MobileNavButton href="/home" onClick={handleToggleMobileMenu}>
               Início
             </MobileNavButton>
             <MobileNavButton href="/about" onClick={handleToggleMobileMenu}>
@@ -59,18 +58,14 @@ export function Header() {
           </nav>
 
           <nav
-            className="flex items-center justify-center flex-wrap gap-6
-            sm:gap-3 mt-4"
+            className="flex items-center justify-center flex-wrap gap-8
+            sm:gap-4 mt-8"
           >
             <SocialLinks />
             <ThemeSwitcher />
           </nav>
         </motion.div>
       ) : null}
-
-      {/* <div className="absolute left-[50%] top-2 translate-x-[-50%]">
-        <Logo />
-      </div> */}
     </header>
   )
 }

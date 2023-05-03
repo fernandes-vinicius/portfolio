@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 
-import { GithubIcon } from '~/app/Icons'
+import { GithubIcon } from '~/shared/components/Icons'
 
 interface ProjectProps {
   type: string

@@ -40,8 +40,8 @@ export function AnimatedText({ text, className }: AnimatedTextProps) {
 
   return (
     <div
-      className="w-full mx-auto py-2 flex items-center justify-center text-center
-      overflow-hidden sm:py-0"
+      className="w-full mx-auto py-2 flex items-center justify-center
+      text-center overflow-hidden sm:py-0"
     >
       <motion.h1
         className={clsx(
@@ -56,8 +56,8 @@ export function AnimatedText({ text, className }: AnimatedTextProps) {
         {words.map((word, index) => (
           <motion.span
             key={`${word}-${index}`}
-            className="inline-block"
             variants={singleWord}
+            className="inline-block"
           >
             {word}&nbsp;
           </motion.span>

@@ -1,18 +1,18 @@
 import Image from 'next/image'
 
-import { AnimatedText } from '~/components/AnimatedText'
-import { Layout } from '~/components/Layout'
-import { TransitionEffect } from '~/components/TransitionEffect'
+import { AnimatedText } from '~/shared/components/AnimatedText'
+import { Layout } from '~/shared/components/Layout'
+import { TransitionEffect } from '~/shared/components/TransitionEffect'
 
 import profilePic from '../../../public/images/developer-pic-2.jpg'
-import { AnimatedNumbers } from './AnimatedNumbers'
-import { Education } from './Education'
-import { Experience } from './Experience'
-import { Skills } from './Skills'
+import { AnimatedNumbers } from './components/AnimatedNumbers'
+import { Education } from './components/Education'
+import { Experience } from './components/Experience'
+import { Skills } from './components/Skills'
 
-// export const metadata = {
-//   title: 'About',
-// }
+export const metadata = {
+  title: 'Sobre mim | Vinícius Fernandes',
+}
 
 export default function About() {
   return (
@@ -55,7 +55,7 @@ export default function About() {
                 experiências intuitivas e agradáveis para os usuários.
               </p>
 
-              <p>
+              <p className="font-medium">
                 Quer esteja trabalhando em um site, aplicativo móvel ou outro
                 produto digital, trago meu compromisso com a excelência em
                 design e o pensamento centrado no usuário em todos os projetos
@@ -86,7 +86,7 @@ export default function About() {
               className="col-span-2 flex flex-col items-end justify-between
               xl:col-span-8 xl:flex-row xl:items-center md:order-3"
             >
-              <div
+              {/* <div
                 className="flex flex-col items-end justify-center
                 xl:items-center"
               >
@@ -103,9 +103,9 @@ export default function About() {
                 >
                   satisfied clients
                 </h2>
-              </div>
+              </div> */}
 
-              <div
+              {/* <div
                 className="flex flex-col items-end justify-center
                 xl:items-center"
               >
@@ -122,7 +122,7 @@ export default function About() {
                 >
                   projects completed
                 </h2>
-              </div>
+              </div> */}
 
               <div
                 className="flex flex-col items-end justify-center
@@ -139,7 +139,7 @@ export default function About() {
                 dark:text-light/75 xl:text-center md:text-lg sm:text-base
                   xs:text-sm"
                 >
-                  years of experience
+                  anos de experiência
                 </h2>
               </div>
             </div>

@@ -8,8 +8,8 @@ export function Skills() {
   return (
     <>
       <h2
-        className="font-bold text-8xl mt-64 w-full text-center md:text-6xl
-        md:mt-32"
+        className="font-bold text-8xl mt-64 mb-32 w-full text-center md:text-6xl
+        xs:text-4xl md:mb-16"
       >
         Skills
       </h2>
@@ -32,7 +32,7 @@ export function Skills() {
 
         <Skill name="HTML" x="-25vw" y="2vw" />
         <Skill name="CSS" x="-5vw" y="-10vw" />
-        <Skill name="Javascript" x="20vw" y="6vw" />
+        <Skill name="Typescript" x="20vw" y="6vw" />
         <Skill name="ReactJS" x="0vw" y="12vw" />
         <Skill name="NextJS" x="-20vw" y="-15vw" />
         <Skill name="ViteJS" x="15vw" y="-12vw" />
