@@ -1,10 +1,7 @@
 import { AnimatedText } from '~/shared/components/AnimatedText'
-import { Layout } from '~/shared/components/Layout'
+import { Container } from '~/shared/components/Container'
 import { TransitionEffect } from '~/shared/components/TransitionEffect'
 
-import projectCoffeeDelivery from '../../../public/images/projects/coffee-delivery.png'
-import projectIgniteShop from '../../../public/images/projects/ignite-shop.png'
-import projectThatMovie from '../../../public/images/projects/that-movie.png'
 import { FeaturedProject } from './components/FeaturedProject'
 import { Project } from './components/Project'
 
@@ -18,13 +15,14 @@ export default function Projects() {
       <TransitionEffect />
 
       <main
-        className="w-full mb-16 flex flex-col items-center justify-center
+        className="mb-16 flex w-full flex-col items-center justify-center
         dark:text-light"
       >
-        <Layout className="pt-16">
+        <Container className="pt-16">
           <AnimatedText
             text="A imaginação supera o conhecimento!"
-            className="mb-16 lg:!text-7xl sm:mb-8 sm:!text-6xl xs:!text-4xl"
+            className="mb-16 !text-8xl !leading-tight lg:!text-7xl sm:mb-8
+            sm:!text-6xl xs:!text-4xl xl:text-6xl"
           />
 
           <div
@@ -34,38 +32,38 @@ export default function Projects() {
             <div className="col-span-12">
               <FeaturedProject
                 title="That Movie"
-                summary="That Movie is a web application that allows you to
-                search for movies and series, and see their details. It was
-                developed using React, TypeScript, Tailwind CSS, and The Movie
+                summary="Navegue, encontre classificações, verifique atores e
+                encontre seu próximo filme para assistir. THAT MOVIE Foi
+                desenvolvido usando React, TypeScript, Tailwind CSS e The Movie
                 Database API."
-                link="https://that-movie.vercel.app/"
                 type="Projeto em destaque"
+                img="/images/projects/that-movie.png"
+                link="https://that-movie.vercel.app/"
                 github="https://github.com/fernandes-vinicius/that-movie"
-                img={projectThatMovie}
               />
             </div>
 
             <div className="col-span-6 sm:col-span-12">
               <Project
                 title="Coffee Delivery"
+                type="Web Application"
+                img="/images/projects/coffee-delivery.png"
                 link="https://coffee-delivery-react-one.vercel.app/"
-                type="Web application"
                 github="https://github.com/fernandes-vinicius/coffee-delivery-react"
-                img={projectCoffeeDelivery}
               />
             </div>
 
             <div className="col-span-6 sm:col-span-12">
               <Project
                 title="Ignite Shop"
+                type="Web Application"
+                img="/images/projects/ignite-shop.png"
                 link="https://coffee-delivery-react-one.vercel.app/"
-                type="Web application"
                 github="https://github.com/fernandes-vinicius/ignite-shop-2.0"
-                img={projectIgniteShop}
               />
             </div>
           </div>
-        </Layout>
+        </Container>
       </main>
     </>
   )

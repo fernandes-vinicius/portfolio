@@ -22,7 +22,7 @@ export function EducationDetails(props: EducationDetailsProps) {
     <li
       ref={ref}
       className="my-8 first:mt-0 last:mb-0 w-[60%] mx-auto flex flex-col
-      items-center justify-between md:w-[80%]"
+      items-start justify-between md:w-[80%]"
     >
       <LiIcon reference={ref} />
 
@@ -36,7 +36,7 @@ export function EducationDetails(props: EducationDetailsProps) {
         </h3>
 
         <span
-          className="capitalize font-medium text-dark/75 dark:text-light/75
+          className="capitalize text-dark/75 font-medium dark:text-light/50
           xs:text-sm"
         >
           {time} | {place}

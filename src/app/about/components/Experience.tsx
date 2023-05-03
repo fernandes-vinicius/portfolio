@@ -22,29 +22,18 @@ export function Experience() {
         Experiência
       </h2>
 
-      <div ref={ref} className="w-[75%] mx-auto relative lg:w-[90%] md:w-full">
+      <div ref={ref} className="relative w-[75%] mx-auto lg:w-[90%] md:w-full">
         <motion.div
-          style={{ scale: scrollYProgress }}
-          className="absolute left-9 top-1 w-[4px] h-full bg-dark
-          origin-top dark:bg-light md:w-[2px] md:left-[30px] xs:left-[20px]"
+          style={{ scaleY: scrollYProgress }}
+          className="absolute left-9 top-0.5 w-[4px] md:w-[2px] md:left-[30px]
+          xs:left-[20px] h-full bg-dark origin-top dark:bg-primaryDark
+          dark:shadow-3xl"
         />
 
         <ul
           className="w-full flex flex-col items-start justify-between ml-4
           xs:ml-2"
         >
-          {/* <ExperienceDetails
-            position="Graduado em Análise e Desenvolvimento de Sistemas"
-            company="IFRN - Campus Pau dos Ferros"
-            companyLink="https://portal.ifrn.edu.br/campus/paudosferros/"
-            time="2015-2019"
-            address="Brasil, RN"
-            work="Durante o curso tive a oportunidade de participar de projetos
-            de pesquisa e extensão, além de ter participado de eventos como
-            competição de programação. Após concluir minha formação ingressei no
-            mercado de trabalho como desenvolvedor frontend."
-          /> */}
-
           <ExperienceDetails
             position="Frontend Developer"
             company="EVOCORP"

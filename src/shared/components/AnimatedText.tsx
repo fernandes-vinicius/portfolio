@@ -40,7 +40,7 @@ export function AnimatedText({ text, className }: AnimatedTextProps) {
 
   return (
     <div
-      className="w-full mx-auto py-2 flex items-center justify-center
+      className="flex flex-col items-center justify-center w-full mx-auto py-2
       text-center overflow-hidden sm:py-0"
     >
       <motion.h1

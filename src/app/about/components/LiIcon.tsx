@@ -15,7 +15,7 @@ export function LiIcon({ reference }: LiIconProps) {
   })
 
   return (
-    <figure className="absolute left-0 stroke-dark dark:stroke-light">
+    <figure className="stroke-dark absolute left-0 dark:stroke-light">
       <svg
         className="-rotate-90 md:w-[60px] md:h-[60px] xs:w-[40px] xs:h-[40px]"
         width="75"
@@ -26,8 +26,8 @@ export function LiIcon({ reference }: LiIconProps) {
           cx="75"
           cy="50"
           r="20"
-          className="stroke-primary dark:stroke-primary-dark stroke-1
-          fill-none"
+          className="stroke-primary stroke-1 fill-none
+          dark:stroke-primary-dark"
         />
         <motion.circle
           cx="75"

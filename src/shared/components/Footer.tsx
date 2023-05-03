@@ -10,14 +10,16 @@ export function Footer() {
       text-lg dark:text-light dark:border-light sm:text-base"
     >
       <div
-        className="w-full h-full z-0 p-32 py-8 flex items-center justify-between
-        gap-2 lg:flex-col lg:py-6 sm:p-6"
+        className="flex items-center justify-between z-0 h-full w-full p-32
+        bg-light dark:bg-dark xl:p-24 lg:p-16 md:p-12 sm:p-8 py-8
+        lg:flex-col lg:py-6 sm:gap-2"
       >
-        <span>{year} &copy; Todos os direitos reservados.</span>
+        <span>© {year} Vinícius | Frontend Developer</span>
 
         <Link
           href={whatsAppURL}
           target="_blank"
+          rel="noopener noreferrer"
           className="underline underline-offset-2"
         >
           Diga olá

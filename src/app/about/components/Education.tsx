@@ -8,6 +8,7 @@ import { EducationDetails } from './EducationDetails'
 
 export function Education() {
   const ref = React.useRef(null)
+
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ['start end', 'center start'],
@@ -22,17 +23,15 @@ export function Education() {
         Educação
       </h2>
 
-      <div ref={ref} className="w-[75%] mx-auto relative lg:w-[90%] md:w-full">
+      <div ref={ref} className="relative w-[75%] mx-auto lg:w-[90%] md:w-full">
         <motion.div
-          style={{ scale: scrollYProgress }}
-          className="absolute left-9 top-1 w-[4px] h-full bg-dark
-          origin-top dark:bg-light md:w-[2px] md:left-[30px] xs:left-[20px]"
+          style={{ scaleY: scrollYProgress }}
+          className="absolute left-9 top-0.5 w-[4px] md:w-[2px] md:left-[30px]
+          xs:left-[20px] h-full bg-dark origin-top rounded-full
+          dark:bg-primary-dark dark:shadow-3xl"
         />
 
-        <ul
-          className="w-full flex flex-col items-start justify-between ml-4
-          xs:ml-2"
-        >
+        <ul className="w-full flex flex-col items-start justify-between ml-4">
           <EducationDetails
             type="Graduado em Análise e Desenvolvimento de Sistemas"
             time="2015-2019"

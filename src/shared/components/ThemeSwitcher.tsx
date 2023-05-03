@@ -14,6 +14,7 @@ export function ThemeSwitcher() {
 
   return (
     <button
+      aria-label="theme-switcher"
       onClick={handleChangeThemeMode}
       className={clsx(
         'flex items-center justify-center rounded-full p-1 w-6 h-6',

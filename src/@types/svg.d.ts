@@ -1,4 +1,4 @@
-declare global {
+export declare global {
   namespace JSX {
     interface IntrinsicElements {
       [elemName: string]: any;
@@ -6,9 +6,7 @@ declare global {
   }
 }
 
-declare module "*.svg" {
+export declare module "*.svg" {
   const content: React.FunctionComponent<React.SVGProps<SVGSVGElement>>;
   export default content;
 }
-
-export {}

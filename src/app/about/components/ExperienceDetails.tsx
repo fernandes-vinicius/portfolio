@@ -24,7 +24,7 @@ export function ExperienceDetails(props: ExperienceDetailsProps) {
     <li
       ref={ref}
       className="my-8 first:mt-0 last:mb-0 w-[60%] mx-auto flex flex-col
-      items-center justify-between md:w-[80%]"
+      items-start justify-between md:w-[80%]"
     >
       <LiIcon reference={ref} />
 
@@ -38,7 +38,7 @@ export function ExperienceDetails(props: ExperienceDetailsProps) {
           <a
             href={companyLink}
             target="_blank"
-            rel="noreferrer"
+            rel="noreferrer noopener"
             className="text-primary dark:text-primary-dark capitalize"
           >
             @{company}
