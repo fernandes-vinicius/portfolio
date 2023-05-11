@@ -36,7 +36,7 @@ export default function About() {
             >
               <h2
                 className="mb-4 text-lg font-bold uppercase text-dark/75
-              dark:text-light/75"
+                dark:text-light/75"
               >
                 Biografia
               </h2>
@@ -88,44 +88,6 @@ export default function About() {
               className="col-span-2 flex flex-col items-end justify-between
               xl:col-span-8 xl:flex-row xl:items-center md:order-3"
             >
-              {/* <div
-                className="flex flex-col items-end justify-center
-                xl:items-center"
-              >
-                <span
-                  className="inline-block text-7xl font-bold md:text-6xl
-                  sm:text-5xl xs:text-4xl"
-                >
-                  <AnimatedNumbers value={50} /> +
-                </span>
-                <h2
-                  className="text-xl font-medium text-dark/75
-                dark:text-light/75 xl:text-center md:text-lg sm:text-base
-                  xs:text-sm"
-                >
-                  satisfied clients
-                </h2>
-              </div> */}
-
-              {/* <div
-                className="flex flex-col items-end justify-center
-                xl:items-center"
-              >
-                <span
-                  className="inline-block text-7xl font-bold md:text-6xl
-                  sm:text-5xl xs:text-4xl"
-                >
-                  <AnimatedNumbers value={40} /> +
-                </span>
-                <h2
-                  className="text-xl font-medium text-dark/75
-                dark:text-light/75 xl:text-center md:text-lg sm:text-base
-                  xs:text-sm"
-                >
-                  projects completed
-                </h2>
-              </div> */}
-
               <div
                 className="flex flex-col items-end justify-center
                 xl:items-center"
@@ -142,6 +104,44 @@ export default function About() {
                   xs:text-sm"
                 >
                   Anos de experiência
+                </h2>
+              </div>
+
+              <div
+                className="flex flex-col items-end justify-center
+                xl:items-center"
+              >
+                <span
+                  className="inline-block text-7xl font-bold md:text-6xl
+                  sm:text-5xl xs:text-4xl"
+                >
+                  <AnimatedNumbers value={10} /> +
+                </span>
+                <h2
+                  className="text-xl font-medium text-dark/75
+                dark:text-light/75 xl:text-center md:text-lg sm:text-base
+                  xs:text-sm"
+                >
+                  tecnologias dominadas
+                </h2>
+              </div>
+
+              <div
+                className="flex flex-col items-end justify-center
+                xl:items-center"
+              >
+                <span
+                  className="inline-block text-7xl font-bold md:text-6xl
+                  sm:text-5xl xs:text-4xl"
+                >
+                  <AnimatedNumbers value={155} /> +
+                </span>
+                <h2
+                  className="text-xl font-medium text-dark/75
+                dark:text-light/75 xl:text-center md:text-lg sm:text-base
+                  xs:text-sm"
+                >
+                  contribuições
                 </h2>
               </div>
             </div>

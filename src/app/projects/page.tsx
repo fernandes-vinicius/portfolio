@@ -31,15 +31,13 @@ export default function Projects() {
           >
             <div className="col-span-12">
               <FeaturedProject
-                title="That Movie"
-                summary="Navegue, encontre classificações, verifique atores e
-                encontre seu próximo filme para assistir. THAT MOVIE Foi
-                desenvolvido usando React, TypeScript, Tailwind CSS e The Movie
-                Database API."
+                title="Quotify"
+                summary="Transforme seu dia com frases inspiradoras e
+                motivacionais escolhidas aleatoriamente."
                 type="Projeto em destaque"
-                img="/images/projects/that-movie.png"
-                link="https://that-movie.vercel.app/"
-                github="https://github.com/fernandes-vinicius/that-movie"
+                img="/images/projects/quotify.png"
+                link="https://quotify-two.vercel.app/"
+                github="https://github.com/fernandes-vinicius/quotify"
               />
             </div>
 
