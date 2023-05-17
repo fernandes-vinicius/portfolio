@@ -13,12 +13,12 @@ export function Skills() {
       </h2>
 
       <div
-        className="relative mb-64 mt-32 flex w-full items-center justify-center
+        className="relative mb-64 mt-16 flex w-full items-center justify-center
         md:mb-32"
       >
         <div
           className="grid grid-cols-5 gap-12 md:grid-cols-4 sm:grid-cols-3
-          xs:grid-cols-2"
+          xs:grid-cols-3"
         >
           <Skill name="HTML5" image="/images/skills/html5.svg" />
 
