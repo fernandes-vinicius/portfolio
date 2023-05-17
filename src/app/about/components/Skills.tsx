@@ -13,7 +13,7 @@ export function Skills() {
       </h2>
 
       <div
-        className="relative mb-64 mt-16 flex w-full items-center justify-center
+        className="relative mb-64 mt-24 flex w-full items-center justify-center
         md:mb-32"
       >
         <div
