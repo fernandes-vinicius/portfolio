@@ -87,7 +87,7 @@ export default function Projects() {
                 title="Todo List App"
                 type="Web Application"
                 img="/images/projects/todo-list.png"
-                link="todo-list-react-roan.vercel.app"
+                link="https://todo-list-react-roan.vercel.app"
                 github="https://github.com/fernandes-vinicius/todo-list-react"
               />
             </div>
