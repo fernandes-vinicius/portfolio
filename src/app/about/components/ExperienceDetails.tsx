@@ -23,8 +23,8 @@ export function ExperienceDetails(props: ExperienceDetailsProps) {
   return (
     <li
       ref={ref}
-      className="my-8 first:mt-0 last:mb-0 w-[60%] mx-auto flex flex-col
-      items-start justify-between md:w-[80%]"
+      className="mx-auto my-8 flex w-[60%] flex-col items-start justify-between
+      first:mt-0 last:mb-0 md:w-[80%]"
     >
       <LiIcon reference={ref} />
 
@@ -33,26 +33,23 @@ export function ExperienceDetails(props: ExperienceDetailsProps) {
         whileInView={{ y: 0 }}
         transition={{ duration: 0.5, type: 'spring' }}
       >
-        <h3 className="capitalize font-bold text-2xl sm:text-xl xs:text-lg">
+        <h3 className="text-2xl font-bold capitalize sm:text-xl xs:text-lg">
           {position}&nbsp;
           <a
             href={companyLink}
             target="_blank"
             rel="noreferrer noopener"
-            className="text-primary dark:text-primary-dark capitalize"
+            className="capitalize text-primary dark:text-primary-dark"
           >
             @{company}
           </a>
         </h3>
 
-        <span
-          className="capitalize font-medium text-dark/ dark:text-light/75
-          xs:text-sm"
-        >
+        <span className="text-dark/ font-medium dark:text-light/75 xs:text-sm">
           {time} | {address}
         </span>
 
-        <p className="font-medium w-full md:text-sm">{work}</p>
+        <p className="w-full font-medium md:text-sm">{work}</p>
       </motion.div>
     </li>
   )

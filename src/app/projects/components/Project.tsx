@@ -1,7 +1,9 @@
+'use client'
+
+import { motion } from 'framer-motion'
+
 import Image from 'next/image'
 import Link from 'next/link'
-
-import { GithubIcon } from '~/shared/components/Icons'
 
 interface ProjectProps {
   type: string
@@ -11,7 +13,7 @@ interface ProjectProps {
   github: string
 }
 
-// TODO Criar animação de hover na image usando motion scale
+const MotionImage = motion(Image)
 
 export function Project(props: ProjectProps) {
   const { type, title, img, link, github } = props
@@ -34,14 +36,15 @@ export function Project(props: ProjectProps) {
         rel="noopener noreferrer"
         className="w-full cursor-pointer overflow-hidden rounded-lg"
       >
-        <Image
+        <MotionImage
           src={img}
           alt={title}
           loading="lazy"
           width="1280"
           height="720"
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-          className="w-full h-auto hover:scale-105"
+          className="w-full h-auto"
+          whileHover={{ scale: 1.05 }}
         />
       </Link>
 
@@ -79,7 +82,13 @@ export function Project(props: ProjectProps) {
             rel="noopener noreferrer"
             className="w-8 md:w-6"
           >
-            <GithubIcon />
+            <Image
+              src="/images/social/github.svg"
+              alt="Github"
+              width="40"
+              height="40"
+              className="h-auto"
+            />
           </Link>
         </div>
       </div>

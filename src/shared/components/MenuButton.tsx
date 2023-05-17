@@ -13,28 +13,28 @@ export function MenuButton({ isOpen, className, ...rest }: MenuButtonProps) {
       type="button"
       aria-controls="mobile-menu"
       aria-expanded={isOpen}
-      className={clsx('flex flex-col justify-center items-center', className)}
+      className={clsx('flex flex-col items-center justify-center', className)}
     >
       <span className="sr-only" />
       <span
         className={clsx(
-          'bg-dark dark:bg-light block h-0.5 w-6 rounded-sm',
+          'block h-0.5 w-6 rounded-sm bg-dark dark:bg-light',
           'transition-all duration-300 ease-out',
-          [isOpen ? 'rotate-45 translate-y-1' : '-translate-y-0.5'],
+          [isOpen ? 'translate-y-1 rotate-45' : '-translate-y-0.5'],
         )}
       />
       <span
         className={clsx(
-          'bg-dark dark:bg-light block h-0.5 w-6 rounded-sm',
-          'transition-all duration-300 ease-out my-0.5',
+          'block h-0.5 w-6 rounded-sm bg-dark dark:bg-light',
+          'my-0.5 transition-all duration-300 ease-out',
           [isOpen ? 'opacity-0' : 'opacity-100'],
         )}
       />
       <span
         className={clsx(
-          'bg-dark dark:bg-light block h-0.5 w-6 rounded-sm',
+          'block h-0.5 w-6 rounded-sm bg-dark dark:bg-light',
           'transition-all duration-300 ease-out',
-          isOpen ? '-rotate-45 -translate-y-1' : 'translate-y-0.5',
+          isOpen ? '-translate-y-1 -rotate-45' : 'translate-y-0.5',
         )}
       />
     </button>

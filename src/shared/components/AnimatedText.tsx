@@ -40,12 +40,12 @@ export function AnimatedText({ text, className }: AnimatedTextProps) {
 
   return (
     <div
-      className="flex flex-col items-center justify-center w-full mx-auto py-2
-      text-center overflow-hidden sm:py-0"
+      className="mx-auto flex w-full flex-col items-center justify-center
+      overflow-hidden py-2 text-center sm:py-0"
     >
       <motion.h1
         className={clsx(
-          'inline-block w-full font-bold capitalize text-8xl',
+          'inline-block w-full text-8xl font-bold capitalize',
           'text-dark dark:text-light',
           className,
         )}

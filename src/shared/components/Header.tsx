@@ -19,8 +19,8 @@ export function Header() {
 
   return (
     <header
-      className="relative flex items-center justify-between w-full px-32 py-8
-      z-10 font-medium dark:text-light lg:px-16 z-1 md:px-12 sm:px-8"
+      className="relative z-10 flex w-full items-center justify-between px-32
+      py-8 font-medium dark:text-light lg:px-16 md:px-12 sm:px-8"
     >
       <div className="hidden lg:block">
         <MenuButton
@@ -29,7 +29,7 @@ export function Header() {
         />
       </div>
 
-      <div className="flex justify-between items-center w-full lg:hidden">
+      <div className="flex w-full items-center justify-between lg:hidden">
         <nav className="flex items-center gap-8">
           <NavLink href="/home">Início</NavLink>
           <NavLink href="/about">Sobre mim</NavLink>
@@ -37,7 +37,7 @@ export function Header() {
         </nav>
 
         <nav
-          className="flex items-center justify-center flex-wrap gap-6
+          className="flex flex-wrap items-center justify-center gap-6
           lg:mt-2"
         >
           <SocialMediaLinks />
@@ -45,14 +45,14 @@ export function Header() {
         </nav>
       </div>
 
-      {isMobileMenuOpen ? (
+      {isMobileMenuOpen && (
         <motion.div
           initial={{ scale: 0, opacity: 0, x: '-50%', y: '-50%' }}
           animate={{ scale: 1, opacity: 1 }}
-          className="min-w-[70vw] sm:min-w-[90vw] flex justify-between
-          items-center flex-col fixed top-1/2 left-1/2 -translate-x-1/2
-          -translate-y-1/2 py-32 bg-dark/90 dark:bg-light/75 rounded-lg
-          z-50 backdrop-blur-md"
+          className="fixed left-1/2 top-1/2 z-50 flex min-w-[70vw]
+          -translate-x-1/2 -translate-y-1/2 flex-col items-center
+          justify-between rounded-lg bg-dark/90 py-32 backdrop-blur-md
+          dark:bg-light/75 sm:min-w-[90vw]"
         >
           <nav className="flex flex-col items-center justify-center gap-4">
             <NavLink href="/home" onClick={handleToggleMobileMenu}>
@@ -66,12 +66,12 @@ export function Header() {
             </NavLink>
           </nav>
 
-          <nav className="flex items-center justify-center gap-6 mt-6">
+          <nav className="mt-6 flex items-center justify-center gap-6">
             <SocialMediaLinks />
             <ThemeSwitcher />
           </nav>
         </motion.div>
-      ) : null}
+      )}
 
       <div className="absolute left-[50%] top-2 translate-x-[-50%]">
         <Logo />

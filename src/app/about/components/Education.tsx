@@ -17,33 +17,33 @@ export function Education() {
   return (
     <div className="my-64">
       <h2
-        className="font-bold text-8xl mb-32 w-full text-center md:text-6xl
-        xs:text-4xl md:mb-16"
+        className="mb-32 w-full text-center text-8xl font-bold md:mb-16
+        md:text-6xl xs:text-4xl"
       >
         Educação
       </h2>
 
-      <div ref={ref} className="relative w-[75%] mx-auto lg:w-[90%] md:w-full">
+      <div ref={ref} className="relative mx-auto w-[75%] lg:w-[90%] md:w-full">
         <motion.div
           style={{ scaleY: scrollYProgress }}
-          className="absolute left-9 top-0.5 w-[4px] md:w-[2px] md:left-[30px]
-          xs:left-[20px] h-full bg-dark origin-top rounded-full
-          dark:bg-primary-dark dark:shadow-3xl"
+          className="dark:shadow-3xl absolute left-9 top-0.5 h-full w-[4px]
+          origin-top rounded-full bg-dark dark:bg-primary-dark md:left-[30px]
+          md:w-[2px] xs:left-[20px]"
         />
 
-        <ul className="w-full flex flex-col items-start justify-between ml-4">
+        <ul className="ml-4 flex w-full flex-col items-start justify-between">
           <EducationDetails
+            place="IFRN - INSTITUTO FEDERAL DO RIO GRANDE DO NORTE"
             type="Graduado em Análise e Desenvolvimento de Sistemas"
-            time="2015-2019"
-            place="Instituto Federal do Rio Grande do Norte (IFRN)"
+            time="2015-2020"
             info="Os cursos relevantes incluíram Estruturas e Algoritmos de Dados,
-            Engenharia de Sistemas Computacionais e Web Design."
+            Engenharia de Sistemas Computacionais, Web Design, entre outros."
           />
 
           <EducationDetails
-            type="Curso Ignite - Trilha ReactJS"
-            time="2022-2023"
             place="Rocketseat"
+            type="Curso Ignite - Trilha ReactJS"
+            time="2023"
             info="O Ignite é um programa de aceleração de carreira para devs que
             buscam evoluir na carreira e se destacar no mercado. A trilha de
             ReactJS é focada em desenvolvimento web com ReactJS e NextJS."

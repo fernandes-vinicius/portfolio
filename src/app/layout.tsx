@@ -10,17 +10,18 @@ import './globals.css'
 const montserrat = Montserrat({ subsets: ['latin'] })
 
 export const metadata = {
-  title: 'Vinícius Fernandes | Frontend Developer',
+  title: 'Vinícius | Desenvolvedor Front-end',
   description: `
-    Desenvolvedor frontend apaixonado por criar interfaces incríveis. Confira
-    meu portfólio para ver meus trabalhos mais recentes.
+    Sou um desenvolvedor front-end apaixonado pelo processo de criação.
+    Meu portfólio é um reflexo do meu compromisso em criar soluções elegantes,
+    combinando habilidades técnicas com uma abordagem criativa.
   `,
 }
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="pt-br" className={montserrat.className}>
-      <body className="bg-light dark:bg-dark w-full h-full min-h-screen">
+      <body className="h-full min-h-screen w-full bg-light dark:bg-dark">
         <Header />
         {children}
         <Footer />

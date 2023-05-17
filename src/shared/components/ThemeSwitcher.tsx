@@ -17,7 +17,7 @@ export function ThemeSwitcher() {
       aria-label="theme-switcher"
       onClick={handleChangeThemeMode}
       className={clsx(
-        'flex items-center justify-center rounded-full p-1 w-6 h-6',
+        'flex h-6 w-6 items-center justify-center rounded-full p-1',
         [mode === 'light' ? 'bg-dark text-light' : 'bg-light text-dark'],
       )}
     >

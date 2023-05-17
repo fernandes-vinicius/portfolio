@@ -19,16 +19,16 @@ export function NavLink({ href, children, ...rest }: NavLinkProps) {
     <Link
       {...rest}
       href={href}
-      className="relative group rounded lg:text-light lg:dark:text-dark"
+      className="group relative rounded lg:text-light lg:dark:text-dark"
     >
       {children}
 
       <span
         className={clsx(
-          'absolute left-0 -bottom-0.5 inline-block h-[1px]',
+          'absolute -bottom-0.5 left-0 inline-block h-[1px]',
           'group-hover:w-full',
           'bg-dark dark:bg-light lg:bg-light lg:dark:bg-dark',
-          'transition-[width] ease duration-300',
+          'ease transition-[width] duration-300',
           [isActive ? 'w-full' : 'w-0'],
         )}
       >
