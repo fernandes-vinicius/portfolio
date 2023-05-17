@@ -17,8 +17,8 @@ export default function Projects() {
         <Container className="pt-16">
           <AnimatedText
             text="A imaginação supera o conhecimento!"
-            className="mb-16 !text-8xl !leading-tight lg:!text-7xl sm:mb-8
-            sm:!text-6xl xs:!text-4xl xl:text-6xl"
+            className="mb-16 !text-8xl !leading-tight xl:text-6xl lg:!text-7xl
+            sm:mb-8 sm:!text-6xl xs:!text-4xl"
           />
 
           <div

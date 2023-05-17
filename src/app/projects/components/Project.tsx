@@ -22,10 +22,10 @@ export function Project(props: ProjectProps) {
     <article
       className="relative flex w-full flex-col items-center justify-center
       rounded-2xl rounded-br-2xl border border-solid border-dark bg-light
-      p-6 shadow-2xl dark:border-light dark:bg-dark xs:p-4 "
+      p-6 shadow-2xl dark:border-light dark:bg-dark xs:p-4"
     >
       <div
-        className="absolute top-0 -right-3 -z-10 h-[103%] w-[102%]
+        className="absolute -right-3 top-0 -z-10 h-[103%] w-[102%]
         rounded-[2rem] rounded-br-3xl bg-dark dark:bg-light md:-right-2
         md:w-[101%] xs:h-[102%] xs:rounded-[1.5rem]"
       />
@@ -43,15 +43,15 @@ export function Project(props: ProjectProps) {
           width="1280"
           height="720"
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-          className="w-full h-auto"
+          className="h-auto w-full"
           whileHover={{ scale: 1.05 }}
         />
       </Link>
 
       <div className="mt-4 flex w-full flex-col items-start justify-between">
         <span
-          className="text-xl font-medium text-primary
-          dark:text-primary-dark lg:text-lg md:text-base"
+          className="text-xl font-medium text-primary dark:text-primary-dark
+          lg:text-lg md:text-base"
         >
           {type}
         </span>
@@ -67,7 +67,7 @@ export function Project(props: ProjectProps) {
           </h2>
         </Link>
 
-        <div className="flex items-center justify-between w-full">
+        <div className="flex w-full items-center justify-between">
           <Link
             href={link}
             target="_blank"

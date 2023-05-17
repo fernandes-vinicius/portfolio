@@ -1,46 +1,66 @@
 'use client'
 
-import { motion } from 'framer-motion'
-
 import { Skill } from './Skill'
 
 export function Skills() {
   return (
     <>
       <h2
-        className="font-bold text-8xl mt-64 w-full text-center md:text-6xl
-        md:mt-32"
+        className="mt-32 w-full text-center text-8xl font-bold md:mt-16
+        md:text-6xl"
       >
         Skills
       </h2>
 
       <div
-        className="w-full h-[100vh] relative bg-circular-light
-        dark:bg-circular-dark flex items-center justify-center mb-64 md:mb-32
-        rounded-full lg:bg-circular-light-lg lg:dark:bg-circular-dark-lg
-        md:bg-circular-light-md md:dark:bg-circular-dark-md
-        sm:bg-circular-light-sm sm:dark:bg-circular-dark-sm lg:h-[80vh]
-        sm:h-[60vh] xs:h-[50vh]"
+        className="relative mb-64 mt-32 flex w-full items-center justify-center
+        md:mb-32"
       >
-        <motion.div
-          className="cursor-pointer flex rounded-full font-semibold bg-dark
-          text-light p-8 shadow-dark dark:bg-light dark:text-dark lg:p-6
-          md:p-4 xs:text-xs xs:p-2 "
-          whileHover={{ scale: 1.05 }}
+        <div
+          className="grid grid-cols-5 gap-12 md:grid-cols-4 sm:grid-cols-3
+          xs:grid-cols-2"
         >
-          Web
-        </motion.div>
+          <Skill name="HTML5" image="/images/skills/html5.svg" />
 
-        <Skill name="HTML" x="-25vw" y="2vw" />
-        <Skill name="CSS" x="-5vw" y="-10vw" />
-        <Skill name="Typescript" x="20vw" y="6vw" />
-        <Skill name="ReactJS" x="0vw" y="12vw" />
-        <Skill name="NextJS" x="-20vw" y="-15vw" />
-        <Skill name="ViteJS" x="15vw" y="-12vw" />
-        <Skill name="Web design" x="32vw" y="-5vw" />
-        <Skill name="Figma" x="0vw" y="-20vw" />
-        <Skill name="Supabase" x="-25vw" y="18vw" />
-        <Skill name="Tailwind" x="18vw" y="18vw" />
+          <Skill name="CSS3" image="/images/skills/css3.svg" />
+
+          <Skill name="JavaScript" image="/images/skills/js.svg" />
+
+          <Skill name="TypeScript" image="/images/skills/ts.svg" />
+
+          <Skill name="React | React Native" image="/images/skills/react.svg" />
+
+          <Skill
+            name="Next.Js"
+            image="/images/skills/next.svg"
+            className="rounded-full bg-light p-0.5"
+          />
+
+          <Skill name="Tailwind CSS" image="/images/skills/tailwind.svg" />
+
+          <Skill
+            name="Styled Components"
+            image="/images/skills/styled-components.png"
+          />
+
+          <Skill name="Material UI" image="/images/skills/mui.svg" />
+
+          <Skill name="ESLint" image="/images/skills/eslint.svg" />
+
+          <Skill name="React Query" image="/images/skills/react-query.png" />
+
+          <Skill name="Redux" image="/images/skills/redux.svg" />
+
+          <Skill name="Supabase" image="/images/skills/supabase.png" />
+
+          <Skill
+            name="Prisma"
+            image="/images/skills/prisma.svg"
+            className="rounded-full bg-light p-0.5"
+          />
+
+          <Skill name="Git | Github" image="/images/skills/git.svg" />
+        </div>
       </div>
     </>
   )

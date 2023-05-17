@@ -7,7 +7,7 @@ export function Footer() {
   return (
     <footer
       className="w-full border-t-2 border-solid border-dark text-lg font-medium
-      dark:border-light dark:text-light sm:text-center sm:text-base"
+      dark:border-light dark:text-light sm:text-center sm:text-sm"
     >
       <div
         className="z-0 flex h-full w-full items-center justify-between bg-light

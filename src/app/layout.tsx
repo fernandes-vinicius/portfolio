@@ -11,11 +11,7 @@ const montserrat = Montserrat({ subsets: ['latin'] })
 
 export const metadata = {
   title: 'Vinícius | Desenvolvedor Front-end',
-  description: `
-    Sou um desenvolvedor front-end apaixonado pelo processo de criação.
-    Meu portfólio é um reflexo do meu compromisso em criar soluções elegantes,
-    combinando habilidades técnicas com uma abordagem criativa.
-  `,
+  description: `Sou um desenvolvedor front-end apaixonado pelo processo de criação.`,
 }
 
 export default function RootLayout({ children }: { children: ReactNode }) {

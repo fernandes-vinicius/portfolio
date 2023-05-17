@@ -86,7 +86,7 @@ export default function About() {
                 rounded-[2rem] rounded-br-3xl bg-dark dark:bg-light"
               />
               <Image
-                src="/images/me-front.jpg"
+                src="/images/me-2.jpg"
                 alt="Vinícius"
                 priority
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"

@@ -27,7 +27,7 @@ export function FeaturedProject(props: FeaturedProjectProps) {
       xs:rounded-br-3xl xs:p-4"
     >
       <div
-        className="absolute top-0 -right-3 -z-10 h-[103%] w-[101%]
+        className="absolute -right-3 top-0 -z-10 h-[103%] w-[101%]
         rounded-[2.5rem] rounded-br-3xl bg-dark dark:bg-light xs:-right-2
         xs:h-[102%] xs:w-[100%] xs:rounded-[1.5rem]"
       />
@@ -45,7 +45,7 @@ export function FeaturedProject(props: FeaturedProjectProps) {
           width="1280"
           height="720"
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-          className="w-full h-auto"
+          className="h-auto w-full"
           whileHover={{ scale: 1.05 }}
         />
       </Link>
@@ -55,8 +55,8 @@ export function FeaturedProject(props: FeaturedProjectProps) {
         lg:w-full lg:pl-0 lg:pt-6"
       >
         <span
-          className="text-xl font-medium text-primary
-          dark:text-primary-dark xs:text-base"
+          className="text-xl font-medium text-primary dark:text-primary-dark
+          xs:text-base"
         >
           {type}
         </span>
