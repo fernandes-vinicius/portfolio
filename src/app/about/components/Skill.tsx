@@ -41,8 +41,8 @@ export function Skill({ name, image, className }: SkillProps) {
         loading="lazy"
         width="40"
         height="40"
-        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-        className={clsx('h-10 w-10', className)}
+        // sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+        className={clsx('h-10 w-10 object-contain', className)}
         whileHover={{ scale: 1.08 }}
       />
     </motion.div>

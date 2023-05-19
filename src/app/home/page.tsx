@@ -6,6 +6,7 @@ import { Container } from '~/shared/components/Container'
 import { TransitionEffect } from '~/shared/components/TransitionEffect'
 
 import { ResumeLink } from './components/ResumeLink'
+import DevAnimation from './components/DevAnimation'
 
 const whatsAppLink = process.env.NEXT_PUBLIC_WHATSAPP_LINK
 
@@ -23,7 +24,7 @@ export default function Home() {
           md:flex-col"
         >
           <div className="w-1/2 lg:hidden md:inline-block md:w-full">
-            <Image
+            {/* <Image
               src="/images/me-profile.png"
               alt="Vinícius"
               priority
@@ -31,7 +32,9 @@ export default function Home() {
               width="580"
               height="580"
               className="h-auto w-full"
-            />
+            /> */}
+
+            <DevAnimation />
           </div>
 
           <div

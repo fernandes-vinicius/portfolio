@@ -59,7 +59,12 @@ export function Skills() {
             className="rounded-full bg-light p-0.5"
           />
 
+          <Skill name="Figma" image="/images/skills/figma.png" />
+
           <Skill name="Git | Github" image="/images/skills/git.svg" />
+
+          {/* TODO */}
+          {/* Vercel */}
         </div>
       </div>
     </>
