@@ -67,7 +67,7 @@ export default function Projects() {
                 a dispositivos móveis."
                 type="Portfolio Website"
                 img="/images/projects/portfolio.png"
-                link="https://portfolio-lemon-ten-87.vercel.app"
+                link="https://portfolio-viniciusfernandes.vercel.app"
                 github="https://github.com/fernandes-vinicius/portfolio"
               />
             </div>
