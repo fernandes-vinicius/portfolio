@@ -60,9 +60,9 @@ export default function Projects() {
 
             <div className="col-span-12">
               <FeaturedProject
-                title="Site do Portfólio React"
-                summary="Um site de portfólio profissional usando React JS,
-                Framer-motion e Tailwind. Possui transições de página suaves,
+                title="Site do Portfólio"
+                summary="Site do meu portfólio profissional usando Next JS,
+                Framer-motion, Tailwind CSS e muito mais. Possui transições de página suaves,
                 efeitos de fundo interessantes, design exclusivo e é responsivo
                 a dispositivos móveis."
                 type="Portfolio Website"
