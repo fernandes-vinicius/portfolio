@@ -42,8 +42,6 @@ Encontre alguns projetos desenvolvidos por mim, um pouco sobre a minha formaçã
 
 2. Abra o navegador e acesse o seguinte endereço:
 
-O seu projeto está rodando no seguinte endereço:
-
 ```ts
   http://localhost:3000
 ```
