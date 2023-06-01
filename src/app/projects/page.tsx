@@ -91,6 +91,20 @@ export default function Projects() {
                 github="https://github.com/fernandes-vinicius/todo-list-react"
               />
             </div>
+
+            <div className="col-span-12">
+              <FeaturedProject
+                title="The Fit Club"
+                summary="Website responsivo de uma academia usando Next.js +
+                Tailwind CSS. O objetivo deste projeto foi estudar a criação de
+                sites responsivos e aprimorar minhas habilidades com as
+                tecnologias usadas no projeto."
+                type="Website"
+                img="/images/projects/the-fit-club.png"
+                link="https://the-fit-club-web.vercel.app"
+                github="https://github.com/fernandes-vinicius/gym-website"
+              />
+            </div>
           </div>
         </Container>
       </main>
