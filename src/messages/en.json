@@ -1,0 +1,107 @@
+{
+  "Header": {
+    "navLinks": {
+      "home": "Home",
+      "about": "About",
+      "projects": "Projects"
+    }
+  },
+
+  "Footer": {
+    "text": "Vinicius | Front-end Developer",
+    "hello": "Say Hello"
+  },
+
+  "Home": {
+    "title": "Building the future. Turning ideas into business.",
+    "subtitle": "As a skilled front-end developer, I am dedicated to turning ideas into innovative solutions, combining skills techniques with a creative approach. Explore my projects more recent and get to know my work.",
+    "resumeLink": "Resume",
+    "contactLink": "Contact"
+  },
+
+  "About": {
+    "title": "Passion Fuels Purpose!",
+    "Biography": {
+      "title": "Biography",
+      "paragraphs": {
+        "1": "Hi, I am Vinícius Fernandes, a front-end developer with a passion for creating elegant, functional digital experiences and user-centric.",
+        "2": "With more than 4 years of experience in the field, I am always looking to evolve my knowledge as a Developer. I work daily with React and frameworks like Next.js. I have skills in administration and project management, business plans, administrative functions (Leadership, Direction, Planning, and Control), IT Management.",
+        "3": "Experience with project versioning tools (Git, GitHub, GitFlow) and project prototyping techniques applying UI/UX concepts using tools like Figma.",
+        "4": "I believe that the front-end development process is more than just making things look beautiful - it&apos;s about solving problems and creating intuitive and enjoyable experiences for users."
+      }
+    },
+    "Highlights": {
+      "experience": "years of experience"
+    },
+    "Skills": {
+      "title": "Skills"
+    },
+    "Experience": {
+      "title": "Experience",
+      "experiences": {
+        "1": {
+          "position": "Front-end Developer & UI Design",
+          "work": "I work in a team responsible for the development of technological solutions for different sectors of the market. Including Chatbot solutions, Mobile Applications, Websites and Web Systems."
+        }
+      }
+    },
+    "Education": {
+      "title": "Education",
+      "history": {
+        "1": {
+          "place": "Federal Institute of Rio Grande do Norte",
+          "type": "Graduated in Systems Analysis and Development",
+          "details": "Relevant courses included Data Structures and Algorithms, Computer Systems Engineering, Web Design, among others."
+        },
+        "2": {
+          "place": "Rocketseat",
+          "type": "Ignite Course - ReactJS Track",
+          "details": "Ignite is a career acceleration program for developers who seek to evolve in their career and stand out in the market. the trail of ReactJS is focused on web development with ReactJS and NextJS."
+        }
+      }
+    }
+  },
+
+  "Projects": {
+    "title": "Imagination Trumps Knowledge!",
+    "FeaturedProject": {
+      "demoLink": "Visit Project"
+    },
+    "Project": {
+      "demoLink": "Visit"
+    },
+    "projects": {
+      "1": {
+        "title": "Ignite Call",
+        "type": "Featured Project",
+        "summary": "Connect your calendar and allow people to schedule appointments in your free time. The application was built using Next.js, Tailwind CSS, Prisma, PlanetScale, and much more."
+      },
+      "2": {
+        "title": "Coffee Delivery",
+        "type": "Web Application"
+      },
+      "3": {
+        "title": "That Movie",
+        "type": "Website"
+      },
+      "4": {
+        "title": "Next.js Portfolio Website",
+        "type": "Portfolio Website",
+        "summary": "A professional portfolio website using React JS, Framer-motion, and Styled-components. It has smooth page transitions, cool background effects, unique design and it is mobile responsive."
+      },
+      "5": {
+        "title": "Quotify",
+        "type": "Website"
+      },
+      "6": {
+        "title": "Todo List App",
+        "type": "Web Application"
+      },
+      "7": {
+        "title": "The Fit Club",
+        "type": "Featured Project",
+        "summary": "A gym's responsive website using Next.js + Tailwind CSS. The objective of this project was to study the creation of responsive websites and improved my skills with technologies used in the project."
+      }
+    }
+  }
+}
