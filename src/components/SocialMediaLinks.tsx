@@ -12,22 +12,22 @@ type LinkType = {
 
 const links: LinkType[] = [
   {
-    href: process.env.GITHUB_URL,
+    href: process.env.NEXT_PUBLIC_GITHUB_URL,
     src: '/images/social/github.svg',
     alt: 'Github',
   },
   {
-    href: process.env.LINKEDIN_URL,
+    href: process.env.NEXT_PUBLIC_LINKEDIN_URL,
     src: '/images/social/linkedin.svg',
     alt: 'Linkedin',
   },
   {
-    href: process.env.INSTAGRAM_URL,
+    href: process.env.NEXT_PUBLIC_INSTAGRAM_URL,
     src: '/images/social/instagram.png',
     alt: 'Instagram',
   },
   {
-    href: process.env.WHATS_APP_URL,
+    href: process.env.NEXT_PUBLIC_WHATS_APP_URL,
     src: '/images/social/whatsapp.svg',
     alt: 'WhatsApp',
   },

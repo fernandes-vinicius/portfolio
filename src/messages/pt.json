@@ -31,7 +31,8 @@
       }
     },
     "Highlights": {
-      "experience": "anos de experiência"
+      "experience": "anos de experiência",
+      "projects": "projetos desenvolvidos"
     },
     "Skills": {
       "title": "Skills"
@@ -65,7 +66,7 @@
   "Projects": {
     "title": "A imaginação supera o conhecimento!",
     "FeaturedProject": {
-      "demoLink": "Visito o Projeto"
+      "demoLink": "Visite o Projeto"
     },
     "Project": {
       "demoLink": "Visite"

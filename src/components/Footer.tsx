@@ -23,8 +23,7 @@ export function Footer() {
         </span>
 
         <Link
-          href="/"
-          // href={whatsAppLink} // TODO
+          href={process.env.NEXT_PUBLIC_WHATS_APP_URL}
           target="_blank"
           rel="noopener noreferrer"
           className="underline underline-offset-2"

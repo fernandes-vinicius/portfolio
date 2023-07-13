@@ -8,8 +8,7 @@ export function ContactLink() {
 
   return (
     <Link
-      href="/"
-      // href={whatsAppLink} // TODO
+      href={process.env.NEXT_PUBLIC_WHATS_APP_URL}
       target="_blank"
       rel="noopener noreferrer"
       className="ml-8 text-lg font-medium capitalize text-dark underline

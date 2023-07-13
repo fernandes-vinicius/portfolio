@@ -6,7 +6,6 @@ import { useTranslations } from 'next-intl'
 
 import { motion } from 'framer-motion'
 
-// import { LocaleSwitcher } from './LocaleSwitcher'
 import { LocaleSwitcher } from './LocaleSwitcher'
 import { Logo } from './Logo'
 import { MenuButton } from './MenuButton'

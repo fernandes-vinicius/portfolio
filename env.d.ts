@@ -1,10 +1,10 @@
 export declare global {
   namespace NodeJS {
     interface ProcessEnv {
-      GITHUB_URL: string
-      LINKEDIN_URL: string
-      INSTAGRAM_URL: string
-      WHATS_APP_URL: string
+      NEXT_PUBLIC_GITHUB_URL: string
+      NEXT_PUBLIC_LINKEDIN_URL: string
+      NEXT_PUBLIC_INSTAGRAM_URL: string
+      NEXT_PUBLIC_WHATS_APP_URL: string
     }
   }
 }
