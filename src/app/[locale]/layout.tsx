@@ -4,6 +4,7 @@ import type { Metadata } from 'next'
 import { NextIntlClientProvider } from 'next-intl'
 import { Montserrat } from 'next/font/google'
 import { notFound } from 'next/navigation'
+import Script from 'next/script'
 
 import { Footer } from '~/components/Footer'
 import { Header } from '~/components/Header'
@@ -44,6 +45,18 @@ export default async function RootLayout(props: RootLayoutProps) {
 
   return (
     <html lang={locale}>
+      {/* Google tag (gtag.js) */}
+      <Script src="https://www.googletagmanager.com/gtag/js?id=G-SDWWSKV8SC" />
+      <Script id="google-analytics">
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-SDWWSKV8SC');
+        `}
+      </Script>
+
       <body className={montserrat.className}>
         <NextIntlClientProvider locale={locale} messages={messages}>
           <div className="min-h-screen w-full bg-light dark:bg-dark">
