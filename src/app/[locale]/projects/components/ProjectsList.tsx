@@ -30,8 +30,8 @@ export function ProjectsList() {
           title={t('projects.2.title')}
           type={t('projects.2.type')}
           coverImagePath="/images/projects/coffee-delivery.png"
-          codeUrl="https://coffee-delivery-react-one.vercel.app"
-          demoUrl="https://github.com/fernandes-vinicius/coffee-delivery-react"
+          codeUrl="https://github.com/fernandes-vinicius/coffee-delivery-react"
+          demoUrl="https://coffee-delivery-react-one.vercel.app"
         />
       </div>
 
