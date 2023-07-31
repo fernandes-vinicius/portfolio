@@ -36,7 +36,7 @@ export function FeaturedProject(props: FeaturedProjectProps) {
       />
 
       <Link
-        href={demoUrl || codeUrl}
+        href={demoUrl ?? codeUrl}
         target="_blank"
         rel="noopener noreferrer"
         className="w-1/2 cursor-pointer overflow-hidden rounded-lg lg:w-full"
@@ -65,7 +65,7 @@ export function FeaturedProject(props: FeaturedProjectProps) {
         </span>
 
         <Link
-          href={codeUrl}
+          href={demoUrl ?? codeUrl}
           target="_blank"
           rel="noopener noreferrer"
           className="underline-offset-2 hover:underline"
@@ -97,7 +97,7 @@ export function FeaturedProject(props: FeaturedProjectProps) {
           </Link>
 
           <Link
-            href={demoUrl || codeUrl}
+            href={demoUrl ?? codeUrl}
             target="_blank"
             rel="noopener noreferrer"
             className="ml-4 rounded-lg bg-dark p-2 px-6 text-lg font-semibold

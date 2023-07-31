@@ -91,6 +91,17 @@ export function ProjectsList() {
           demoUrl="https://the-fit-club-web.vercel.app"
         />
       </div>
+
+      {/* CarHub */}
+      <div className="col-span-6 sm:col-span-12">
+        <Project
+          title={t('projects.8.title')}
+          type={t('projects.8.type')}
+          coverImagePath="/images/projects/carhub.png"
+          codeUrl="https://github.com/fernandes-vinicius/car-hub"
+          demoUrl="https://web-carhub.vercel.app"
+        />
+      </div>
     </div>
   )
 }

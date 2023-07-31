@@ -34,7 +34,7 @@ export function Project(props: ProjectProps) {
       />
 
       <Link
-        href={demoUrl || codeUrl}
+        href={demoUrl ?? codeUrl}
         target="_blank"
         rel="noopener noreferrer"
         className="w-full cursor-pointer overflow-hidden rounded-lg"
@@ -59,7 +59,7 @@ export function Project(props: ProjectProps) {
         </span>
 
         <Link
-          href={demoUrl || codeUrl}
+          href={demoUrl ?? codeUrl}
           target="_blank"
           rel="noopener noreferrer"
           className="underline-offset-2 hover:underline"
@@ -71,7 +71,7 @@ export function Project(props: ProjectProps) {
 
         <div className="flex w-full items-center justify-between">
           <Link
-            href={demoUrl || codeUrl}
+            href={demoUrl ?? codeUrl}
             target="_blank"
             rel="noopener noreferrer"
             className="rounded text-lg font-medium underline md:text-base"
@@ -80,7 +80,7 @@ export function Project(props: ProjectProps) {
           </Link>
 
           <Link
-            href={demoUrl || codeUrl}
+            href={codeUrl}
             target="_blank"
             rel="noopener noreferrer"
             className="w-8 md:w-6"

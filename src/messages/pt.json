@@ -102,6 +102,10 @@
         "title": "The Fit Club",
         "type": "Projeto em destaque",
         "summary": "O site responsivo de uma academia usando Next.js + Tailwind CSS. O objetivo deste projeto foi estudar a criação de sites responsivos e aprimorar minhas habilidades com as tecnologias utilizadas no projeto."
+      },
+      "8": {
+        "title": "CarHub",
+        "type": "Website"
       }
     }
   }
