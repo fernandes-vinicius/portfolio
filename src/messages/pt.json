@@ -106,6 +106,10 @@
       "8": {
         "title": "CarHub",
         "type": "Website"
+      },
+      "9": {
+        "title": "React + Redux + Zustand",
+        "type": "Aplicação"
       }
     }
   }

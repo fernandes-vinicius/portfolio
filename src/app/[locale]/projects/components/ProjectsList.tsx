@@ -102,6 +102,17 @@ export function ProjectsList() {
           demoUrl="https://web-carhub.vercel.app"
         />
       </div>
+
+      {/* React + Redux + Zustand */}
+      <div className="col-span-6 sm:col-span-12">
+        <Project
+          title={t('projects.9.title')}
+          type={t('projects.9.type')}
+          coverImagePath="/images/projects/react-redux-zustand.png"
+          codeUrl="https://github.com/fernandes-vinicius/react-redux-zustand"
+          demoUrl="https://react-redux-zustand-six.vercel.app"
+        />
+      </div>
     </div>
   )
 }
