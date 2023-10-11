@@ -35,14 +35,14 @@ export function ProjectsList() {
         />
       </div>
 
-      {/* That Movie */}
+      {/* React + Redux + Zustand */}
       <div className="col-span-6 sm:col-span-12">
         <Project
-          title={t('projects.3.title')}
-          type={t('projects.3.type')}
-          coverImagePath="/images/projects/that-movie.png"
-          codeUrl="https://github.com/fernandes-vinicius/that-movie"
-          demoUrl="https://that-movie.vercel.app"
+          title={t('projects.9.title')}
+          type={t('projects.9.type')}
+          coverImagePath="/images/projects/react-redux-zustand.png"
+          codeUrl="https://github.com/fernandes-vinicius/react-redux-zustand"
+          demoUrl="https://react-redux-zustand-six.vercel.app"
         />
       </div>
 
@@ -103,14 +103,14 @@ export function ProjectsList() {
         />
       </div>
 
-      {/* React + Redux + Zustand */}
+      {/* That Movie */}
       <div className="col-span-6 sm:col-span-12">
         <Project
-          title={t('projects.9.title')}
-          type={t('projects.9.type')}
-          coverImagePath="/images/projects/react-redux-zustand.png"
-          codeUrl="https://github.com/fernandes-vinicius/react-redux-zustand"
-          demoUrl="https://react-redux-zustand-six.vercel.app"
+          title={t('projects.3.title')}
+          type={t('projects.3.type')}
+          coverImagePath="/images/projects/that-movie.png"
+          codeUrl="https://github.com/fernandes-vinicius/that-movie"
+          demoUrl="https://that-movie.vercel.app"
         />
       </div>
     </div>
