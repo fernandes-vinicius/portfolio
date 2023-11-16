@@ -1,0 +1,76 @@
+[
+  {
+    "name": "HTML5",
+    "imageUrl": "/images/skills/html5.svg"
+  },
+
+  {
+    "name": "CSS3",
+    "imageUrl": "/images/skills/css3.svg"
+  },
+
+  {
+    "name": "JavaScript",
+    "imageUrl": "/images/skills/js.svg"
+  },
+
+  {
+    "name": "TypeScript",
+    "imageUrl": "/images/skills/ts.svg"
+  },
+
+  {
+    "name": "React",
+    "imageUrl": "/images/skills/react.svg"
+  },
+
+  {
+    "name": "Next.Js",
+    "imageUrl": "/images/skills/next.svg"
+  },
+
+  {
+    "name": "Tailwind CSS",
+    "imageUrl": "/images/skills/tailwind.svg"
+  },
+
+  {
+    "name": "Material UI",
+    "imageUrl": "/images/skills/mui.svg"
+  },
+
+  {
+    "name": "ESLint",
+    "imageUrl": "/images/skills/eslint.svg"
+  },
+
+  {
+    "name": "React Query",
+    "imageUrl": "/images/skills/react-query.png"
+  },
+
+  {
+    "name": "Redux",
+    "imageUrl": "/images/skills/redux.svg"
+  },
+
+  {
+    "name": "Supabase",
+    "imageUrl": "/images/skills/supabase.png"
+  },
+
+  {
+    "name": "Prisma",
+    "imageUrl": "/images/skills/prisma.svg"
+  },
+
+  {
+    "name": "Figma",
+    "imageUrl": "/images/skills/figma.png"
+  },
+
+  {
+    "name": "Git | GitHub",
+    "imageUrl": "/images/skills/git.svg"
+  }
+]

@@ -1,0 +1,79 @@
+[
+  {
+    "title": "Ignite Call",
+    "type": "Projeto em destaque",
+    "summary": "Conecte seu calendário e permita que as pessoas agendem compromissos em seu tempo livre. O aplicativo foi construído usando Next.js, Tailwind CSS, Prisma, PlanetScale e muito mais.",
+    "coverImageUrl": "/images/projects/ignite-call.png",
+    "codeUrl": "https://github.com/fernandes-vinicius/ignite-call",
+    "demoUrl": "https://ignite-call-ashy.vercel.app",
+    "isFeatured": true
+  },
+
+  {
+    "title": "Coffee Delivery",
+    "type": "Aplicação Web",
+    "coverImageUrl": "/images/projects/coffee-delivery.png",
+    "codeUrl": "https://github.com/fernandes-vinicius/ignite-call",
+    "demoUrl": "https://ignite-call-ashy.vercel.app"
+  },
+
+  {
+    "title": "That Movie",
+    "type": "Website",
+    "coverImageUrl": "/images/projects/that-movie.png",
+    "codeUrl": "https://github.com/fernandes-vinicius/ignite-call",
+    "demoUrl": "https://ignite-call-ashy.vercel.app"
+  },
+
+  {
+    "title": "Next.js Portfolio Website",
+    "type": "Portfolio Website",
+    "summary": "Um site de portfólio profissional usando React JS, Framer-motion e Styled-components. Possui transições de página suaves, efeitos de fundo interessantes, design exclusivo e é responsivo a dispositivos móveis.",
+    "coverImageUrl": "/images/projects/portfolio.png",
+    "codeUrl": "https://github.com/fernandes-vinicius/portfolio",
+    "demoUrl": "https://viniciusfrontend.vercel.app",
+    "isFeatured": true
+  },
+
+  {
+    "title": "Quotify",
+    "type": "Website",
+    "coverImageUrl": "/images/projects/quotify.png",
+    "codeUrl": "https://github.com/fernandes-vinicius/ignite-call",
+    "demoUrl": "https://ignite-call-ashy.vercel.app"
+  },
+
+  {
+    "title": "CarHub",
+    "type": "Website",
+    "coverImageUrl": "/images/projects/carhub.png",
+    "codeUrl": "https://github.com/fernandes-vinicius/ignite-call",
+    "demoUrl": "https://ignite-call-ashy.vercel.app"
+  },
+
+  {
+    "title": "The Fit Club",
+    "type": "Projeto em destaque",
+    "summary": "O site responsivo de uma academia usando Next.js + Tailwind CSS. O objetivo deste projeto foi estudar a criação de sites responsivos e aprimorar minhas habilidades com as tecnologias utilizadas no projeto.",
+    "coverImageUrl": "/images/projects/the-fit-club.png",
+    "codeUrl": "https://github.com/fernandes-vinicius/the-fit-club",
+    "demoUrl": "https://the-fit-club.vercel.app",
+    "isFeatured": true
+  },
+
+  {
+    "title": "Todo List App",
+    "type": "Aplicação Web",
+    "coverImageUrl": "/images/projects/todo-list.png",
+    "codeUrl": "https://github.com/fernandes-vinicius/ignite-call",
+    "demoUrl": "https://ignite-call-ashy.vercel.app"
+  },
+
+  {
+    "title": "React + Redux + Zustand",
+    "type": "Aplicação Web",
+    "coverImageUrl": "/images/projects/react-redux-zustand.png",
+    "codeUrl": "https://github.com/fernandes-vinicius/ignite-call",
+    "demoUrl": "https://ignite-call-ashy.vercel.app"
+  }
+]

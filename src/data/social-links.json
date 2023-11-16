@@ -1,0 +1,25 @@
+[
+  {
+    "name": "GitHub",
+    "href": "https://github.com/fernandes-vinicius",
+    "imageUrl": "/images/social/github.svg"
+  },
+
+  {
+    "name": "LinkedIn",
+    "href": "https://www.linkedin.com/in/vinicius-fernandes-3a6686139",
+    "imageUrl": "/images/social/linkedin.svg"
+  },
+
+  {
+    "name": "Instagram",
+    "href": "https://www.instagram.com/fernandesv_",
+    "imageUrl": "/images/social/instagram.png"
+  },
+
+  {
+    "name": "WhatsApp",
+    "href": "https://wa.me/+5584999954300",
+    "imageUrl": "/images/social/whatsapp.svg"
+  }
+]
