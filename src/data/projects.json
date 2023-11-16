@@ -10,19 +10,19 @@
   },
 
   {
-    "title": "Coffee Delivery",
-    "type": "Aplicação Web",
-    "coverImageUrl": "/images/projects/coffee-delivery.png",
-    "codeUrl": "https://github.com/fernandes-vinicius/ignite-call",
-    "demoUrl": "https://ignite-call-ashy.vercel.app"
+    "title": "The Fit Club",
+    "type": "Projeto em destaque",
+    "coverImageUrl": "/images/projects/the-fit-club.png",
+    "codeUrl": "https://github.com/fernandes-vinicius/gym-website",
+    "demoUrl": "https://gym-the-fit-club.vercel.app"
   },
 
   {
-    "title": "That Movie",
+    "title": "CarHub",
     "type": "Website",
-    "coverImageUrl": "/images/projects/that-movie.png",
-    "codeUrl": "https://github.com/fernandes-vinicius/ignite-call",
-    "demoUrl": "https://ignite-call-ashy.vercel.app"
+    "coverImageUrl": "/images/projects/carhub.png",
+    "codeUrl": "https://github.com/fernandes-vinicius/car-hub",
+    "demoUrl": "https://web-carhub.vercel.app"
   },
 
   {
@@ -31,7 +31,7 @@
     "summary": "Um site de portfólio profissional usando React JS, Framer-motion e Styled-components. Possui transições de página suaves, efeitos de fundo interessantes, design exclusivo e é responsivo a dispositivos móveis.",
     "coverImageUrl": "/images/projects/portfolio.png",
     "codeUrl": "https://github.com/fernandes-vinicius/portfolio",
-    "demoUrl": "https://viniciusfrontend.vercel.app",
+    "demoUrl": "https://vinicius-frontend.vercel.app",
     "isFeatured": true
   },
 
@@ -39,25 +39,25 @@
     "title": "Quotify",
     "type": "Website",
     "coverImageUrl": "/images/projects/quotify.png",
-    "codeUrl": "https://github.com/fernandes-vinicius/ignite-call",
-    "demoUrl": "https://ignite-call-ashy.vercel.app"
+    "codeUrl": "https://github.com/fernandes-vinicius/quotify",
+    "demoUrl": "https://web-quotify.vercel.app"
   },
 
   {
-    "title": "CarHub",
-    "type": "Website",
-    "coverImageUrl": "/images/projects/carhub.png",
-    "codeUrl": "https://github.com/fernandes-vinicius/ignite-call",
-    "demoUrl": "https://ignite-call-ashy.vercel.app"
+    "title": "React + Redux + Zustand",
+    "type": "Aplicação Web",
+    "coverImageUrl": "/images/projects/react-redux-zustand.png",
+    "codeUrl": "https://github.com/fernandes-vinicius/react-redux-zustand",
+    "demoUrl": "https://react-redux-zustand-omega.vercel.app"
   },
 
   {
-    "title": "The Fit Club",
-    "type": "Projeto em destaque",
-    "summary": "O site responsivo de uma academia usando Next.js + Tailwind CSS. O objetivo deste projeto foi estudar a criação de sites responsivos e aprimorar minhas habilidades com as tecnologias utilizadas no projeto.",
-    "coverImageUrl": "/images/projects/the-fit-club.png",
-    "codeUrl": "https://github.com/fernandes-vinicius/the-fit-club",
-    "demoUrl": "https://the-fit-club.vercel.app",
+    "title": "Coffee Delivery",
+    "type": "Aplicação Web",
+    "summary": "Encontre o café perfeito para qualquer hora do dia. Esta aplicação implementa um carrinho de compras para um site de cafeteria digital, usando React JS e Context API.",
+    "coverImageUrl": "/images/projects/coffee-delivery.png",
+    "codeUrl": "https://github.com/fernandes-vinicius/coffee-delivery-react",
+    "demoUrl": "https://coffee-delivery-react-one.vercel.app",
     "isFeatured": true
   },
 
@@ -65,15 +65,7 @@
     "title": "Todo List App",
     "type": "Aplicação Web",
     "coverImageUrl": "/images/projects/todo-list.png",
-    "codeUrl": "https://github.com/fernandes-vinicius/ignite-call",
-    "demoUrl": "https://ignite-call-ashy.vercel.app"
-  },
-
-  {
-    "title": "React + Redux + Zustand",
-    "type": "Aplicação Web",
-    "coverImageUrl": "/images/projects/react-redux-zustand.png",
-    "codeUrl": "https://github.com/fernandes-vinicius/ignite-call",
-    "demoUrl": "https://ignite-call-ashy.vercel.app"
+    "codeUrl": "https://github.com/fernandes-vinicius/todo-list-react",
+    "demoUrl": "https://web-todo-list.vercel.app"
   }
 ]
