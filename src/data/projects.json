@@ -67,5 +67,13 @@
     "coverImageUrl": "/images/projects/todo-list.png",
     "codeUrl": "https://github.com/fernandes-vinicius/todo-list-react",
     "demoUrl": "https://web-todo-list.vercel.app"
+  },
+
+  {
+    "title": "Expert Notes",
+    "type": "SPA",
+    "coverImageUrl": "/images/projects/expert-notes.png",
+    "codeUrl": "https://github.com/fernandes-vinicius/nlw-expert-notes",
+    "demoUrl": "https://nlw-expert-notes-seven.vercel.app"
   }
 ]

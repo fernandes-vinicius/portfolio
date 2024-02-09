@@ -25,7 +25,7 @@ export function AnimatedText({ text, className }: AnimatedTextProps) {
   return (
     <div
       className="mx-auto flex w-full flex-col items-center justify-center
-      overflow-hidden py-2 text-center sm:py-0"
+      py-2 text-center sm:py-0"
     >
       <motion.h1
         initial="initial"
