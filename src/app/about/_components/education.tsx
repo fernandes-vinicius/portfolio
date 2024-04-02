@@ -30,11 +30,11 @@ export function Education() {
 
         <ul className="ml-4 flex w-full flex-col items-start justify-between">
           <EducationItem
-            time="2015-2019"
-            place="IFRN - Instituto Federal do Rio Grande do Norte"
-            type="Graduado em Análise e Desenvolvimento de Sistemas"
-            details="Cursos relevantes incluíram Estruturas e Algoritmos de Dados,
-            Engenharia de Sistemas de Computação, Web Design, entre outros."
+            time="2023-Hoje"
+            place="FSC - Full Stack Club"
+            type="Full Stack Club | React | Node.js | Next.js"
+            details="O FSC tem como principal objetivo garantir o domínio
+            do Frontend e Backend. Com mais de 150 aulas disponíveis e com projetos reais."
           />
 
           <EducationItem
@@ -45,6 +45,14 @@ export function Education() {
             desenvolvedores que buscam evoluir na carreira e se destacar no
             mercado. a trilha do ReactJS é focada em desenvolvimento web com
             ReactJS e NextJS."
+          />
+
+          <EducationItem
+            time="2015-2019"
+            place="IFRN - Instituto Federal do Rio Grande do Norte"
+            type="Graduado em Análise e Desenvolvimento de Sistemas"
+            details="Cursos relevantes incluíram Estruturas e Algoritmos de Dados,
+            Engenharia de Sistemas de Computação, Web Design, entre outros."
           />
         </ul>
       </div>

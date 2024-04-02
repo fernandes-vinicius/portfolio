@@ -31,7 +31,7 @@ export default function AboutPage() {
               className="col-span-2 flex flex-col items-end gap-32 xl:col-span-8
               xl:flex-row xl:items-center md:order-3 md:justify-between sm:gap-0"
             >
-              <Highlight value={4} label="Anos de experiência" />
+              <Highlight value={5} label="Anos de experiência" />
               <Highlight value={10} label="Projetos desenvolvidos" />
             </div>
           </div>

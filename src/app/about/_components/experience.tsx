@@ -31,12 +31,23 @@ export function Experience() {
         <ul className="ml-4 flex w-full flex-col items-start justify-between xs:ml-2">
           <ExperienceItem
             company="EVOCORP"
-            companyLink="https://www.evocorp.com.br/"
-            time="2019 - 2023"
-            position="Desenvolvedor Front-end & UI Design"
+            companyLink="https://www.evocorp.com.br"
+            time="2019 - Hoje"
+            position="Desenvolvedor Frontend & UI Design"
             work="Atuo em uma equipe responsável pelo desenvolvimento de soluções
             tecnológicas para diversos setores do mercado. Incluindo soluções Chatbot,
             Aplicações Mobile, Websites e Sistemas Web."
+          />
+
+          <ExperienceItem
+            company="Zaut Pagamentos"
+            companyLink="https://zaut.com.br"
+            time="2021 - 2023"
+            position="Desenvolvedor Frontend & UI Design"
+            work="A Zaut é uma startup cujo principal objetivo é otimizar
+            a relação entre empresas e seus colaboradores. Participei no Core team,
+            desenvolvendo e implementando novos recursos e projetando melhorias
+            para o sistema."
           />
         </ul>
       </div>

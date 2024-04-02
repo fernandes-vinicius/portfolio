@@ -1,11 +1,11 @@
 [
   {
-    "title": "Ignite Call",
+    "title": "Tech Store",
     "type": "Projeto em destaque",
-    "summary": "Conecte seu calendário e permita que as pessoas agendem compromissos em seu tempo livre. O aplicativo foi construído usando Next.js, Tailwind CSS, Prisma, PlanetScale e muito mais.",
-    "coverImageUrl": "/images/projects/ignite-call.png",
-    "codeUrl": "https://github.com/fernandes-vinicius/ignite-call",
-    "demoUrl": "https://ignite-call-ashy.vercel.app",
+    "summary": "Explore e adquira os mais recentes produtos de tecnologia no TechStore. Nosso e-commerce oferece uma ampla variedade de produtos, incluindo mouses, teclados, monitores, fones de ouvido e muito mais.",
+    "coverImageUrl": "/images/projects/tech-store.png",
+    "codeUrl": "https://github.com/fernandes-vinicius/tech-store",
+    "demoUrl": "https://tech-store-web.vercel.app",
     "isFeatured": true
   },
 
@@ -26,12 +26,12 @@
   },
 
   {
-    "title": "Next.js Portfolio Website",
-    "type": "Portfolio Website",
-    "summary": "Um site de portfólio profissional usando React JS, Framer-motion e Styled-components. Possui transições de página suaves, efeitos de fundo interessantes, design exclusivo e é responsivo a dispositivos móveis.",
-    "coverImageUrl": "/images/projects/portfolio.png",
-    "codeUrl": "https://github.com/fernandes-vinicius/portfolio",
-    "demoUrl": "https://vinicius-frontend.vercel.app",
+    "title": "That Movie",
+    "type": "Projeto em destaque",
+    "summary": "That Movie é um aplicativo de catálogo de filmes desenvolvido com Next.js, React, TypeScript e Tailwind CSS. Ele consome dados da API pública do TMDB para fornecer aos usuários informações sobre vários filmes.",
+    "coverImageUrl": "/images/projects/that-movie.png",
+    "codeUrl": "https://github.com/fernandes-vinicius/that-movie",
+    "demoUrl": "https://that-movie.vercel.app",
     "isFeatured": true
   },
 
@@ -75,5 +75,15 @@
     "coverImageUrl": "/images/projects/expert-notes.png",
     "codeUrl": "https://github.com/fernandes-vinicius/nlw-expert-notes",
     "demoUrl": "https://nlw-expert-notes-seven.vercel.app"
+  },
+
+  {
+    "title": "Next.js Portfolio Website",
+    "type": "Portfolio Website",
+    "summary": "Um site de portfólio profissional usando React JS, Framer-motion e Styled-components. Possui transições de página suaves, efeitos de fundo interessantes, design exclusivo e é responsivo a dispositivos móveis.",
+    "coverImageUrl": "/images/projects/portfolio.png",
+    "codeUrl": "https://github.com/fernandes-vinicius/portfolio",
+    "demoUrl": "https://vinicius-frontend.vercel.app",
+    "isFeatured": true
   }
 ]

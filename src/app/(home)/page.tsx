@@ -22,9 +22,9 @@ export default function HomePage() {
             md:!text-5xl sm:!text-3xl"
           />
           <p className="my-4 text-base font-medium md:text-sm sm:text-xs">
-            Como um desenvolvedor front-end, dedico-me a transformar ideias em
+            Como um desenvolvedor frontend, dedico-me a transformar ideias em
             soluções inovadoras, combinando habilidades técnicas e criatividade.
-            Explore meus projetos mais recentes e conheça meu trabalho.
+            Explore meus projetos mais recentes e conheça o meu trabalho.
           </p>
 
           <div className="mt-2 flex items-center self-start lg:self-center">

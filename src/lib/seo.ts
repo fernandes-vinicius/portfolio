@@ -1,6 +1,6 @@
 export const SEOConfig = {
-  name: 'Vinicius | Desenvolvedor Front-End',
-  description: `Sou um desenvolvedor front-end apaixonado pelo processo de criação.`,
+  name: 'Vinicius | Desenvolvedor Frontend',
+  description: `Sou um desenvolvedor frontend apaixonado pelo processo de criação.`,
   url: 'http://localhost:3000',
   ogImage: '',
   links: {
