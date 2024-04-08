@@ -2,11 +2,14 @@ import Link from 'next/link'
 
 import { ArrowDownRightSquare } from 'lucide-react'
 
+import { SEOConfig } from '@/lib/seo'
+
 export function ResumeButton() {
   return (
     <Link
       download
-      href="/resume.pdf"
+      // href="/resume.pdf"
+      href={SEOConfig.links.curriculum}
       target="_blank"
       rel="noopener noreferrer"
       className="flex items-center gap-2 rounded-lg border-2 border-solid
