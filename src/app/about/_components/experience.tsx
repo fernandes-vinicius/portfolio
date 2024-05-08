@@ -32,9 +32,9 @@ export function Experience() {
           <ExperienceItem
             company="EVOCORP"
             companyLink="https://www.evocorp.com.br"
-            time="2019 - Hoje"
+            time="2019 - 2024"
             position="Desenvolvedor Frontend & UI Design"
-            work="Atuo em uma equipe responsável pelo desenvolvimento de soluções
+            work="Atuei em uma equipe responsável pelo desenvolvimento de soluções
             tecnológicas para diversos setores do mercado. Incluindo soluções Chatbot,
             Aplicações Mobile, Websites e Sistemas Web."
           />
