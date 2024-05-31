@@ -1,5 +1,8 @@
 {
-  "Home": {
-    "title": "Home"
+  "Hero": {
+    "title": "Transforming Concepts into Seamless User Experiences",
+    "subtitle": "Hi! I'm Vinicius, a Frontend Developer based in Brazil.",
+    "tagline": "Dynamic Web Magic with Next.js",
+    "button": "Show my work"
   }
 }

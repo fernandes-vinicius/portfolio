@@ -1,5 +1,8 @@
 {
-  "Home": {
-    "title": "Início"
+  "Hero": {
+    "title": "Transformando conceitos em experiências de usuário",
+    "subtitle": "Olá! Eu sou Vinícius, um desenvolvedor frontend brasileiro.",
+    "tagline": "Magia Web Dinâmica com Next.js",
+    "button": "Veja meu trabalho"
   }
 }
