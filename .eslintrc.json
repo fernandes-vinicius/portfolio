@@ -2,6 +2,7 @@
   "extends": ["next/core-web-vitals", "@rocketseat/eslint-config/next"],
   "plugins": ["import-helpers"],
   "rules": {
+    "camelcase": "off",
     "import-helpers/order-imports": [
       "warn",
       {
