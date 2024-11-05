@@ -15,7 +15,7 @@
 			},
 			"style": { "noNamespace": "error", "useAsConstAssertion": "error" },
 			"suspicious": {
-				"noExplicitAny": "error",
+				"noExplicitAny": "info",
 				"noExtraNonNullAssertion": "error",
 				"noMisleadingInstantiator": "error",
 				"noUnsafeDeclarationMerging": "error",
