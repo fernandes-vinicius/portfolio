@@ -1,9 +1,13 @@
 'use client'
 
-import Lottie from 'react-lottie-player'
+import dynamic from 'next/dynamic'
 
 import heroAnimationJson from '../hero-animation.json'
 import { Blob } from './blob'
+
+const Lottie = dynamic(() => import('react-lottie-player'), {
+  ssr: false,
+})
 
 export function HeroImage() {
   return (
