@@ -1,10 +1,13 @@
 import type { NextConfig } from "next";
-import createNextIntlPlugin from "next-intl/plugin";
-
-const withNextIntl = createNextIntlPlugin();
 
 const nextConfig: NextConfig = {
-	/* config options here */
+  images: {
+    /**
+     * @description: Disable image optimization for production for saving costs on Vercel
+     * @see: https://nextjs.org/docs/app/building-your-application/optimizing/images
+     */
+    unoptimized: process.env.NODE_ENV === "production",
+  },
 };
 
-export default withNextIntl(nextConfig);
+export default nextConfig;
