@@ -1,0 +1,105 @@
+/* ─── Hero mount animations ─── */
+@keyframes hero-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+    filter: blur(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0px);
+  }
+}
+
+/* ─── Scroll-reveal (added via IntersectionObserver) ─── */
+.reveal {
+  opacity: 0;
+  transform: translateY(26px);
+  transition:
+    opacity 0.65s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.reveal-d1 {
+  transition-delay: 0.07s;
+}
+.reveal-d2 {
+  transition-delay: 0.14s;
+}
+.reveal-d3 {
+  transition-delay: 0.21s;
+}
+.reveal-d4 {
+  transition-delay: 0.28s;
+}
+.reveal-d5 {
+  transition-delay: 0.35s;
+}
+.reveal-d6 {
+  transition-delay: 0.42s;
+}
+
+/* ─── Floating orbs ─── */
+@keyframes orb-1 {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+  33% {
+    transform: translate(40px, -30px) scale(1.12);
+  }
+  66% {
+    transform: translate(-25px, 38px) scale(0.94);
+  }
+}
+@keyframes orb-2 {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+  33% {
+    transform: translate(-32px, 38px) scale(0.92);
+  }
+  66% {
+    transform: translate(22px, -22px) scale(1.08);
+  }
+}
+
+/* ─── Scroll indicator pulse ─── */
+@keyframes scroll-pulse {
+  0%,
+  100% {
+    transform: scaleY(0.4);
+    opacity: 0.2;
+  }
+  50% {
+    transform: scaleY(1);
+    opacity: 0.55;
+  }
+}
+
+/* ─── Marquee ─── */
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* ─── Stat count-up fade ─── */
+@keyframes stat-appear {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

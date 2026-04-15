@@ -1,22 +1,26 @@
-import "./globals.css"
-import { fontHeading, fontMono, fontSans } from "@/config/fonts";
-import { ThemeProvider } from "@/components/theme-provider";
-import { cn } from "@/lib/utils";
+import "./globals.css";
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode
-}>) {
+import { ThemeProvider } from "@/components/common/theme-provider";
+import { fontHeading, fontMono, fontSans } from "@/config/fonts";
+import { cn } from "@/lib/utils";
+import type { LayoutProps } from "@/types";
+
+export default function RootLayout({ children }: LayoutProps) {
   return (
     <html
       lang="en"
       suppressHydrationWarning
-      className={cn("antialiased", fontSans.variable, fontHeading.variable, fontMono.variable, "font-sans")}
+      className={cn(
+        "antialiased",
+        fontSans.variable,
+        fontHeading.variable,
+        fontMono.variable,
+        "font-sans",
+      )}
     >
       <body>
         <ThemeProvider>{children}</ThemeProvider>
       </body>
     </html>
-  )
+  );
 }
