@@ -20,6 +20,9 @@ export default function RootLayout({ children }: LayoutProps) {
         "font-sans",
       )}
     >
+      {/* React 19 hoists these to <head> automatically */}
+      <link rel="preconnect" href="https://cdn.sanity.io" />
+      <link rel="dns-prefetch" href="https://cdn.sanity.io" />
       <body>
         <ThemeProvider>{children}</ThemeProvider>
       </body>

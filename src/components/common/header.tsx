@@ -1,30 +1,31 @@
 "use client";
 
+import dynamic from "next/dynamic";
 import Link from "next/link";
-import { useState } from "react";
 import { CTAButton } from "@/components/common/cta-button";
-import { CloseIcon, MenuIcon } from "@/components/common/icons";
+import { MenuIcon } from "@/components/common/icons";
 import { NavButton } from "@/components/common/nav-button";
 import { Button } from "@/components/ui/button";
-import {
-  Popover,
-  PopoverContent,
-  PopoverTrigger,
-} from "@/components/ui/popover";
+import { navLinks } from "@/config/nav";
 import { useScrollThreshold } from "@/hooks/use-scroll-threshold";
 import { cn } from "@/lib/utils";
 import { ScrollToTop } from "./scroll-to-top";
 
-const navLinks = [
-  { label: "Experience", href: "#experience" },
-  { label: "Projects", href: "#projects" },
-  { label: "Skills", href: "#skills" },
-  { label: "Contact", href: "#contact" },
-];
+// Radix Popover + its 14 sub-packages (floating-ui, focus-scope, portal, etc.)
+// are loaded only when this chunk is needed — keeps them out of the critical bundle.
+const MobileMenu = dynamic(
+  () => import("./mobile-menu").then((m) => m.MobileMenu),
+  {
+    ssr: false,
+    loading: () => (
+      <Button variant="ghost" size="icon-sm" aria-label="Open menu" disabled>
+        <MenuIcon />
+      </Button>
+    ),
+  },
+);
 
 export function Header() {
-  const [mobileOpen, setMobileOpen] = useState(false);
-
   const scrolled = useScrollThreshold(24);
 
   return (
@@ -78,50 +79,10 @@ export function Header() {
             </CTAButton>
           </div>
 
-          {/* Mobile popover */}
-          <Popover open={mobileOpen} onOpenChange={setMobileOpen}>
-            <PopoverTrigger asChild className="md:hidden">
-              {/* Mobile toggle */}
-              <Button
-                variant="ghost"
-                size="icon-sm"
-                aria-label={mobileOpen ? "Close menu" : "Open menu"}
-                aria-expanded={mobileOpen}
-                aria-controls="mobile-nav"
-              >
-                {mobileOpen ? <CloseIcon /> : <MenuIcon />}
-              </Button>
-            </PopoverTrigger>
-
-            <PopoverContent
-              id="mobile-nav"
-              side="bottom"
-              align="end"
-              sideOffset={24}
-              className="md:hidden"
-            >
-              <div className="flex flex-col gap-1">
-                {navLinks.map(({ href, label }) => (
-                  <NavButton
-                    key={href}
-                    asChild
-                    className="justify-start px-3 py-2.5 text-left"
-                  >
-                    <Link href={href}>{label}</Link>
-                  </NavButton>
-                ))}
-
-                <div className="mt-2 border-t pt-4">
-                  {/* Mobile CTA */}
-                  <CTAButton asChild className="w-full">
-                    <Link href="#contact" aria-label="Go to contact">
-                      Hire me
-                    </Link>
-                  </CTAButton>
-                </div>
-              </div>
-            </PopoverContent>
-          </Popover>
+          {/* Mobile menu — lazy-loaded to keep Radix Popover out of the critical bundle */}
+          <div className="md:hidden">
+            <MobileMenu />
+          </div>
         </div>
       </div>
     </header>
