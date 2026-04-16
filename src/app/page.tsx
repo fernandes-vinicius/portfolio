@@ -13,9 +13,10 @@ export default async function Page() {
   return (
     <>
       <CursorGlow />
-
       <Header />
-      <HeroSection profile={profile} />
+      <main>
+        <HeroSection profile={profile} />
+      </main>
     </>
   );
 }

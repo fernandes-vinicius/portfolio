@@ -82,12 +82,19 @@ export function Header() {
           <Popover open={mobileOpen} onOpenChange={setMobileOpen}>
             <PopoverTrigger asChild className="md:hidden">
               {/* Mobile toggle */}
-              <Button variant="ghost" size="icon-sm">
+              <Button
+                variant="ghost"
+                size="icon-sm"
+                aria-label={mobileOpen ? "Close menu" : "Open menu"}
+                aria-expanded={mobileOpen}
+                aria-controls="mobile-nav"
+              >
                 {mobileOpen ? <CloseIcon /> : <MenuIcon />}
               </Button>
             </PopoverTrigger>
 
             <PopoverContent
+              id="mobile-nav"
               side="bottom"
               align="end"
               sideOffset={24}
