@@ -15,6 +15,11 @@
 export declare const internalGroqTypeReferenceTo: unique symbol;
 
 // Source: schema.json
+export type TechStack = {
+  _type: "techStack";
+  title?: string;
+};
+
 export type Metric = {
   _type: "metric";
   title?: string;
@@ -61,6 +66,11 @@ export type Profile = {
     {
       _key: string;
     } & Metric
+  >;
+  techStack?: Array<
+    {
+      _key: string;
+    } & TechStack
   >;
 };
 
@@ -184,6 +194,7 @@ export type Slug = {
 };
 
 export type AllSanitySchemaTypes =
+  | TechStack
   | Metric
   | Profile
   | SanityImagePaletteSwatch
@@ -200,7 +211,7 @@ export type AllSanitySchemaTypes =
 
 // Source: ../portfolio/src/lib/sanity/queries.ts
 // Variable: PROFILE_QUERY
-// Query: *[_type == "profile"][0]{_id, title, firstName, lastName, jobTarget, headline, email, phone, linkedInUrl, location, country, available}
+// Query: *[_type == "profile"][0]{_id, title, firstName, lastName, jobTarget, headline, available, metrics}
 export type PROFILE_QUERY_RESULT = {
   _id: string;
   title: string | null;
@@ -225,18 +236,18 @@ export type PROFILE_QUERY_RESULT = {
     _type: "block";
     _key: string;
   }> | null;
-  email: string | null;
-  phone: string | null;
-  linkedInUrl: string | null;
-  location: string | null;
-  country: string | null;
   available: boolean | null;
+  metrics: Array<
+    {
+      _key: string;
+    } & Metric
+  > | null;
 } | null;
 
 // Query TypeMap
 import "@sanity/client";
 declare module "@sanity/client" {
   interface SanityQueries {
-    '*[_type == "profile"][0]{_id, title, firstName, lastName, jobTarget, headline, email, phone, linkedInUrl, location, country, available}': PROFILE_QUERY_RESULT;
+    '*[_type == "profile"][0]{_id, title, firstName, lastName, jobTarget, headline, available, metrics}': PROFILE_QUERY_RESULT;
   }
 }

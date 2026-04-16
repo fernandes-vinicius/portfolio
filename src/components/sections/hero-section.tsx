@@ -4,11 +4,7 @@ import { CTAButton } from "@/components/common/cta-button";
 import { ArrowRightIcon } from "@/components/common/icons";
 import { OpenToWorkBadge } from "@/components/common/open-to-work-badge";
 import { Stat } from "@/components/common/stat";
-import { client } from "@/lib/sanity/client";
-import { PROFILE_QUERY } from "@/lib/sanity/queries";
 import type { Profile } from "@/lib/sanity/types";
-
-const options = { next: { revalidate: 30 } };
 
 const portableTextComponents: PortableTextComponents = {
   block: {
@@ -22,9 +18,11 @@ const portableTextComponents: PortableTextComponents = {
   hardBreak: () => <br className="hidden sm:block" />,
 };
 
-export async function HeroSection() {
-  const profile = await client.fetch<Profile>(PROFILE_QUERY, {}, options);
+interface HeroSectionProps {
+  profile: Profile;
+}
 
+export function HeroSection({ profile }: HeroSectionProps) {
   return (
     <section
       data-slot="hero-section"
