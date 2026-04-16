@@ -30,12 +30,7 @@ export function MobileMenu() {
         </Button>
       </PopoverTrigger>
 
-      <PopoverContent
-        id="mobile-nav"
-        side="bottom"
-        align="end"
-        sideOffset={24}
-      >
+      <PopoverContent id="mobile-nav" side="bottom" align="end" sideOffset={24}>
         <div className="flex flex-col gap-1">
           {navLinks.map(({ href, label }) => (
             <NavButton

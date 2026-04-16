@@ -5,11 +5,11 @@ import Link from "next/link";
 import { CTAButton } from "@/components/common/cta-button";
 import { MenuIcon } from "@/components/common/icons";
 import { NavButton } from "@/components/common/nav-button";
+import { ScrollToTop } from "@/components/common/scroll-to-top";
 import { Button } from "@/components/ui/button";
 import { navLinks } from "@/config/nav";
 import { useScrollThreshold } from "@/hooks/use-scroll-threshold";
 import { cn } from "@/lib/utils";
-import { ScrollToTop } from "./scroll-to-top";
 
 // Radix Popover + its 14 sub-packages (floating-ui, focus-scope, portal, etc.)
 // are loaded only when this chunk is needed — keeps them out of the critical bundle.
