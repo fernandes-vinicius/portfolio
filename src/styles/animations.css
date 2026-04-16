@@ -1,14 +1,27 @@
 /* ─── Hero mount animations ─── */
+
+/* Used on decorative / secondary elements (badge, subheadings, CTAs).
+   Starts at opacity:0 intentionally — these are NOT the LCP candidate. */
 @keyframes hero-fade-up {
   from {
     opacity: 0;
     transform: translateY(28px);
-    filter: blur(6px);
   }
   to {
     opacity: 1;
     transform: translateY(0);
-    filter: blur(0px);
+  }
+}
+
+/* Used exclusively on the h1 (LCP candidate).
+   Keeps opacity:1 from the first frame so Chrome paints — and reports LCP —
+   on the very first render tick, while the slide-up remains purely decorative. */
+@keyframes hero-slide-up {
+  from {
+    transform: translateY(28px);
+  }
+  to {
+    transform: translateY(0);
   }
 }
 

@@ -82,7 +82,7 @@ export function HeroSection({ profile }: { profile: Profile }) {
           className="mb-5"
           style={{
             animation:
-              "hero-fade-up 0.75s 0.11s cubic-bezier(0.22,1,0.36,1) both",
+              "hero-slide-up 0.75s 0.11s cubic-bezier(0.22,1,0.36,1) both",
           }}
         >
           <h1 className="-tracking-[0.04em] font-extrabold font-heading text-[clamp(3rem,7.5vw,5.5rem)] leading-[1.04]">
