@@ -1,3 +1,4 @@
+import { CursorGlow } from "@/components/common/cursor-glow";
 import { Header } from "@/components/common/header";
 import { HeroSection } from "@/components/sections/hero-section";
 import { client } from "@/lib/sanity/client";
@@ -11,6 +12,8 @@ export default async function Page() {
 
   return (
     <>
+      <CursorGlow />
+
       <Header />
       <HeroSection profile={profile} />
     </>
