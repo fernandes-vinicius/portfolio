@@ -15,6 +15,39 @@
 export declare const internalGroqTypeReferenceTo: unique symbol;
 
 // Source: schema.json
+export type Experience = {
+  _id: string;
+  _type: "experience";
+  _createdAt: string;
+  _updatedAt: string;
+  _rev: string;
+  title?: string;
+  jobTitle?: string;
+  employer?: string;
+  startDate?: string;
+  endDate?: string;
+  current?: boolean;
+  description?: Array<{
+    children?: Array<{
+      marks?: Array<string>;
+      text?: string;
+      _type: "span";
+      _key: string;
+    }>;
+    style?: "normal" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "blockquote";
+    listItem?: "bullet" | "number";
+    markDefs?: Array<{
+      href?: string;
+      _type: "link";
+      _key: string;
+    }>;
+    level?: number;
+    _type: "block";
+    _key: string;
+  }>;
+  order?: number;
+};
+
 export type TechStack = {
   _type: "techStack";
   title?: string;
@@ -23,9 +56,10 @@ export type TechStack = {
 export type Metric = {
   _type: "metric";
   title?: string;
-  value?: string;
+  value?: number;
+  suffix?: string;
   label?: string;
-  description?: string;
+  sub?: string;
 };
 
 export type Profile = {
@@ -194,6 +228,7 @@ export type Slug = {
 };
 
 export type AllSanitySchemaTypes =
+  | Experience
   | TechStack
   | Metric
   | Profile
@@ -211,7 +246,7 @@ export type AllSanitySchemaTypes =
 
 // Source: ../portfolio/src/lib/sanity/queries.ts
 // Variable: PROFILE_QUERY
-// Query: *[_type == "profile"][0]{_id, title, firstName, lastName, jobTarget, headline, available, metrics}
+// Query: *[_type == "profile"][0]{_id, title, firstName, lastName, jobTarget, headline, available, metrics, techStack}
 export type PROFILE_QUERY_RESULT = {
   _id: string;
   title: string | null;
@@ -242,12 +277,17 @@ export type PROFILE_QUERY_RESULT = {
       _key: string;
     } & Metric
   > | null;
+  techStack: Array<
+    {
+      _key: string;
+    } & TechStack
+  > | null;
 } | null;
 
 // Query TypeMap
 import "@sanity/client";
 declare module "@sanity/client" {
   interface SanityQueries {
-    '*[_type == "profile"][0]{_id, title, firstName, lastName, jobTarget, headline, available, metrics}': PROFILE_QUERY_RESULT;
+    '*[_type == "profile"][0]{_id, title, firstName, lastName, jobTarget, headline, available, metrics, techStack}': PROFILE_QUERY_RESULT;
   }
 }

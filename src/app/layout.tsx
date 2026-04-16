@@ -1,9 +1,9 @@
 import "./globals.css";
 
-import { CursorGlow } from "@/components/common/cursor-glow";
-import { Header } from "@/components/common/header";
-import { NoiseTexture } from "@/components/common/noise-texture";
-import { ThemeProvider } from "@/components/common/theme-provider";
+import { CursorGlow } from "@/components/cursor-glow";
+import { Header } from "@/components/header";
+import { NoiseTexture } from "@/components/noise-texture";
+import { ThemeProvider } from "@/components/theme-provider";
 import { fontMono, fontSans } from "@/config/fonts";
 import { baseMetadata } from "@/config/seo";
 import { cn } from "@/lib/utils";

@@ -3,7 +3,7 @@ export function NoiseTexture() {
     <svg
       className="pointer-events-none fixed inset-0 z-2 h-full w-full"
       xmlns="http://www.w3.org/2000/svg"
-      style={{ opacity: 0.018, mixBlendMode: "multiply" }}
+      style={{ opacity: 0.02, mixBlendMode: "multiply" }}
     >
       <title className="sr-only">Noise Texture</title>
       <filter id="noise">

@@ -1,73 +1,22 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import { CountUp } from "@/components/common/count-up";
-import { useScrollReveal } from "@/hooks/use-scroll-reveal";
+import { CountUp } from "@/components/count-up";
+import {
+  Statistic,
+  StatisticLabel,
+  StatisticSub,
+  StatisticValue,
+} from "@/components/statistic";
+import { useInViewOnce } from "@/hooks/use-in-view-once";
+import type { Metric } from "@/lib/sanity/types";
 import { cn } from "@/lib/utils";
 
-const stats = [
-  {
-    value: 6,
-    suffix: "+",
-    label: "Years of experience",
-    sub: "Building at scale",
-  },
-  { value: 40, suffix: "%", label: "LCP reduction", sub: "Performance wins" },
-  { value: 95, suffix: "+", label: "Lighthouse score", sub: "Production apps" },
-  { value: 1, suffix: "M+", label: "Users reached", sub: "Real-world impact" },
-];
+type StatsSectionProps = {
+  metrics: Metric[];
+};
 
-function StatCell({
-  value,
-  suffix,
-  label,
-  sub,
-  active,
-  index,
-}: {
-  value: number;
-  suffix: string;
-  label: string;
-  sub: string;
-  active: boolean;
-  index: number;
-}) {
-  return (
-    <div className="flex flex-col items-center justify-center gap-1.5 px-4 py-10 text-center">
-      <span className="-tracking-tighter font-extrabold font-sans text-[clamp(1.75rem,4vw,2.25rem)] text-foreground leading-none">
-        {active ? <CountUp end={value} delay={index * 0.15} /> : 0}
-        {suffix}
-      </span>
-
-      <span className="font-medium text-foreground/80 text-xs">{label}</span>
-
-      <span className="text-muted-foreground text-xs">{sub}</span>
-    </div>
-  );
-}
-
-export function StatsSection() {
-  const [active, setActive] = useState(false);
-  const wrapRef = useScrollReveal<HTMLDivElement>();
-
-  // biome-ignore lint/correctness/useExhaustiveDependencies: <>
-  useEffect(() => {
-    const el = wrapRef.current;
-    if (!el) return;
-
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setActive(true);
-          observer.disconnect();
-        }
-      },
-      { threshold: 0.15 },
-    );
-
-    observer.observe(el);
-    return () => observer.disconnect();
-  }, []);
+export function StatsSection({ metrics = [] }: StatsSectionProps) {
+  const { ref: wrapRef, inView } = useInViewOnce<HTMLDivElement>();
 
   return (
     <section className="relative bg-background px-6 py-20">
@@ -82,8 +31,14 @@ export function StatsSection() {
             "divide-x divide-border",
           )}
         >
-          {stats.map((s, i) => (
-            <StatCell key={s.label} {...s} active={active} index={i} />
+          {metrics.map((metric) => (
+            <Statistic key={metric.label}>
+              <StatisticValue>
+                <CountUp end={metric.value ?? 0} suffix={metric.suffix ?? ""} />
+              </StatisticValue>
+              <StatisticLabel>{metric.label}</StatisticLabel>
+              <StatisticSub>{metric.sub}</StatisticSub>
+            </Statistic>
           ))}
         </div>
       </div>

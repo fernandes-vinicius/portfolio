@@ -1,9 +1,15 @@
 import { PortableText, type PortableTextComponents } from "@portabletext/react";
 import Link from "next/link";
-import { CTAButton } from "@/components/common/cta-button";
-import { ArrowRightIcon } from "@/components/common/icons";
-import { OpenToWorkBadge } from "@/components/common/open-to-work-badge";
-import { Stat } from "@/components/common/stat";
+import { CountUp } from "@/components/count-up";
+import { CTAButton } from "@/components/cta-button";
+import { ArrowRightIcon } from "@/components/icons";
+import { OpenToWorkBadge } from "@/components/open-to-work-badge";
+import { ScrollCue } from "@/components/scroll-cue";
+import {
+  Statistic,
+  StatisticSub,
+  StatisticValue,
+} from "@/components/statistic";
 import type { Profile } from "@/lib/sanity/types";
 
 const portableTextComponents: PortableTextComponents = {
@@ -18,130 +24,61 @@ const portableTextComponents: PortableTextComponents = {
   hardBreak: () => <br className="hidden sm:block" />,
 };
 
-interface HeroSectionProps {
+type HeroSectionProps = {
   profile: Profile;
-}
+};
 
 export function HeroSection({ profile }: HeroSectionProps) {
   return (
     <section
-      data-slot="hero-section"
-      className="relative flex min-h-screen items-center justify-center overflow-hidden bg-background"
+      data-slot="hero"
+      className="relative flex min-h-svh items-center justify-center overflow-hidden bg-background"
     >
       {/* ── Ambient orbs ── */}
-      <div
-        className="pointer-events-none absolute"
-        style={{
-          top: "-8%",
-          left: "-6%",
-          width: "52vw",
-          height: "52vw",
-          maxWidth: 680,
-          maxHeight: 680,
-          borderRadius: "50%",
-          background:
-            "radial-gradient(circle, rgba(59,130,246,0.11) 0%, rgba(59,130,246,0.03) 50%, transparent 70%)",
-          filter: "blur(52px)",
-          animation: "orb-1 14s ease-in-out infinite",
-        }}
-      />
-      <div
-        className="pointer-events-none absolute"
-        style={{
-          bottom: "-10%",
-          right: "-5%",
-          width: "46vw",
-          height: "46vw",
-          maxWidth: 620,
-          maxHeight: 620,
-          borderRadius: "50%",
-          background:
-            "radial-gradient(circle, rgba(124,58,237,0.09) 0%, rgba(124,58,237,0.02) 50%, transparent 70%)",
-          filter: "blur(56px)",
-          animation: "orb-2 16s ease-in-out infinite",
-          animationDelay: "1s",
-        }}
-      />
+      <div className="pointer-events-none absolute top-[-8%] left-[-6%] h-[52vw] max-h-[680px] w-[52vw] max-w-[680px] animate-orb rounded-full bg-[radial-gradient(circle,rgba(59,130,246,0.11)_0%,rgba(59,130,246,0.03)_50%,transparent_70%)] blur-[52px]" />
+      <div className="pointer-events-none absolute right-[-5%] bottom-[-10%] h-[46vw] max-h-[620px] w-[46vw] max-w-[620px] animate-orb-2 rounded-full bg-[radial-gradient(circle,rgba(124,58,237,0.09)_0%,rgba(124,58,237,0.02)_50%,transparent_70%)] blur-[56px] [animation-delay:1s]" />
 
       {/* ── Dot grid ── */}
-      <div
-        className="pointer-events-none absolute inset-0"
-        style={{
-          backgroundImage:
-            "radial-gradient(rgba(0,0,0,0.07) 1px, transparent 1px)",
-          backgroundSize: "32px 32px",
-          maskImage:
-            "radial-gradient(ellipse 80% 70% at 50% 50%, black 0%, transparent 100%)",
-          WebkitMaskImage:
-            "radial-gradient(ellipse 80% 70% at 50% 50%, black 0%, transparent 100%)",
-        }}
-      />
+      <div className="mask-[radial-gradient(ellipse_75%_65%_at_50%_50%,black_0%,transparent_100%)] pointer-events-none absolute inset-0 bg-[radial-gradient(color-mix(in_oklch,var(--foreground)_12%,transparent)_1px,transparent_1px)] bg-size-[28px_28px] [-webkit-mask-image:radial-gradient(ellipse_75%_65%_at_50%_50%,black_0%,transparent_100%)]" />
 
       <div className="relative z-10 mx-auto max-w-5xl px-6 pt-36 pb-28 text-center">
-        {/* ── Status badge ── */}
+        {/* ── Available badge ── */}
         {profile.available && <OpenToWorkBadge />}
 
         {/* ── Heading ── */}
-        <div
-          className="mb-5"
-          style={{
-            animation:
-              "hero-slide-up 0.75s 0.11s cubic-bezier(0.22,1,0.36,1) both",
-          }}
-        >
-          <h1 className="-tracking-[0.04em] font-extrabold font-heading text-[clamp(3rem,7.5vw,5.5rem)] leading-[1.04]">
+        <div className="mb-5 animate-[hero-slide-up_0.75s_0.11s_cubic-bezier(0.22,1,0.36,1)_both]">
+          <h1 className="font-extrabold font-heading text-[clamp(3rem,7.5vw,5.5rem)] leading-[1.04] tracking-tighter">
             {profile.firstName}{" "}
-            <span
-              style={{
-                background:
-                  "linear-gradient(135deg, #2563eb 0%, #7c3aed 60%, #a855f7 100%)",
-                WebkitBackgroundClip: "text",
-                WebkitTextFillColor: "transparent",
-                backgroundClip: "text",
-              }}
-            >
+            {/* <span className="bg-brand-gradient bg-clip-text text-transparent"> */}
+            <span className="bg-linear-to-br from-blue-600 via-violet-600 to-purple-500 bg-clip-text text-transparent">
               {profile.lastName}
             </span>
           </h1>
         </div>
 
         {/* ── Job target ── */}
-        <p
-          className="mb-5 font-normal font-sans text-[clamp(0.875rem,1.6vw,1rem)] text-muted-foreground uppercase tracking-[0.17em] opacity-75!"
-          style={{
-            animation:
-              "hero-fade-up 0.75s 0.22s cubic-bezier(0.22,1,0.36,1) both",
-          }}
-        >
+        <p className="mb-5 animate-[hero-fade-up_0.75s_0.22s_cubic-bezier(0.22,1,0.36,1)_both] font-normal font-sans text-[clamp(0.875rem,1.6vw,1rem)] text-muted-foreground/75 uppercase tracking-[0.17em]">
           {profile.jobTarget}
         </p>
 
         {/* ── Headline ── */}
         {profile.headline && (
-          <p
-            className="mx-auto mt-0 mb-10 max-w-xl font-normal font-sans text-[clamp(1rem,2vw,1.125rem)] text-muted-foreground leading-[1.8]"
-            style={{
-              animation:
-                "hero-fade-up 0.75s 0.33s cubic-bezier(0.22,1,0.36,1) both",
-            }}
-          >
+          <div className="mx-auto mt-0 mb-10 max-w-xl animate-[hero-fade-up_0.75s_0.33s_cubic-bezier(0.22,1,0.36,1)_both] font-normal font-sans text-[clamp(1rem,2vw,1.125rem)] text-muted-foreground leading-[1.8]">
             <PortableText
               value={profile.headline}
               components={portableTextComponents}
             />
-          </p>
+          </div>
         )}
 
         {/* ── CTAs ── */}
-        <div
-          className="mb-16 flex flex-wrap items-center justify-center gap-3"
-          style={{
-            animation:
-              "hero-fade-up 0.75s 0.44s cubic-bezier(0.22,1,0.36,1) both",
-          }}
-        >
-          <CTAButton asChild size="xl" className="group flex gap-2">
+        <div className="mb-16 flex animate-[hero-fade-up_0.75s_0.44s_cubic-bezier(0.22,1,0.36,1)_both] flex-wrap items-center justify-center gap-3">
+          <CTAButton
+            asChild
+            className="group relative flex gap-2 overflow-hidden"
+          >
             <Link href="#projects">
+              <span className="absolute inset-0 bg-brand-gradient opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
               <span className="relative">View Projects</span>
               <ArrowRightIcon
                 size={14}
@@ -150,53 +87,39 @@ export function HeroSection({ profile }: HeroSectionProps) {
             </Link>
           </CTAButton>
 
-          <CTAButton
-            asChild
-            size="xl"
-            variant="outline"
-            className="font-medium"
-          >
+          <CTAButton asChild variant="outline" className="font-medium">
             <Link href="#contact">Contact me</Link>
           </CTAButton>
         </div>
 
         {/* Metric strip */}
         {profile.metrics && (
-          <div
-            className="grid grid-cols-2 gap-8 md:grid-cols-4"
-            style={{
-              animation:
-                "hero-fade-up 0.75s 0.55s cubic-bezier(0.22,1,0.36,1) both",
-            }}
-          >
-            {profile.metrics.map((metric) => (
-              <Stat key={metric._key} metric={metric} />
+          <div className="mx-auto grid w-full grid-cols-2 items-center justify-center gap-8 md:w-fit md:grid-cols-4">
+            {profile.metrics.map((metric, index) => (
+              <Statistic
+                key={metric._key}
+                className="animate-[hero-fade-up_0.75s_var(--delay)_cubic-bezier(0.22,1,0.36,1)_both] justify-stretch gap-0.5 p-0"
+                style={
+                  {
+                    "--delay": `${0.55 + index * 0.05}s`,
+                  } as React.CSSProperties
+                }
+              >
+                <StatisticValue className="text-xl">
+                  <CountUp
+                    end={metric.value ?? 0}
+                    suffix={metric.suffix ?? ""}
+                    duration={0}
+                  />
+                </StatisticValue>
+                <StatisticSub>{metric.label}</StatisticSub>
+              </Statistic>
             ))}
           </div>
         )}
       </div>
 
-      {/* Scroll cue */}
-      <div
-        style={{
-          position: "absolute",
-          bottom: "2.5rem",
-          left: "50%",
-          transform: "translateX(-50%)",
-          animation: `hero-fade-up 0.8s 0.66s cubic-bezier(0.22,1,0.36,1) both`,
-        }}
-      >
-        <div
-          style={{
-            width: 1,
-            height: 40,
-            background:
-              "linear-gradient(to bottom, transparent, var(--primary) 50%, transparent)",
-            animation: "scroll-pulse 2s ease-in-out infinite",
-            transformOrigin: "center",
-          }}
-        />
-      </div>
+      <ScrollCue />
     </section>
   );
 }
