@@ -38,7 +38,8 @@ src/
 │   │   └── popover.tsx
 │   └── sections/           # Seções de página (Hero, About, Projects…) — a criar
 ├── config/
-│   └── fonts.ts            # Definições next/font/google
+│   ├── fonts.ts            # Definições next/font/google
+│   └── seo.ts              # siteConfig + baseMetadata (Next.js Metadata API)
 ├── hooks/                  # Custom hooks React
 │   └── use-scroll-threshold.ts  # Hook para detectar scroll além de threshold
 ├── lib/
@@ -64,7 +65,7 @@ src/
 | Ícones (abstração) | `src/components/common/icons.tsx` |
 | ThemeProvider, Header, etc. | `src/components/common/` |
 | Fontes (`next/font`) | `src/config/fonts.ts` |
-| SEO/Metadata | `src/config/seo.ts` (a criar) |
+| SEO/Metadata | `src/config/seo.ts` |
 | Variáveis de configuração | `src/config/` |
 | Funções utilitárias | `src/lib/utils.ts` |
 | Custom hooks React | `src/hooks/` |

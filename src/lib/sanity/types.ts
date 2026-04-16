@@ -15,36 +15,12 @@
 export declare const internalGroqTypeReferenceTo: unique symbol;
 
 // Source: schema.json
-export type Experience = {
-  _id: string;
-  _type: "experience";
-  _createdAt: string;
-  _updatedAt: string;
-  _rev: string;
-  role?: string;
-  company?: string;
-  startDate?: string;
-  endDate?: string;
-  current?: boolean;
-  description?: Array<{
-    children?: Array<{
-      marks?: Array<string>;
-      text?: string;
-      _type: "span";
-      _key: string;
-    }>;
-    style?: "normal" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "blockquote";
-    listItem?: "bullet" | "number";
-    markDefs?: Array<{
-      href?: string;
-      _type: "link";
-      _key: string;
-    }>;
-    level?: number;
-    _type: "block";
-    _key: string;
-  }>;
-  order?: number;
+export type Metric = {
+  _type: "metric";
+  title?: string;
+  value?: string;
+  label?: string;
+  description?: string;
 };
 
 export type Profile = {
@@ -80,6 +56,12 @@ export type Profile = {
   linkedInUrl?: string;
   location?: string;
   country?: string;
+  available?: boolean;
+  metrics?: Array<
+    {
+      _key: string;
+    } & Metric
+  >;
 };
 
 export type SanityImagePaletteSwatch = {
@@ -202,7 +184,7 @@ export type Slug = {
 };
 
 export type AllSanitySchemaTypes =
-  | Experience
+  | Metric
   | Profile
   | SanityImagePaletteSwatch
   | SanityImagePalette
@@ -218,17 +200,43 @@ export type AllSanitySchemaTypes =
 
 // Source: ../portfolio/src/lib/sanity/queries.ts
 // Variable: PROFILE_QUERY
-// Query: *[_type == "profile"][0]{_id, title, firstName}
+// Query: *[_type == "profile"][0]{_id, title, firstName, lastName, jobTarget, headline, email, phone, linkedInUrl, location, country, available}
 export type PROFILE_QUERY_RESULT = {
   _id: string;
   title: string | null;
   firstName: string | null;
+  lastName: string | null;
+  jobTarget: string | null;
+  headline: Array<{
+    children?: Array<{
+      marks?: Array<string>;
+      text?: string;
+      _type: "span";
+      _key: string;
+    }>;
+    style?: "blockquote" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "normal";
+    listItem?: "bullet" | "number";
+    markDefs?: Array<{
+      href?: string;
+      _type: "link";
+      _key: string;
+    }>;
+    level?: number;
+    _type: "block";
+    _key: string;
+  }> | null;
+  email: string | null;
+  phone: string | null;
+  linkedInUrl: string | null;
+  location: string | null;
+  country: string | null;
+  available: boolean | null;
 } | null;
 
 // Query TypeMap
 import "@sanity/client";
 declare module "@sanity/client" {
   interface SanityQueries {
-    '*[_type == "profile"][0]{_id, title, firstName}': PROFILE_QUERY_RESULT;
+    '*[_type == "profile"][0]{_id, title, firstName, lastName, jobTarget, headline, email, phone, linkedInUrl, location, country, available}': PROFILE_QUERY_RESULT;
   }
 }

@@ -71,7 +71,7 @@ export function Header() {
 
           {/* CTA */}
           <div aria-hidden="true" className="hidden md:block">
-            <CTAButton asChild>
+            <CTAButton asChild size="lg">
               <Link href="#contact" aria-label="Go to contact">
                 Hire me
               </Link>
@@ -106,7 +106,7 @@ export function Header() {
 
                 <div className="mt-2 border-t pt-4">
                   {/* Mobile CTA */}
-                  <CTAButton asChild className="w-full py-2.5">
+                  <CTAButton asChild className="w-full">
                     <Link href="#contact" aria-label="Go to contact">
                       Hire me
                     </Link>

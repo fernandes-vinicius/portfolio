@@ -2,8 +2,11 @@ import "./globals.css";
 
 import { ThemeProvider } from "@/components/common/theme-provider";
 import { fontHeading, fontMono, fontSans } from "@/config/fonts";
+import { baseMetadata } from "@/config/seo";
 import { cn } from "@/lib/utils";
 import type { LayoutProps } from "@/types";
+
+export const metadata = baseMetadata;
 
 export default function RootLayout({ children }: LayoutProps) {
   return (
