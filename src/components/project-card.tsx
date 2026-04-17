@@ -34,21 +34,22 @@ export function ProjectCard({ project, delay }: ProjectCardProps) {
   return (
     <Card
       ref={wrapRef}
-      className="group reveal transition-all duration-300 hover:shadow-lg hover:ring-foreground/20"
+      className="group reveal relative transition-all duration-300 ease-out hover:shadow-lg hover:ring-foreground/20"
       style={{ transitionDelay: `${delay}s` }}
     >
       {/* Colored top line */}
-      <div
-        className="h-px w-full"
-        // style={{ background: project.topGradient, opacity: 0.7 }}
-      />
+      <div className="absolute top-0 left-0 h-px w-full bg-primary/70" />
 
       <CardHeader>
-        <CardTitle className="flex items-center gap-2 font-bold text-[1.0625rem] tracking-tight">
-          {project.name}
+        <CardTitle className="flex items-center gap-2">
+          <h3 className="font-bold">{project.name}</h3>
           {project.featured && <Badge variant="tertiary">Featured</Badge>}
         </CardTitle>
-        <CardDescription>{project.tagline}</CardDescription>
+
+        <CardDescription>
+          <p>{project.tagline}</p>
+        </CardDescription>
+
         <CardAction className="flex translate-y-1 items-center gap-1.5 opacity-0 transition-all duration-200 group-hover:translate-y-0 group-hover:opacity-100">
           <Button asChild size="icon-sm" variant="ghost" aria-label="View code">
             <a
@@ -79,10 +80,7 @@ export function ProjectCard({ project, delay }: ProjectCardProps) {
             <div key={label} className="flex items-center gap-2">
               <FlameIcon size={12} className="text-primary" />
               <div>
-                <p
-                  className="font-bold text-foreground text-sm tracking-tight"
-                  style={{ lineHeight: 1 }}
-                >
+                <p className="font-bold text-foreground text-sm leading-none tracking-tight">
                   {value}
                 </p>
                 <p className="mt-0.5 text-muted-foreground text-xs">{label}</p>
@@ -97,7 +95,7 @@ export function ProjectCard({ project, delay }: ProjectCardProps) {
               <TechTag key={t._key}>{t.title}</TechTag>
             ))}
           </div>
-          <Button asChild size="sm" variant="link">
+          <Button asChild size="xs" variant="link">
             <a target="_blank" rel="noopener noreferrer" href={project.liveUrl}>
               View <ExternalLinkIcon />
             </a>

@@ -11,3 +11,7 @@ export const EXPERIENCES_QUERY = defineQuery(
 export const PROJECTS_QUERY = defineQuery(
   `*[_type == "project"] | order(order asc) {_id, name, slug, tagline, description, techStack, metrics, featured, repositoryUrl, liveUrl, order}`,
 );
+
+export const SKILL_GROUPS_QUERY = defineQuery(
+  `*[_type == "skillGroup"] | order(order asc) {_id, category, techStack, order}`,
+);

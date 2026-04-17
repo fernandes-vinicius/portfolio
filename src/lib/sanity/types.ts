@@ -15,6 +15,21 @@
 export declare const internalGroqTypeReferenceTo: unique symbol;
 
 // Source: schema.json
+export type SkillGroup = {
+  _id: string;
+  _type: "skillGroup";
+  _createdAt: string;
+  _updatedAt: string;
+  _rev: string;
+  category?: string;
+  techStack?: Array<
+    {
+      _key: string;
+    } & TechStack
+  >;
+  order?: number;
+};
+
 export type Project = {
   _id: string;
   _type: "project";
@@ -244,6 +259,7 @@ export type Geopoint = {
 };
 
 export type AllSanitySchemaTypes =
+  | SkillGroup
   | Project
   | Slug
   | Experience
@@ -322,11 +338,37 @@ export type EXPERIENCES_QUERY_RESULT = Array<{
   order: number | null;
 }>;
 
+// Source: ../portfolio/src/lib/sanity/queries.ts
+// Variable: PROJECTS_QUERY
+// Query: *[_type == "project"] | order(order asc) {_id, name, slug, tagline, description, techStack, metrics, featured, repositoryUrl, liveUrl, order}
+export type PROJECTS_QUERY_RESULT = Array<{
+  _id: string;
+  name: string | null;
+  slug: Slug | null;
+  tagline: string | null;
+  description: string | null;
+  techStack: Array<
+    {
+      _key: string;
+    } & TechStack
+  > | null;
+  metrics: Array<
+    {
+      _key: string;
+    } & Metric
+  > | null;
+  featured: boolean | null;
+  repositoryUrl: string | null;
+  liveUrl: string | null;
+  order: number | null;
+}>;
+
 // Query TypeMap
 import "@sanity/client";
 declare module "@sanity/client" {
   interface SanityQueries {
     '*[_type == "profile"][0]{_id, title, firstName, lastName, jobTarget, headline, available, metrics, techStack}': PROFILE_QUERY_RESULT;
     '*[_type == "experience"] | order(order asc) {_id, jobTitle, employer, startDate, endDate, current, description, location, achievements, techStack, order}': EXPERIENCES_QUERY_RESULT;
+    '*[_type == "project"] | order(order asc) {_id, name, slug, tagline, description, techStack, metrics, featured, repositoryUrl, liveUrl, order}': PROJECTS_QUERY_RESULT;
   }
 }
