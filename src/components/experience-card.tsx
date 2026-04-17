@@ -1,0 +1,92 @@
+"use client";
+
+import { ArrowUpRightIcon, CalendarIcon, MapPinIcon } from "@/components/icons";
+import { TechTag } from "@/components/tech-tag";
+import { Badge } from "@/components/ui/badge";
+import {
+  Card,
+  CardAction,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { useInViewOnce } from "@/hooks/use-in-view-once";
+import { formatRange } from "@/lib/dayjs";
+import type { Experience } from "@/lib/sanity/types";
+
+type ExperienceCardProps = {
+  experience: Experience;
+  delay: number;
+};
+
+export function ExperienceCard({ experience, delay }: ExperienceCardProps) {
+  const { ref: wrapRef, inView } = useInViewOnce<HTMLDivElement>({
+    threshold: 0.08,
+    rootMargin: "-60px 0px",
+  });
+
+  return (
+    <Card
+      ref={wrapRef}
+      className="group reveal transition-all duration-300 hover:shadow-lg hover:ring-primary/10 hover:dark:ring-primary-foreground/20"
+      style={{ transitionDelay: `${delay}s` }}
+    >
+      <CardHeader>
+        <CardTitle className="flex items-center gap-3">
+          <h3 className="font-bold">{experience.employer}</h3>
+          {experience.current && <Badge variant="tertiary">Now</Badge>}
+        </CardTitle>
+        <CardDescription>
+          <p>{experience.jobTitle}</p>
+        </CardDescription>
+        <CardAction className="flex gap-3 sm:flex-col sm:items-end">
+          {experience.startDate && (
+            <div className="flex items-center gap-1.5 text-muted-foreground text-xs opacity-75">
+              <CalendarIcon size={11} />
+              {formatRange(experience.startDate, experience.endDate)}
+            </div>
+          )}
+          <div className="flex items-center gap-1.5 text-muted-foreground text-xs opacity-75">
+            <MapPinIcon size={11} />
+            {experience.location || "Remote"}
+          </div>
+        </CardAction>
+      </CardHeader>
+
+      <CardContent>
+        {/* Description */}
+        <p className="mb-5 font-normal text-muted-foreground text-sm leading-relaxed">
+          {experience.description}
+        </p>
+
+        {/* Achievements */}
+        <ul className="mb-6 space-y-3">
+          {experience.achievements?.map((item, i) => (
+            <li
+              key={`achievement-${item}-${String(i)}`}
+              className="flex items-start gap-3 text-sm"
+            >
+              <ArrowUpRightIcon
+                size={13}
+                className="mt-0.5 shrink-0 text-primary"
+              />
+              <span className="font-normal text-foreground text-sm leading-relaxed">
+                {item}
+              </span>
+            </li>
+          ))}
+        </ul>
+
+        {/* Tech tags */}
+        {experience.techStack && experience.techStack.length > 0 && (
+          <div className="flex flex-wrap gap-2 border-t pt-5">
+            {experience.techStack.map((t) => (
+              <TechTag key={t._key}>{t.title}</TechTag>
+            ))}
+          </div>
+        )}
+      </CardContent>
+    </Card>
+  );
+}

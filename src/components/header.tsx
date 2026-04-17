@@ -47,7 +47,7 @@ export function Header() {
         >
           {/* Logo */}
           <ScrollToTop asChild>
-            <Link href="#" className="group flex items-center gap-1.5">
+            <Link href="/" className="group flex items-center gap-1.5">
               <span className="-tracking-[0.04em] font-extrabold transition-colors group-hover:text-muted-foreground">
                 vf
               </span>

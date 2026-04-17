@@ -15,6 +15,9 @@ export function ScrollToTop({ asChild, onClick, ...props }: ScrollToTopProps) {
     e.preventDefault();
     onClick?.(e);
 
+    // remove the hash from the URL
+    window.history.replaceState(null, "", window.location.pathname);
+
     const scrollY = window.scrollY;
     window.scrollTo({ top: 0, behavior: scrollY > 0 ? "smooth" : "auto" });
   };

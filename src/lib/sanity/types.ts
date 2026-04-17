@@ -22,29 +22,19 @@ export type Experience = {
   _updatedAt: string;
   _rev: string;
   title?: string;
-  jobTitle?: string;
   employer?: string;
+  jobTitle?: string;
   startDate?: string;
   endDate?: string;
+  location?: string;
   current?: boolean;
-  description?: Array<{
-    children?: Array<{
-      marks?: Array<string>;
-      text?: string;
-      _type: "span";
+  description?: string;
+  achievements?: Array<string>;
+  techStack?: Array<
+    {
       _key: string;
-    }>;
-    style?: "normal" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "blockquote";
-    listItem?: "bullet" | "number";
-    markDefs?: Array<{
-      href?: string;
-      _type: "link";
-      _key: string;
-    }>;
-    level?: number;
-    _type: "block";
-    _key: string;
-  }>;
+    } & TechStack
+  >;
   order?: number;
 };
 
@@ -284,10 +274,25 @@ export type PROFILE_QUERY_RESULT = {
   > | null;
 } | null;
 
+// Source: ../portfolio/src/lib/sanity/queries.ts
+// Variable: EXPERIENCE_QUERY
+// Query: *[_type == "experience"] | order(order asc) {_id, jobTitle, employer, startDate, endDate, current, description, order}
+export type EXPERIENCE_QUERY_RESULT = Array<{
+  _id: string;
+  jobTitle: string | null;
+  employer: string | null;
+  startDate: string | null;
+  endDate: string | null;
+  current: boolean | null;
+  description: string | null;
+  order: number | null;
+}>;
+
 // Query TypeMap
 import "@sanity/client";
 declare module "@sanity/client" {
   interface SanityQueries {
     '*[_type == "profile"][0]{_id, title, firstName, lastName, jobTarget, headline, available, metrics, techStack}': PROFILE_QUERY_RESULT;
+    '*[_type == "experience"] | order(order asc) {_id, jobTitle, employer, startDate, endDate, current, description, order}': EXPERIENCE_QUERY_RESULT;
   }
 }

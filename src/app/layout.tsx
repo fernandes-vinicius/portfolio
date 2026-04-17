@@ -1,6 +1,7 @@
 import "./globals.css";
 
 import { CursorGlow } from "@/components/cursor-glow";
+import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
 import { NoiseTexture } from "@/components/noise-texture";
 import { ThemeProvider } from "@/components/theme-provider";
@@ -23,10 +24,6 @@ export default function RootLayout({ children }: LayoutProps) {
         "font-sans",
       )}
     >
-      {/* React 19 hoists these to <head> automatically */}
-      <link rel="preconnect" href="https://cdn.sanity.io" />
-      <link rel="dns-prefetch" href="https://cdn.sanity.io" />
-
       <body>
         <ThemeProvider>
           <div className="min-h-svh">
@@ -34,6 +31,7 @@ export default function RootLayout({ children }: LayoutProps) {
             <NoiseTexture />
             <Header />
             {children}
+            <Footer />
           </div>
         </ThemeProvider>
       </body>
