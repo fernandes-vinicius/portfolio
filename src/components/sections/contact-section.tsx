@@ -147,7 +147,7 @@ export function ContactSection() {
               >
                 <a href={href} target="_blank" rel="noopener noreferrer">
                   <Icon />
-                  {label}
+                  <span className="sr-only sm:not-sr-only">{label}</span>
                 </a>
               </Button>
             ))}
