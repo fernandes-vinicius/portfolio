@@ -37,6 +37,7 @@ export function MobileMenu() {
               asChild
               variant="ghost"
               className="justify-start px-3 py-2.5 text-left font-normal duration-150"
+              onClick={() => setOpen(false)}
             >
               <Link href={href}>{label}</Link>
             </Button>

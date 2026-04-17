@@ -25,6 +25,7 @@ export function useInViewOnce<T extends HTMLElement>(
       ([entry]) => {
         if (entry.isIntersecting) {
           setInView(true);
+          el.classList.add("is-visible");
           observer.disconnect();
         }
       },

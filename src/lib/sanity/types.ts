@@ -15,6 +15,38 @@
 export declare const internalGroqTypeReferenceTo: unique symbol;
 
 // Source: schema.json
+export type Project = {
+  _id: string;
+  _type: "project";
+  _createdAt: string;
+  _updatedAt: string;
+  _rev: string;
+  name?: string;
+  slug?: Slug;
+  tagline?: string;
+  description?: string;
+  metrics?: Array<
+    {
+      _key: string;
+    } & Metric
+  >;
+  techStack?: Array<
+    {
+      _key: string;
+    } & TechStack
+  >;
+  featured?: boolean;
+  repositoryUrl?: string;
+  liveUrl?: string;
+  order?: number;
+};
+
+export type Slug = {
+  _type: "slug";
+  current?: string;
+  source?: string;
+};
+
 export type Experience = {
   _id: string;
   _type: "experience";
@@ -211,13 +243,9 @@ export type Geopoint = {
   alt?: number;
 };
 
-export type Slug = {
-  _type: "slug";
-  current?: string;
-  source?: string;
-};
-
 export type AllSanitySchemaTypes =
+  | Project
+  | Slug
   | Experience
   | TechStack
   | Metric
@@ -231,8 +259,7 @@ export type AllSanitySchemaTypes =
   | SanityFileAsset
   | SanityAssetSourceData
   | SanityImageAsset
-  | Geopoint
-  | Slug;
+  | Geopoint;
 
 // Source: ../portfolio/src/lib/sanity/queries.ts
 // Variable: PROFILE_QUERY
@@ -275,9 +302,9 @@ export type PROFILE_QUERY_RESULT = {
 } | null;
 
 // Source: ../portfolio/src/lib/sanity/queries.ts
-// Variable: EXPERIENCE_QUERY
-// Query: *[_type == "experience"] | order(order asc) {_id, jobTitle, employer, startDate, endDate, current, description, order}
-export type EXPERIENCE_QUERY_RESULT = Array<{
+// Variable: EXPERIENCES_QUERY
+// Query: *[_type == "experience"] | order(order asc) {_id, jobTitle, employer, startDate, endDate, current, description, location, achievements, techStack, order}
+export type EXPERIENCES_QUERY_RESULT = Array<{
   _id: string;
   jobTitle: string | null;
   employer: string | null;
@@ -285,6 +312,13 @@ export type EXPERIENCE_QUERY_RESULT = Array<{
   endDate: string | null;
   current: boolean | null;
   description: string | null;
+  location: string | null;
+  achievements: Array<string> | null;
+  techStack: Array<
+    {
+      _key: string;
+    } & TechStack
+  > | null;
   order: number | null;
 }>;
 
@@ -293,6 +327,6 @@ import "@sanity/client";
 declare module "@sanity/client" {
   interface SanityQueries {
     '*[_type == "profile"][0]{_id, title, firstName, lastName, jobTarget, headline, available, metrics, techStack}': PROFILE_QUERY_RESULT;
-    '*[_type == "experience"] | order(order asc) {_id, jobTitle, employer, startDate, endDate, current, description, order}': EXPERIENCE_QUERY_RESULT;
+    '*[_type == "experience"] | order(order asc) {_id, jobTitle, employer, startDate, endDate, current, description, location, achievements, techStack, order}': EXPERIENCES_QUERY_RESULT;
   }
 }
