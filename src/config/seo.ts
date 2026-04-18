@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 
 export const siteConfig = {
   name: "Vinicius Fernandes",
-  title: "Vinicius Fernandes — Software Engineer",
+  title: "Vinicius Fernandes — Frontend Engineer",
   description:
     "Software engineer specializing in building modern web applications with a focus on performance, accessibility, and great user experiences.",
   url: "https://viniciusfernandes.dev",
