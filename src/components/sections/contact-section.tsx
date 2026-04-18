@@ -50,7 +50,7 @@ export function ContactSection(props: ContactSectionProps) {
           {
             Icon: MessageCircleIcon,
             label: "WhatsApp",
-            href: `https://wa.me/${phone}`,
+            href: `https://wa.me/${phone}?text=Hi!%20I%20just%20saw%20your%20website%20and%20would%20like%20to%20talk%20%F0%9F%99%82`,
             sub: "Quick conversations",
             external: true,
           },
