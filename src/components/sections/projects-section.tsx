@@ -6,6 +6,7 @@ import {
   SectionContainer,
   SectionContent,
   SectionDescription,
+  SectionDivider,
   SectionHeader,
   SectionTagline,
   SectionTitle,
@@ -22,7 +23,7 @@ export function ProjectsSection({ projects }: ProjectsSectionProps) {
 
   return (
     <Section id="projects">
-      <div className="-translate-x-1/2 absolute top-0 left-1/2 h-px w-full max-w-5xl bg-[linear-gradient(90deg,transparent_0%,rgba(0,0,0,0.06)_30%,rgba(0,0,0,0.06)_70%,transparent_100%)]" />
+      <SectionDivider />
 
       <SectionContainer>
         <SectionHeader ref={headerRef}>

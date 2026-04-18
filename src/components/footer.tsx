@@ -32,7 +32,7 @@ export function Footer() {
 
           <p className="text-muted-foreground text-xs opacity-50">
             <small>
-              Built with React
+              Built with Next.js
               <span aria-hidden="true"> · </span>
               TypeScript
               <span aria-hidden="true"> · </span>

@@ -75,7 +75,7 @@ export function ContactSection(props: ContactSectionProps) {
             {/* Subtle top glow */}
             <div className="-translate-x-1/2 pointer-events-none absolute top-0 left-1/2 h-40 w-[400px] bg-[radial-gradient(ellipse,color-mix(in_oklch,var(--primary)_7%,transparent)_0%,transparent_70%)] blur-lg" />
 
-            <CardContent className="relative flex flex-col items-center gap-6">
+            <CardContent className="relative flex flex-col items-center gap-6 p-0">
               <SectionTagline className="mb-0">Get in touch</SectionTagline>
 
               {/* Heading */}

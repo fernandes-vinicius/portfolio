@@ -97,7 +97,7 @@ function SectionDivider({ className, ...props }: React.ComponentProps<"div">) {
     <div
       data-slot="section-divider"
       className={cn(
-        "-translate-x-1/2 absolute top-0 left-1/2 h-px w-full max-w-5xl bg-linear-to-r from-transparent via-border/75 to-transparent",
+        "-translate-x-1/2 absolute top-0 left-1/2 h-px w-full max-w-5xl bg-linear-to-r from-transparent via-border/50 to-transparent",
         className,
       )}
       {...props}
