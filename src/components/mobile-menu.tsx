@@ -45,7 +45,11 @@ export function MobileMenu() {
             ))}
 
             <div className="mt-2 border-t pt-4">
-              <CTAButton asChild className="w-full">
+              <CTAButton
+                asChild
+                className="w-full"
+                onClick={() => setOpen(false)}
+              >
                 <Link href="#contact" aria-label="Go to contact">
                   Hire me
                 </Link>

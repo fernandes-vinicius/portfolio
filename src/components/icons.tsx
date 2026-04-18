@@ -11,6 +11,9 @@ import {
   MapPin,
   Menu,
   MessageCircle,
+  Monitor,
+  Moon,
+  Sun,
   Target,
   TrendingUp,
   Users,
@@ -57,3 +60,6 @@ export const LinkedInIcon = (props: IconProps) => <FaLinkedin {...props} />;
 export const TwitterIcon = (props: IconProps) => <FaXTwitter {...props} />;
 export const WhatsAppIcon = (props: IconProps) => <FaWhatsapp {...props} />;
 export const LinkIcon = (props: IconProps) => <Link {...props} />;
+export const SunIcon = (props: IconProps) => <Sun {...props} />;
+export const MoonIcon = (props: IconProps) => <Moon {...props} />;
+export const MonitorIcon = (props: IconProps) => <Monitor {...props} />;

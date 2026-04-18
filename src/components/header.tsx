@@ -4,6 +4,7 @@ import dynamic from "next/dynamic";
 import Link from "next/link";
 import { CTAButton } from "@/components/cta-button";
 import { MenuIcon } from "@/components/icons";
+import { ThemeToggle } from "@/components/theme-toggle";
 import { Button } from "@/components/ui/button";
 import { navLinks } from "@/config/nav";
 import { useScrollThreshold } from "@/hooks/use-scroll-threshold";
@@ -78,8 +79,9 @@ export function Header() {
             ))}
           </nav>
 
-          {/* CTA */}
-          <div className="hidden md:block">
+          {/* CTA + theme toggle */}
+          <div className="hidden items-center gap-2 md:flex">
+            <ThemeToggle />
             <CTAButton asChild size="default">
               <Link href="#contact" aria-label="Go to contact">
                 Hire me
