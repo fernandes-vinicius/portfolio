@@ -1,75 +1,101 @@
-'use client'
+"use client";
 
-import React from 'react'
+import dynamic from "next/dynamic";
+import Link from "next/link";
+import { CTAButton } from "@/components/cta-button";
+import { MenuIcon } from "@/components/icons";
+import { ThemeToggle } from "@/components/theme-toggle";
+import { Button } from "@/components/ui/button";
+import { navLinks } from "@/config/nav";
+import { useScrollThreshold } from "@/hooks/use-scroll-threshold";
+import { useScrollToTop } from "@/hooks/use-scroll-to-top";
+import { cn } from "@/lib/utils";
 
-import { motion } from 'framer-motion'
-
-import { Logo } from './logo'
-import { MenuButton } from './menu-button'
-import { NavLink } from './nav-link'
-import { SocialLinks } from './social-links'
-import { ThemeToggle } from './theme-toggle'
+// Radix Popover + its 14 sub-packages (floating-ui, focus-scope, portal, etc.)
+// are loaded only when this chunk is needed — keeps them out of the critical bundle.
+const MobileMenu = dynamic(
+  () => import("@/components/mobile-menu").then((m) => m.MobileMenu),
+  {
+    ssr: false,
+    loading: () => (
+      <Button
+        variant="ghost"
+        size="icon-sm"
+        aria-label="Open menu"
+        aria-expanded="false"
+        disabled
+      >
+        <MenuIcon />
+      </Button>
+    ),
+  },
+);
 
 export function Header() {
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false)
-
-  function handleToggleMobileMenu() {
-    setIsMobileMenuOpen((state) => !state)
-  }
+  const scrolled = useScrollThreshold();
+  const scrollToTop = useScrollToTop();
 
   return (
-    <header className="relative flex items-center justify-between px-32 py-8 lg:px-16 md:px-12 sm:px-8">
-      <div className="hidden lg:block">
-        <MenuButton
-          isOpen={isMobileMenuOpen}
-          onClick={handleToggleMobileMenu}
-        />
-      </div>
-
-      <nav className="flex items-center justify-between gap-8 lg:hidden">
-        <NavLink href="/">Início</NavLink>
-        <NavLink href="/about">Sobre</NavLink>
-        <NavLink href="/projects">Projetos</NavLink>
-      </nav>
-
-      <div className="flex items-center justify-center gap-8 lg:mt-2">
-        <div className="lg:hidden">
-          <SocialLinks />
-        </div>
-        <ThemeToggle />
-      </div>
-
-      <div className="absolute left-1/2 top-3 -translate-x-1/2">
-        <Logo />
-      </div>
-
-      {/* mobile menu */}
-      {isMobileMenuOpen && (
-        <motion.div
-          initial={{ scale: 0, opacity: 0, x: '-50%', y: '-50%' }}
-          animate={{ scale: 1, opacity: 1 }}
-          className="fixed left-1/2 top-1/2 z-50 flex min-w-[70vw]
-          -translate-x-1/2 -translate-y-1/2 flex-col items-center justify-between
-          rounded-lg bg-foreground/90 py-32 text-background backdrop-blur-md
-          dark:bg-foreground/75 sm:min-w-[90vw]"
+    <header className="fixed top-0 right-0 left-0 z-50 motion-safe:animate-[hero-fade-up_0.6s_cubic-bezier(0.22,1,0.36,1)_both]">
+      <div
+        className={cn(
+          "mx-auto mt-0 max-w-6xl px-0 transition-all duration-500",
+          { "mt-3 max-w-3xl px-2": scrolled },
+        )}
+      >
+        <div
+          className={cn(
+            "flex items-center justify-between bg-transparent p-5 transition-all duration-500 will-change-[transform,opacity]",
+            {
+              "rounded-2xl border bg-background/85 py-3 backdrop-blur-xl":
+                scrolled,
+            },
+          )}
         >
-          <nav className="flex flex-col items-center justify-center gap-4">
-            <NavLink href="/" onClick={handleToggleMobileMenu}>
-              Início
-            </NavLink>
-            <NavLink href="/about" onClick={handleToggleMobileMenu}>
-              Sobre
-            </NavLink>
-            <NavLink href="/projects" onClick={handleToggleMobileMenu}>
-              Projetos
-            </NavLink>
+          {/* Logo */}
+          <Link
+            href="/"
+            aria-label="Go to homepage"
+            onClick={scrollToTop}
+            className="group flex items-center gap-1.5"
+          >
+            <span className="font-extrabold tracking-tighter transition-colors group-hover:text-muted-foreground">
+              vf
+            </span>
+            <span aria-hidden="true" className="size-1.5 rounded-full bg-brand-gradient transition-colors" />
+          </Link>
+
+          {/* Desktop nav */}
+          <nav aria-label="Main navigation" className="hidden items-center gap-1 md:flex">
+            {navLinks.map(({ href, label }) => (
+              <Button
+                key={href}
+                asChild
+                variant="ghost"
+                className="font-normal opacity-75 duration-150"
+              >
+                <Link href={href}>{label}</Link>
+              </Button>
+            ))}
           </nav>
 
-          <div className="mt-6 flex items-center justify-center gap-6">
-            <SocialLinks />
+          {/* CTA + theme toggle */}
+          <div className="hidden items-center gap-2 md:flex">
+            <ThemeToggle />
+            <CTAButton asChild size="default">
+              <Link href="#contact" aria-label="Go to contact">
+                Hire me
+                {/* Get in touch */}
+              </Link>
+            </CTAButton>
           </div>
-        </motion.div>
-      )}
+
+          {/* Mobile menu — lazy-loaded to keep Radix Popover out of the critical bundle */}
+          <div className="md:hidden">
+            <MobileMenu />
+          </div>
+        </div>
+      </div>
     </header>
-  )
+  );
 }

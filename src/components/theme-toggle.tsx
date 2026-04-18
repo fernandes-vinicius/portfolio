@@ -1,22 +1,55 @@
-'use client'
+"use client";
 
-import { useTheme } from 'next-themes'
+import { useTheme } from "next-themes";
+import { MonitorIcon, MoonIcon, SunIcon } from "@/components/icons";
+import { Button } from "@/components/ui/button";
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@/components/ui/popover";
 
-import { MoonIcon, SunIcon } from 'lucide-react'
+type Theme = "system" | "light" | "dark";
+
+const OPTIONS: { value: Theme; label: string; Icon: typeof SunIcon }[] = [
+  { value: "light", label: "Light", Icon: SunIcon },
+  { value: "dark", label: "Dark", Icon: MoonIcon },
+  { value: "system", label: "System", Icon: MonitorIcon },
+];
+
+const CURRENT_ICON: Record<"light" | "dark", typeof SunIcon> = {
+  light: SunIcon,
+  dark: MoonIcon,
+};
 
 export function ThemeToggle() {
-  const { theme, setTheme } = useTheme()
+  const { setTheme, resolvedTheme } = useTheme();
 
-  function handleToggleTheme() {
-    if (theme === 'light') setTheme('dark')
-    else if (theme === 'dark') setTheme('light')
-  }
+  const CurrentIcon =
+    CURRENT_ICON[(resolvedTheme as "light" | "dark") ?? "dark"] ?? MonitorIcon;
 
   return (
-    <button type="button" onClick={handleToggleTheme} className="relative flex">
-      <SunIcon className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
-      <MoonIcon className="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
-      <span className="sr-only">Toggle theme</span>
-    </button>
-  )
+    <Popover>
+      <PopoverTrigger asChild>
+        <Button variant="ghost" size="icon-sm" aria-label="Toggle theme">
+          <CurrentIcon aria-hidden="true" />
+        </Button>
+      </PopoverTrigger>
+
+      <PopoverContent align="end" className="w-auto min-w-36 gap-1.5 p-1">
+        {OPTIONS.map(({ value, label, Icon }) => (
+          <Button
+            key={value}
+            variant="ghost"
+            size="sm"
+            onClick={() => setTheme(value)}
+            className="justify-start gap-3 text-left"
+          >
+            <Icon aria-hidden="true" />
+            {label}
+          </Button>
+        ))}
+      </PopoverContent>
+    </Popover>
+  );
 }

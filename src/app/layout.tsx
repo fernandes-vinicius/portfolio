@@ -1,33 +1,34 @@
-import '@/styles/globals.css'
+import "./globals.css";
 
-import type { Metadata } from 'next'
+import { CursorGlow } from "@/components/cursor-glow";
+import { Footer } from "@/components/footer";
+import { Header } from "@/components/header";
+import { NoiseTexture } from "@/components/noise-texture";
+import { ThemeProvider } from "@/components/theme-provider";
+import { fontMono, fontSans } from "@/config/fonts";
+import { baseMetadata } from "@/config/seo";
+import { cn } from "@/lib/utils";
+import type { LayoutProps } from "@/types";
 
-import { Footer } from '@/components/footer'
-import { Header } from '@/components/header'
-import { ThemeProvider } from '@/contexts/theme'
-import { fontSans } from '@/lib/fonts'
-import { SEOConfig } from '@/lib/seo'
+export const metadata = baseMetadata;
 
-export const metadata: Metadata = {
-  title: SEOConfig.name,
-  description: SEOConfig.description,
-}
-
-interface RootLayoutProps {
-  children: React.ReactNode
-}
-
-export default function RootLayout({ children }: RootLayoutProps) {
+export default function RootLayout({ children }: LayoutProps) {
   return (
-    <html lang="pt-BR" suppressHydrationWarning>
-      <body className={fontSans.variable}>
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="light"
-          enableSystem={false}
-          disableTransitionOnChange
-        >
-          <div className="relative flex min-h-screen flex-col">
+    <html
+      lang="en"
+      suppressHydrationWarning
+      className={cn(
+        "antialiased",
+        fontSans.variable,
+        fontMono.variable,
+        "font-sans",
+      )}
+    >
+      <body>
+        <ThemeProvider>
+          <div className="min-h-svh">
+            <CursorGlow />
+            <NoiseTexture />
             <Header />
             {children}
             <Footer />
@@ -35,5 +36,5 @@ export default function RootLayout({ children }: RootLayoutProps) {
         </ThemeProvider>
       </body>
     </html>
-  )
+  );
 }
