@@ -8,12 +8,14 @@ import { StatsSection } from "@/components/sections/stats-section";
 import { TechMarquee } from "@/components/tech-marquee";
 import { client } from "@/lib/sanity/client";
 import {
+  DIFFERENTIALS_QUERY,
   EXPERIENCES_QUERY,
   PROFILE_QUERY,
   PROJECTS_QUERY,
   SKILL_GROUPS_QUERY,
 } from "@/lib/sanity/queries";
 import type {
+  Differential,
   Experience,
   Profile,
   Project,
@@ -23,12 +25,14 @@ import type {
 const queryOptions = { next: { revalidate: 60 } };
 
 export default async function HomePage() {
-  const [profile, experiences, projects, skillGroups] = await Promise.all([
-    client.fetch<Profile>(PROFILE_QUERY, {}, queryOptions),
-    client.fetch<Experience[]>(EXPERIENCES_QUERY, {}, queryOptions),
-    client.fetch<Project[]>(PROJECTS_QUERY, {}, queryOptions),
-    client.fetch<SkillGroup[]>(SKILL_GROUPS_QUERY, {}, queryOptions),
-  ]);
+  const [profile, experiences, projects, skillGroups, differentials] =
+    await Promise.all([
+      client.fetch<Profile>(PROFILE_QUERY, {}, queryOptions),
+      client.fetch<Experience[]>(EXPERIENCES_QUERY, {}, queryOptions),
+      client.fetch<Project[]>(PROJECTS_QUERY, {}, queryOptions),
+      client.fetch<SkillGroup[]>(SKILL_GROUPS_QUERY, {}, queryOptions),
+      client.fetch<Differential[]>(DIFFERENTIALS_QUERY, {}, queryOptions),
+    ]);
 
   return (
     <main>
@@ -38,7 +42,7 @@ export default async function HomePage() {
       <ExperienceSection experiences={experiences} />
       <ProjectsSection projects={projects} />
       <SkillsSection skillGroups={skillGroups} />
-      <DifferentialsSection />
+      <DifferentialsSection differentials={differentials} />
       <ContactSection
         email={profile.email}
         phone={profile.phone}

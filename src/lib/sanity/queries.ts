@@ -4,6 +4,10 @@ export const PROFILE_QUERY = defineQuery(
   `*[_type == "profile"][0]{_id, title, firstName, lastName, jobTarget, headline, email, phone, available, socialLinks, metrics, techStack}`,
 );
 
+export const DIFFERENTIALS_QUERY = defineQuery(
+  `*[_type == "differential"] | order(order asc) {_id, title, description, metric, icon}`,
+);
+
 export const EXPERIENCES_QUERY = defineQuery(
   `*[_type == "experience"] | order(order asc) {_id, jobTitle, employer, startDate, endDate, current, description, location, achievements, techStack, order}`,
 );

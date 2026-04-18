@@ -20,7 +20,7 @@ export function SkillCard({ skillGroup, delay }: SkillCardProps) {
   return (
     <Card
       ref={ref}
-      className="reveal transition-all duration-300 hover:shadow-lg hover:ring-foreground/20"
+      className="group reveal transition-all duration-300 hover:shadow-lg hover:ring-primary/10 hover:dark:ring-primary-foreground/20"
       style={{ transitionDelay: `${delay}s` }}
     >
       <CardHeader>

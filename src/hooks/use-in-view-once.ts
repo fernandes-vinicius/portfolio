@@ -8,7 +8,7 @@ type UseInViewOnceOptions = {
   rootMargin?: string;
 };
 
-export function useInViewOnce<T extends HTMLElement>(
+export function useInViewOnce<T extends HTMLElement = HTMLDivElement>(
   options: UseInViewOnceOptions = {},
 ) {
   const { threshold = 0.15, rootMargin = "0px" } = options;
