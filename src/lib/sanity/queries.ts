@@ -1,7 +1,7 @@
 import { defineQuery } from "next-sanity";
 
 export const PROFILE_QUERY = defineQuery(
-  `*[_type == "profile"][0]{_id, title, firstName, lastName, jobTarget, headline, available, metrics, techStack}`,
+  `*[_type == "profile"][0]{_id, title, firstName, lastName, jobTarget, headline, email, phone, available, socialLinks, metrics, techStack}`,
 );
 
 export const EXPERIENCES_QUERY = defineQuery(

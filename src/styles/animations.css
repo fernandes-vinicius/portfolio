@@ -37,6 +37,14 @@
   opacity: 1;
   transform: translateY(0);
 }
+
+/* Respect the user's OS motion preference — no animation, just reveal. */
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    transform: none;
+    transition: opacity 0.15s linear;
+  }
+}
 .reveal-d1 {
   transition-delay: 0.07s;
 }

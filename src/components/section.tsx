@@ -1,8 +1,15 @@
+import { Slot } from "radix-ui";
 import { cn } from "@/lib/utils";
 
-function Section({ className, ...props }: React.ComponentProps<"section">) {
+function Section({
+  className,
+  asChild = false,
+  ...props
+}: React.ComponentProps<"section"> & { asChild?: boolean }) {
+  const Comp = asChild ? Slot.Root : "section";
+
   return (
-    <section
+    <Comp
       data-slot="section"
       className={cn("relative bg-background px-6 py-28", className)}
       {...props}
@@ -15,7 +22,7 @@ function SectionContainer({
   ...props
 }: React.ComponentProps<"div">) {
   return (
-    <section
+    <div
       data-slot="section-container"
       className={cn("mx-auto w-full max-w-6xl", className)}
       {...props}
@@ -25,7 +32,7 @@ function SectionContainer({
 
 function SectionHeader({ className, ...props }: React.ComponentProps<"div">) {
   return (
-    <section
+    <div
       data-slot="section-header"
       className={cn("reveal mb-16", className)}
       {...props}
@@ -77,9 +84,22 @@ function SectionDescription({
 
 function SectionContent({ className, ...props }: React.ComponentProps<"div">) {
   return (
-    <section
+    <div
       data-slot="section-content"
       className={cn("relative", className)}
+      {...props}
+    />
+  );
+}
+
+function SectionDivider({ className, ...props }: React.ComponentProps<"div">) {
+  return (
+    <div
+      data-slot="section-divider"
+      className={cn(
+        "-translate-x-1/2 absolute top-0 left-1/2 h-px w-full max-w-5xl bg-linear-to-r from-transparent via-border/75 to-transparent",
+        className,
+      )}
       {...props}
     />
   );
@@ -93,4 +113,5 @@ export {
   SectionTitle,
   SectionDescription,
   SectionContent,
+  SectionDivider,
 };

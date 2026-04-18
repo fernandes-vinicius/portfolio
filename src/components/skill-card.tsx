@@ -1,6 +1,6 @@
 "use client";
 
-import { TargetIcon } from "lucide-react";
+import { TargetIcon } from "@/components/icons";
 import { TechTag } from "@/components/tech-tag";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { useInViewOnce } from "@/hooks/use-in-view-once";

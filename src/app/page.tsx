@@ -39,7 +39,11 @@ export default async function HomePage() {
       <ProjectsSection projects={projects} />
       <SkillsSection skillGroups={skillGroups} />
       <DifferentialsSection />
-      <ContactSection />
+      <ContactSection
+        email={profile.email}
+        phone={profile.phone}
+        socialLinks={profile.socialLinks || []}
+      />
     </main>
   );
 }

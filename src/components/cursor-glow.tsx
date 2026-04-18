@@ -37,7 +37,7 @@ export function CursorGlow() {
   return (
     <div
       ref={glowRef}
-      className="pointer-events-none fixed top-0 left-0 z-1 h-160 w-160 rounded-full bg-glow-gradient opacity-80 blur-3xl"
+      className="pointer-events-none fixed top-0 left-0 z-1 size-160 rounded-full bg-glow-gradient opacity-80 blur-3xl"
     />
   );
 }

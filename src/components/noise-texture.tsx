@@ -1,7 +1,7 @@
 export function NoiseTexture() {
   return (
     <svg
-      className="pointer-events-none fixed inset-0 z-2 h-full w-full"
+      className="pointer-events-none fixed inset-0 z-2 size-full"
       xmlns="http://www.w3.org/2000/svg"
       style={{ opacity: 0.02, mixBlendMode: "multiply" }}
     >

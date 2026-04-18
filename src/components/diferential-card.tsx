@@ -11,6 +11,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { useInViewOnce } from "@/hooks/use-in-view-once";
+import { IconBox } from "./icon-box";
 
 const differentials = [
   {
@@ -78,9 +79,9 @@ export function DifferentialCard({ item, delay }: DifferentialCardProps) {
     >
       <CardHeader>
         <CardTitle className="flex flex-col gap-4">
-          <div className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-primary/10 p-2">
+          <IconBox size="lg">
             <Icon size={18} className="text-primary" />
-          </div>
+          </IconBox>
           <h3 className="font-bold">{item.title}</h3>
         </CardTitle>
         <CardDescription className="flex-1">

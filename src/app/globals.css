@@ -157,7 +157,3 @@
 html {
   scroll-behavior: smooth;
 }
-
-section {
-  scroll-margin-top: 3.5rem;
-}

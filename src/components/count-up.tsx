@@ -1,6 +1,7 @@
 "use client";
 
 import ReactCountUp, { type CountUpProps } from "react-countup";
+import { useReducedMotion } from "@/hooks/use-reduced-motion";
 
 function formatCompact(value: number, divisor: number, suffix: string) {
   const result = value / divisor;
@@ -17,11 +18,12 @@ export function formatNumberShort(value: number) {
   return value.toString();
 }
 
-export function CountUp({ end, suffix = "", ...props }: CountUpProps) {
+export function CountUp({ end, suffix = "", duration = 2.75, ...props }: CountUpProps) {
+  const reduced = useReducedMotion();
   return (
     <ReactCountUp
       end={end}
-      duration={2.75}
+      duration={reduced ? 0 : duration}
       formattingFn={(v) => `${formatNumberShort(v)}${suffix.trim() ?? ""}`}
       {...props}
     />

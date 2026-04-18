@@ -2,6 +2,11 @@
 
 import { useEffect, useState } from "react";
 
+/**
+ * @description Detects if the user has scrolled past a certain threshold.
+ * @param threshold - The threshold in pixels.
+ * @returns True if the user has scrolled past the threshold, false otherwise.
+ */
 export function useScrollThreshold(threshold = 24): boolean {
   const [passed, setPassed] = useState(false);
 

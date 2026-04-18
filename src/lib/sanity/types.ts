@@ -15,6 +15,21 @@
 export declare const internalGroqTypeReferenceTo: unique symbol;
 
 // Source: schema.json
+export type LinkItem = {
+  _type: "linkItem";
+  label?: string;
+  href?: string;
+  sub?: string;
+  platform?: "github" | "linkedin" | "twitter" | "email" | "whatsapp" | "other";
+};
+
+export type SocialLink = {
+  _type: "socialLink";
+  platform?: "github" | "linkedin" | "twitter" | "other";
+  label?: string;
+  url?: string;
+};
+
 export type SkillGroup = {
   _id: string;
   _type: "skillGroup";
@@ -129,10 +144,14 @@ export type Profile = {
   }>;
   email?: string;
   phone?: string;
-  linkedInUrl?: string;
   location?: string;
   country?: string;
   available?: boolean;
+  socialLinks?: Array<
+    {
+      _key: string;
+    } & SocialLink
+  >;
   metrics?: Array<
     {
       _key: string;
@@ -259,6 +278,8 @@ export type Geopoint = {
 };
 
 export type AllSanitySchemaTypes =
+  | LinkItem
+  | SocialLink
   | SkillGroup
   | Project
   | Slug
@@ -279,7 +300,7 @@ export type AllSanitySchemaTypes =
 
 // Source: ../portfolio/src/lib/sanity/queries.ts
 // Variable: PROFILE_QUERY
-// Query: *[_type == "profile"][0]{_id, title, firstName, lastName, jobTarget, headline, available, metrics, techStack}
+// Query: *[_type == "profile"][0]{_id, title, firstName, lastName, jobTarget, headline, email, phone, available, metrics, techStack}
 export type PROFILE_QUERY_RESULT = {
   _id: string;
   title: string | null;
@@ -304,6 +325,8 @@ export type PROFILE_QUERY_RESULT = {
     _type: "block";
     _key: string;
   }> | null;
+  email: string | null;
+  phone: string | null;
   available: boolean | null;
   metrics: Array<
     {
@@ -363,12 +386,27 @@ export type PROJECTS_QUERY_RESULT = Array<{
   order: number | null;
 }>;
 
+// Source: ../portfolio/src/lib/sanity/queries.ts
+// Variable: SKILL_GROUPS_QUERY
+// Query: *[_type == "skillGroup"] | order(order asc) {_id, category, techStack, order}
+export type SKILL_GROUPS_QUERY_RESULT = Array<{
+  _id: string;
+  category: string | null;
+  techStack: Array<
+    {
+      _key: string;
+    } & TechStack
+  > | null;
+  order: number | null;
+}>;
+
 // Query TypeMap
 import "@sanity/client";
 declare module "@sanity/client" {
   interface SanityQueries {
-    '*[_type == "profile"][0]{_id, title, firstName, lastName, jobTarget, headline, available, metrics, techStack}': PROFILE_QUERY_RESULT;
+    '*[_type == "profile"][0]{_id, title, firstName, lastName, jobTarget, headline, email, phone, available, metrics, techStack}': PROFILE_QUERY_RESULT;
     '*[_type == "experience"] | order(order asc) {_id, jobTitle, employer, startDate, endDate, current, description, location, achievements, techStack, order}': EXPERIENCES_QUERY_RESULT;
     '*[_type == "project"] | order(order asc) {_id, name, slug, tagline, description, techStack, metrics, featured, repositoryUrl, liveUrl, order}': PROJECTS_QUERY_RESULT;
+    '*[_type == "skillGroup"] | order(order asc) {_id, category, techStack, order}': SKILL_GROUPS_QUERY_RESULT;
   }
 }
