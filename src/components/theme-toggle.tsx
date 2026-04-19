@@ -6,6 +6,9 @@ import { Button } from "@/components/ui/button";
 import {
   Popover,
   PopoverContent,
+  PopoverDescription,
+  PopoverHeader,
+  PopoverTitle,
   PopoverTrigger,
 } from "@/components/ui/popover";
 
@@ -36,7 +39,7 @@ export function ThemeToggle() {
         </Button>
       </PopoverTrigger>
 
-      <PopoverContent align="end" className="w-auto min-w-36 gap-1.5 p-1">
+      <PopoverContent align="end" className="w-auto min-w-36 gap-1.5">
         {OPTIONS.map(({ value, label, Icon }) => (
           <Button
             key={value}
@@ -49,6 +52,10 @@ export function ThemeToggle() {
             {label}
           </Button>
         ))}
+
+        <p className="sr-only pt-3 text-muted-foreground text-xs opacity-75 md:not-sr-only">
+          Press <kbd>D</kbd> to toggle theme
+        </p>
       </PopoverContent>
     </Popover>
   );
