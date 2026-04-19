@@ -62,11 +62,17 @@ export function Header() {
             <span className="font-extrabold tracking-tighter transition-colors group-hover:text-muted-foreground">
               vf
             </span>
-            <span aria-hidden="true" className="size-1.5 rounded-full bg-brand-gradient transition-colors" />
+            <span
+              aria-hidden="true"
+              className="size-1.5 rounded-full bg-brand-gradient transition-colors"
+            />
           </Link>
 
           {/* Desktop nav */}
-          <nav aria-label="Main navigation" className="hidden items-center gap-1 md:flex">
+          <nav
+            aria-label="Main navigation"
+            className="hidden items-center gap-1 md:flex"
+          >
             {navLinks.map(({ href, label }) => (
               <Button
                 key={href}
@@ -91,7 +97,8 @@ export function Header() {
           </div>
 
           {/* Mobile menu — lazy-loaded to keep Radix Popover out of the critical bundle */}
-          <div className="md:hidden">
+          <div className="flex items-center gap-2 md:hidden">
+            <ThemeToggle />
             <MobileMenu />
           </div>
         </div>
