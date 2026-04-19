@@ -27,7 +27,7 @@ export type SkillGroup = {
       _key: string;
     } & TechStack
   >;
-  order?: number;
+  icon?: "layers" | "paintBrush" | "cpu" | "zap" | "globe" | "wrench";
 };
 
 export type Project = {
@@ -350,6 +350,17 @@ export type PROFILE_QUERY_RESULT = {
 } | null;
 
 // Source: ../portfolio/src/lib/sanity/queries.ts
+// Variable: DIFFERENTIALS_QUERY
+// Query: *[_type == "differential"] | order(order asc) {_id, title, description, metric, icon}
+export type DIFFERENTIALS_QUERY_RESULT = Array<{
+  _id: string;
+  title: string | null;
+  description: string | null;
+  metric: string | null;
+  icon: "barChart" | "layers" | "target" | "users" | null;
+}>;
+
+// Source: ../portfolio/src/lib/sanity/queries.ts
 // Variable: EXPERIENCES_QUERY
 // Query: *[_type == "experience"] | order(order asc) {_id, jobTitle, employer, startDate, endDate, current, description, location, achievements, techStack, order}
 export type EXPERIENCES_QUERY_RESULT = Array<{
@@ -406,7 +417,7 @@ export type SKILL_GROUPS_QUERY_RESULT = Array<{
       _key: string;
     } & TechStack
   > | null;
-  order: number | null;
+  order: null;
 }>;
 
 // Query TypeMap
@@ -414,6 +425,7 @@ import "@sanity/client";
 declare module "@sanity/client" {
   interface SanityQueries {
     '*[_type == "profile"][0]{_id, title, firstName, lastName, jobTarget, headline, email, phone, available, socialLinks, metrics, techStack}': PROFILE_QUERY_RESULT;
+    '*[_type == "differential"] | order(order asc) {_id, title, description, metric, icon}': DIFFERENTIALS_QUERY_RESULT;
     '*[_type == "experience"] | order(order asc) {_id, jobTitle, employer, startDate, endDate, current, description, location, achievements, techStack, order}': EXPERIENCES_QUERY_RESULT;
     '*[_type == "project"] | order(order asc) {_id, name, slug, tagline, description, techStack, metrics, featured, repositoryUrl, liveUrl, order}': PROJECTS_QUERY_RESULT;
     '*[_type == "skillGroup"] | order(order asc) {_id, category, techStack, order}': SKILL_GROUPS_QUERY_RESULT;

@@ -1,16 +1,18 @@
-"use client";
-
 import { IconBox } from "@/components/icon-box";
-import { TargetIcon } from "@/components/icons";
+import {
+  BarChartIcon,
+  LayersIcon,
+  TargetIcon,
+  UsersIcon,
+} from "@/components/icons";
+import { RevealCard } from "@/components/reveal-card";
 import { Badge } from "@/components/ui/badge";
 import {
-  Card,
   CardDescription,
   CardFooter,
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { useInViewOnce } from "@/hooks/use-in-view-once";
 import type { Differential } from "@/lib/sanity/types";
 
 type DifferentialCardProps = {
@@ -18,33 +20,34 @@ type DifferentialCardProps = {
   delay?: number;
 };
 
-export function DifferentialCard({
-  differential,
-  delay = 0,
-}: DifferentialCardProps) {
-  const { ref } = useInViewOnce({
-    threshold: 0.08,
-    rootMargin: "-50px 0px",
-  });
+type DifferentialIconType = Record<
+  NonNullable<Differential["icon"]>,
+  React.ElementType
+>;
 
-  // const { Icon } = item;
+export function DifferentialCard(props: DifferentialCardProps) {
+  const { differential, delay = 0 } = props;
+
+  const DifferentialIconMap: DifferentialIconType = {
+    target: TargetIcon,
+    layers: LayersIcon,
+    barChart: BarChartIcon,
+    users: UsersIcon,
+  };
+
+  const DifferentialIcon = DifferentialIconMap[differential.icon ?? "target"];
 
   return (
-    <Card
-      ref={ref}
-      className="group reveal transition-all duration-300 hover:shadow-lg hover:ring-primary/10 hover:dark:ring-primary-foreground/20"
-      style={{ transitionDelay: `${delay}s` }}
-    >
+    <RevealCard threshold={0.08} rootMargin="-50px 0px" delay={delay}>
       <CardHeader>
         <CardTitle className="flex flex-col gap-4">
           <IconBox size="lg">
-            <TargetIcon size={18} />
-            {/* <Icon size={18} className="text-primary" /> */}
+            <DifferentialIcon size={18} />
           </IconBox>
           <h3 className="font-bold">{differential.title}</h3>
         </CardTitle>
         <CardDescription className="flex-1">
-          <p>{differential.description}</p>
+          {differential.description}
         </CardDescription>
       </CardHeader>
 
@@ -54,6 +57,6 @@ export function DifferentialCard({
           {differential.metric}
         </Badge>
       </CardFooter>
-    </Card>
+    </RevealCard>
   );
 }

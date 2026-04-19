@@ -14,6 +14,7 @@ import {
 import { useInViewOnce } from "@/hooks/use-in-view-once";
 import { formatRange } from "@/lib/dayjs";
 import type { Experience } from "@/lib/sanity/types";
+import { RevealCard } from "./reveal-card";
 
 type ExperienceCardProps = {
   experience: Experience;
@@ -27,11 +28,7 @@ export function ExperienceCard({ experience, delay }: ExperienceCardProps) {
   });
 
   return (
-    <Card
-      ref={wrapRef}
-      className="group reveal transition-all duration-300 hover:shadow-lg hover:ring-primary/10 hover:dark:ring-primary-foreground/20"
-      style={{ transitionDelay: `${delay}s` }}
-    >
+    <RevealCard threshold={0.08} rootMargin="-60px 0px" delay={delay}>
       <CardHeader>
         <CardTitle className="flex items-center gap-3">
           <h3 className="font-bold">{experience.employer}</h3>
@@ -87,6 +84,6 @@ export function ExperienceCard({ experience, delay }: ExperienceCardProps) {
           </div>
         )}
       </CardContent>
-    </Card>
+    </RevealCard>
   );
 }

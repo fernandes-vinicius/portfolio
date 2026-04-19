@@ -34,7 +34,7 @@ export function ProjectCard({ project, delay }: ProjectCardProps) {
   return (
     <Card
       ref={wrapRef}
-      className="group reveal transition-all duration-300 hover:shadow-lg hover:ring-primary/10 hover:dark:ring-primary-foreground/20"
+      className="card-hover group reveal"
       style={{ transitionDelay: `${delay}s` }}
     >
       {/* Colored top line */}

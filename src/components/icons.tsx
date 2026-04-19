@@ -1,11 +1,15 @@
 import {
   ArrowRight,
   ArrowUpRight,
+  BarChart,
   BarChart3,
   Calendar,
   Code,
+  Cpu,
   ExternalLink,
   Flame,
+  Globe,
+  Layers,
   Link,
   Mail,
   MapPin,
@@ -13,10 +17,12 @@ import {
   MessageCircle,
   Monitor,
   Moon,
+  Paintbrush,
   Sun,
   Target,
   TrendingUp,
   Users,
+  Wrench,
   X,
   Zap,
 } from "lucide-react";
@@ -63,3 +69,9 @@ export const LinkIcon = (props: IconProps) => <Link {...props} />;
 export const SunIcon = (props: IconProps) => <Sun {...props} />;
 export const MoonIcon = (props: IconProps) => <Moon {...props} />;
 export const MonitorIcon = (props: IconProps) => <Monitor {...props} />;
+export const LayersIcon = (props: IconProps) => <Layers {...props} />;
+export const BarChartIcon = (props: IconProps) => <BarChart {...props} />;
+export const PaintBrushIcon = (props: IconProps) => <Paintbrush {...props} />;
+export const CpuIcon = (props: IconProps) => <Cpu {...props} />;
+export const GlobeIcon = (props: IconProps) => <Globe {...props} />;
+export const WrenchIcon = (props: IconProps) => <Wrench {...props} />;
