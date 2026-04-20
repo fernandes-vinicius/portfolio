@@ -60,19 +60,23 @@ export function ProjectCard({ project, delay }: ProjectCardProps) {
         </p>
 
         {/* Metrics */}
-        <div className="mb-5 flex gap-6">
-          {project.metrics?.map(({ value, label }) => (
-            <div key={label} className="flex items-center gap-2">
-              <TrendingUpIcon size={12} className="text-primary" />
-              <div>
-                <p className="font-bold text-foreground text-sm leading-none tracking-tight">
-                  {value}
-                </p>
-                <p className="mt-0.5 text-muted-foreground text-xs">{label}</p>
+        {project.metrics && project.metrics.length > 0 && (
+          <div className="mb-5 flex gap-6">
+            {project.metrics.map(({ value, label }) => (
+              <div key={label} className="flex items-center gap-2">
+                <TrendingUpIcon size={12} className="text-primary" />
+                <div>
+                  <p className="font-bold text-foreground text-sm leading-none tracking-tight">
+                    {value}
+                  </p>
+                  <p className="mt-0.5 text-muted-foreground text-xs">
+                    {label}
+                  </p>
+                </div>
               </div>
-            </div>
-          ))}
-        </div>
+            ))}
+          </div>
+        )}
 
         <div className="flex items-center justify-between border-t pt-4">
           <div className="flex flex-wrap gap-1.5">
