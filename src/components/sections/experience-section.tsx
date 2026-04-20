@@ -21,9 +21,12 @@ type ExperienceSectionProps = {
 export function ExperienceSection({ experiences }: ExperienceSectionProps) {
   const headerRef = useScrollReveal();
 
-  const sortedExperiences = experiences.sort(
-    (a, b) => (a?.order ?? 0) - (b?.order ?? 0),
-  );
+  // use end date to sort the experiences. If no end date, use current date.
+  const sortedExperiences = experiences.sort((a, b) => {
+    const aEndDate = a?.endDate ? new Date(a.endDate) : new Date();
+    const bEndDate = b?.endDate ? new Date(b.endDate) : new Date();
+    return bEndDate.getTime() - aEndDate.getTime();
+  });
 
   return (
     <Section id="experience">
