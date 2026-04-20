@@ -22,7 +22,7 @@ export function TechMarquee({ techStack = [] }: TechMarqueeProps) {
             key={`${tech}-${String(index)}`}
             className="flex shrink-0 items-center gap-3 font-sans text-muted-foreground text-sm transition-colors hover:text-foreground"
           >
-            <span className="h-1 w-1 shrink-0 rounded-full bg-border" />
+            <span className="size-1 shrink-0 rounded-full bg-border" />
             {tech}
           </span>
         ))}

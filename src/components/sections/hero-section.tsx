@@ -5,6 +5,7 @@ import { CTAButton } from "@/components/cta-button";
 import { ArrowRightIcon } from "@/components/icons";
 import { OpenToWorkBadge } from "@/components/open-to-work-badge";
 import { ScrollCue } from "@/components/scroll-cue";
+import { Section, SectionContainer } from "@/components/section";
 import {
   Statistic,
   StatisticSub,
@@ -30,9 +31,9 @@ type HeroSectionProps = {
 
 export function HeroSection({ profile }: HeroSectionProps) {
   return (
-    <section
-      data-slot="hero"
-      className="relative flex min-h-svh items-center justify-center overflow-hidden bg-background"
+    <Section
+      id="hero"
+      className="flex min-h-svh items-center justify-center overflow-hidden p-0"
     >
       {/* ── Ambient orbs ── */}
       <div className="pointer-events-none absolute top-[-8%] left-[-6%] h-[52vw] max-h-[680px] w-[52vw] max-w-[680px] rounded-full bg-[radial-gradient(circle,rgba(59,130,246,0.11)_0%,rgba(59,130,246,0.03)_50%,transparent_70%)] blur-[52px] motion-safe:animate-orb" />
@@ -41,7 +42,7 @@ export function HeroSection({ profile }: HeroSectionProps) {
       {/* ── Dot grid ── */}
       <div className="mask-[radial-gradient(ellipse_75%_65%_at_50%_50%,black_0%,transparent_100%)] pointer-events-none absolute inset-0 bg-[radial-gradient(color-mix(in_oklch,var(--foreground)_12%,transparent)_1px,transparent_1px)] bg-size-[28px_28px] [-webkit-mask-image:radial-gradient(ellipse_75%_65%_at_50%_50%,black_0%,transparent_100%)]" />
 
-      <div className="relative z-10 mx-auto max-w-5xl px-6 pt-36 pb-28 text-center">
+      <SectionContainer className="relative z-10 max-w-5xl px-6 pt-36 pb-28 text-center">
         {/* ── Available badge ── */}
         {profile.available && <OpenToWorkBadge />}
 
@@ -49,8 +50,8 @@ export function HeroSection({ profile }: HeroSectionProps) {
         <div className="mb-5 motion-safe:animate-[hero-slide-up_0.75s_0.11s_cubic-bezier(0.22,1,0.36,1)_both]">
           <h1 className="font-extrabold font-heading text-[clamp(3rem,7.5vw,5.5rem)] leading-[1.04] tracking-tighter">
             {profile.firstName}{" "}
-            {/* <span className="bg-brand-gradient bg-clip-text text-transparent"> */}
-            <span className="bg-linear-to-br from-blue-600 via-violet-600 to-purple-500 bg-clip-text text-transparent">
+            {/* <span className="bg-linear-to-br from-blue-600 via-violet-600 to-purple-500 bg-clip-text text-transparent"> */}
+            <span className="bg-brand-gradient bg-clip-text text-transparent">
               {profile.lastName}
             </span>
           </h1>
@@ -73,12 +74,8 @@ export function HeroSection({ profile }: HeroSectionProps) {
 
         {/* ── CTAs ── */}
         <div className="mb-16 flex flex-wrap items-center justify-center gap-3 motion-safe:animate-[hero-fade-up_0.75s_0.44s_cubic-bezier(0.22,1,0.36,1)_both]">
-          <CTAButton
-            asChild
-            className="group relative flex gap-2 overflow-hidden"
-          >
+          <CTAButton asChild className="group relative overflow-hidden">
             <Link href="#projects">
-              <span className="absolute inset-0 bg-brand-gradient opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
               <span className="relative">View Projects</span>
               <ArrowRightIcon
                 size={14}
@@ -117,9 +114,9 @@ export function HeroSection({ profile }: HeroSectionProps) {
             ))}
           </div>
         )}
-      </div>
+      </SectionContainer>
 
       <ScrollCue />
-    </section>
+    </Section>
   );
 }

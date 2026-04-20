@@ -4,10 +4,11 @@ export const siteConfig = {
   name: "Vinicius Fernandes",
   title: "Vinicius Fernandes — Frontend Engineer",
   description:
-    "Software engineer specializing in building modern web applications with a focus on performance, accessibility, and great user experiences.",
-  url: "https://viniciusfernandes.dev",
-  locale: "en_US",
-  twitter: "@viniciusf",
+    "Frontend Engineer specializing in building modern web applications with a focus on performance, accessibility, and great user experiences.",
+  // url: "https://viniciusfernandes.dev",
+  url: "https://vinicius-frontend.vercel.app",
+  locale: "pt_BR",
+  twitter: "@v1n1c1u5f",
 } as const;
 
 export const baseMetadata: Metadata = {

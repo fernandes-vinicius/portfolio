@@ -4,16 +4,15 @@ import { ArrowUpRightIcon, CalendarIcon, MapPinIcon } from "@/components/icons";
 import { TechTag } from "@/components/tech-tag";
 import { Badge } from "@/components/ui/badge";
 import {
-  Card,
   CardAction,
   CardContent,
   CardDescription,
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { useInViewOnce } from "@/hooks/use-in-view-once";
 import { formatRange } from "@/lib/dayjs";
 import type { Experience } from "@/lib/sanity/types";
+import { RevealCard } from "./reveal-card";
 
 type ExperienceCardProps = {
   experience: Experience;
@@ -21,17 +20,8 @@ type ExperienceCardProps = {
 };
 
 export function ExperienceCard({ experience, delay }: ExperienceCardProps) {
-  const { ref: wrapRef, inView } = useInViewOnce<HTMLDivElement>({
-    threshold: 0.08,
-    rootMargin: "-60px 0px",
-  });
-
   return (
-    <Card
-      ref={wrapRef}
-      className="group reveal transition-all duration-300 hover:shadow-lg hover:ring-primary/10 hover:dark:ring-primary-foreground/20"
-      style={{ transitionDelay: `${delay}s` }}
-    >
+    <RevealCard threshold={0.08} rootMargin="-60px 0px" delay={delay}>
       <CardHeader>
         <CardTitle className="flex items-center gap-3">
           <h3 className="font-bold">{experience.employer}</h3>
@@ -44,7 +34,10 @@ export function ExperienceCard({ experience, delay }: ExperienceCardProps) {
           {experience.startDate && (
             <div className="flex items-center gap-1.5 text-muted-foreground text-xs opacity-75">
               <CalendarIcon size={11} />
-              {formatRange(experience.startDate, experience.endDate)}
+              {formatRange(
+                experience.startDate,
+                experience.current ? undefined : experience.endDate,
+              )}
             </div>
           )}
           <div className="flex items-center gap-1.5 text-muted-foreground text-xs opacity-75">
@@ -87,6 +80,6 @@ export function ExperienceCard({ experience, delay }: ExperienceCardProps) {
           </div>
         )}
       </CardContent>
-    </Card>
+    </RevealCard>
   );
 }

@@ -21,7 +21,7 @@ type DifferentialsSectionProps = {
 export function DifferentialsSection({
   differentials,
 }: DifferentialsSectionProps) {
-  const headerRef = useScrollReveal<HTMLDivElement>();
+  const headerRef = useScrollReveal();
 
   return (
     <Section id="differentials">
