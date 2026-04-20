@@ -21,6 +21,10 @@ type ProjectsSectionProps = {
 export function ProjectsSection({ projects }: ProjectsSectionProps) {
   const headerRef = useScrollReveal();
 
+  const sortedProjects = projects.sort(
+    (a, b) => (a?.order ?? 0) - (b?.order ?? 0),
+  );
+
   return (
     <Section id="projects">
       <SectionDivider />
@@ -36,7 +40,7 @@ export function ProjectsSection({ projects }: ProjectsSectionProps) {
         </SectionHeader>
 
         <SectionContent className="grid grid-cols-1 gap-4 md:grid-cols-2">
-          {projects.map((project, i) => (
+          {sortedProjects.map((project, i) => (
             <ProjectCard key={project._id} project={project} delay={i * 0.08} />
           ))}
         </SectionContent>

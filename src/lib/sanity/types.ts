@@ -52,6 +52,7 @@ export type Project = {
   featured?: boolean;
   repositoryUrl?: string;
   demoUrl?: string;
+  order?: number;
 };
 
 export type Experience = {
@@ -60,7 +61,6 @@ export type Experience = {
   _createdAt: string;
   _updatedAt: string;
   _rev: string;
-  title?: string;
   employer?: string;
   jobTitle?: string;
   startDate?: string;
@@ -401,7 +401,7 @@ export type PROJECTS_QUERY_RESULT = Array<{
   featured: boolean | null;
   repositoryUrl: string | null;
   liveUrl: null;
-  order: null;
+  order: number | null;
 }>;
 
 // Source: ../portfolio/src/lib/sanity/queries.ts

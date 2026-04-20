@@ -21,6 +21,10 @@ type ExperienceSectionProps = {
 export function ExperienceSection({ experiences }: ExperienceSectionProps) {
   const headerRef = useScrollReveal();
 
+  const sortedExperiences = experiences.sort(
+    (a, b) => (a?.order ?? 0) - (b?.order ?? 0),
+  );
+
   return (
     <Section id="experience">
       <SectionDivider />
@@ -36,7 +40,7 @@ export function ExperienceSection({ experiences }: ExperienceSectionProps) {
         </SectionHeader>
 
         <SectionContent className="flex flex-col gap-4">
-          {experiences.map((exp, i) => (
+          {sortedExperiences.map((exp, i) => (
             <ExperienceCard key={exp._id} experience={exp} delay={i * 0.1} />
           ))}
         </SectionContent>
