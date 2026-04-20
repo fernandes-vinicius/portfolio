@@ -74,7 +74,6 @@ export type Experience = {
       _key: string;
     } & TechStack
   >;
-  order?: number;
 };
 
 export type TechStack = {
@@ -376,7 +375,7 @@ export type EXPERIENCES_QUERY_RESULT = Array<{
       _key: string;
     } & TechStack
   > | null;
-  order: number | null;
+  order: null;
 }>;
 
 // Source: ../portfolio/src/lib/sanity/queries.ts
