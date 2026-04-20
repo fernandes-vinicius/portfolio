@@ -2,11 +2,17 @@
 
 import { CountUp } from "@/components/count-up";
 import {
+  Section,
+  SectionContainer,
+  SectionDivider,
+} from "@/components/section";
+import {
   Statistic,
   StatisticLabel,
   StatisticSub,
   StatisticValue,
 } from "@/components/statistic";
+import { Card } from "@/components/ui/card";
 import { useInViewOnce } from "@/hooks/use-in-view-once";
 import type { Metric } from "@/lib/sanity/types";
 import { cn } from "@/lib/utils";
@@ -16,18 +22,17 @@ type StatsSectionProps = {
 };
 
 export function StatsSection({ metrics = [] }: StatsSectionProps) {
-  const { ref: wrapRef, inView } = useInViewOnce<HTMLDivElement>();
+  const { ref: wrapRef } = useInViewOnce();
 
   return (
-    <section className="relative bg-background px-6 py-20">
-      {/* Top divider */}
-      <div className="-translate-x-1/2 absolute top-0 left-1/2 h-px w-full max-w-5xl bg-linear-to-r from-transparent via-border to-transparent" />
+    <Section className="py-20">
+      <SectionDivider />
 
-      <div className="mx-auto max-w-5xl">
-        <div
+      <SectionContainer className="max-w-5xl">
+        <Card
           ref={wrapRef}
           className={cn(
-            "reveal grid grid-cols-2 overflow-hidden rounded-2xl border bg-card md:grid-cols-4",
+            "reveal grid grid-cols-2 gap-0 overflow-hidden p-0 md:grid-cols-4",
             "divide-x divide-border",
           )}
         >
@@ -40,8 +45,8 @@ export function StatsSection({ metrics = [] }: StatsSectionProps) {
               <StatisticSub>{metric.sub}</StatisticSub>
             </Statistic>
           ))}
-        </div>
-      </div>
-    </section>
+        </Card>
+      </SectionContainer>
+    </Section>
   );
 }

@@ -19,7 +19,7 @@ type ProjectsSectionProps = {
 };
 
 export function ProjectsSection({ projects }: ProjectsSectionProps) {
-  const headerRef = useScrollReveal<HTMLDivElement>();
+  const headerRef = useScrollReveal();
 
   return (
     <Section id="projects">

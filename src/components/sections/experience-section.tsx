@@ -19,10 +19,10 @@ type ExperienceSectionProps = {
 };
 
 export function ExperienceSection({ experiences }: ExperienceSectionProps) {
-  const headerRef = useScrollReveal<HTMLDivElement>();
+  const headerRef = useScrollReveal();
 
   return (
-    <Section id="experience" className="relative bg-background px-6 py-28">
+    <Section id="experience">
       <SectionDivider />
 
       <SectionContainer className="max-w-4xl">

@@ -1,23 +1,17 @@
 "use client";
 
-import {
-  CodeIcon,
-  ExternalLinkIcon,
-  FlameIcon,
-  TrendingUpIcon,
-} from "@/components/icons";
+import { CodeIcon, ExternalLinkIcon, TrendingUpIcon } from "@/components/icons";
+import { RevealCard } from "@/components/reveal-card";
 import { TechTag } from "@/components/tech-tag";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import {
-  Card,
   CardAction,
   CardContent,
   CardDescription,
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { useInViewOnce } from "@/hooks/use-in-view-once";
 import type { Project } from "@/lib/sanity/types";
 
 type ProjectCardProps = {
@@ -26,17 +20,8 @@ type ProjectCardProps = {
 };
 
 export function ProjectCard({ project, delay }: ProjectCardProps) {
-  const { ref: wrapRef } = useInViewOnce<HTMLDivElement>({
-    threshold: 0.06,
-    rootMargin: "-40px 0px",
-  });
-
   return (
-    <Card
-      ref={wrapRef}
-      className="card-hover group reveal"
-      style={{ transitionDelay: `${delay}s` }}
-    >
+    <RevealCard threshold={0.06} rootMargin="-40px 0px" delay={delay}>
       {/* Colored top line */}
       <div className="absolute top-0 left-0 h-px w-full bg-primary/70" />
 
@@ -61,7 +46,7 @@ export function ProjectCard({ project, delay }: ProjectCardProps) {
             </a>
           </Button>
           <Button asChild size="icon-sm" variant="ghost" aria-label="Live demo">
-            <a target="_blank" rel="noopener noreferrer" href={project.liveUrl}>
+            <a target="_blank" rel="noopener noreferrer" href={project.demoUrl}>
               <ExternalLinkIcon />
             </a>
           </Button>
@@ -78,7 +63,7 @@ export function ProjectCard({ project, delay }: ProjectCardProps) {
         <div className="mb-5 flex gap-6">
           {project.metrics?.map(({ value, label }) => (
             <div key={label} className="flex items-center gap-2">
-              <FlameIcon size={12} className="text-primary" />
+              <TrendingUpIcon size={12} className="text-primary" />
               <div>
                 <p className="font-bold text-foreground text-sm leading-none tracking-tight">
                   {value}
@@ -96,12 +81,12 @@ export function ProjectCard({ project, delay }: ProjectCardProps) {
             ))}
           </div>
           <Button asChild size="xs" variant="link">
-            <a target="_blank" rel="noopener noreferrer" href={project.liveUrl}>
+            <a target="_blank" rel="noopener noreferrer" href={project.demoUrl}>
               View <ExternalLinkIcon />
             </a>
           </Button>
         </div>
       </CardContent>
-    </Card>
+    </RevealCard>
   );
 }

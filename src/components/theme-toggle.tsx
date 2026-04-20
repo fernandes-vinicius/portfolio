@@ -1,6 +1,7 @@
 "use client";
 
 import { useTheme } from "next-themes";
+import { useEffect, useState } from "react";
 import { MonitorIcon, MoonIcon, SunIcon } from "@/components/icons";
 import { Button } from "@/components/ui/button";
 import {
@@ -25,9 +26,15 @@ const CURRENT_ICON: Record<"light" | "dark", typeof SunIcon> = {
 
 export function ThemeToggle() {
   const { setTheme, resolvedTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
 
-  const CurrentIcon =
-    CURRENT_ICON[(resolvedTheme as "light" | "dark") ?? "dark"] ?? MonitorIcon;
+  useEffect(() => setMounted(true), []);
+
+  const CurrentIcon = mounted
+    ? (CURRENT_ICON[resolvedTheme as "light" | "dark"] ?? MonitorIcon)
+    : MonitorIcon;
+
+  if (!mounted) return null;
 
   return (
     <Popover>

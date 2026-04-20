@@ -37,29 +37,21 @@ export type Project = {
   _updatedAt: string;
   _rev: string;
   name?: string;
-  slug?: Slug;
   tagline?: string;
   description?: string;
-  metrics?: Array<
-    {
-      _key: string;
-    } & Metric
-  >;
   techStack?: Array<
     {
       _key: string;
     } & TechStack
   >;
+  metrics?: Array<
+    {
+      _key: string;
+    } & Metric
+  >;
   featured?: boolean;
   repositoryUrl?: string;
-  liveUrl?: string;
-  order?: number;
-};
-
-export type Slug = {
-  _type: "slug";
-  current?: string;
-  source?: string;
+  demoUrl?: string;
 };
 
 export type Experience = {
@@ -281,10 +273,15 @@ export type Geopoint = {
   alt?: number;
 };
 
+export type Slug = {
+  _type: "slug";
+  current?: string;
+  source?: string;
+};
+
 export type AllSanitySchemaTypes =
   | SkillGroup
   | Project
-  | Slug
   | Experience
   | TechStack
   | Metric
@@ -300,7 +297,8 @@ export type AllSanitySchemaTypes =
   | SanityFileAsset
   | SanityAssetSourceData
   | SanityImageAsset
-  | Geopoint;
+  | Geopoint
+  | Slug;
 
 // Source: ../portfolio/src/lib/sanity/queries.ts
 // Variable: PROFILE_QUERY
@@ -387,7 +385,7 @@ export type EXPERIENCES_QUERY_RESULT = Array<{
 export type PROJECTS_QUERY_RESULT = Array<{
   _id: string;
   name: string | null;
-  slug: Slug | null;
+  slug: null;
   tagline: string | null;
   description: string | null;
   techStack: Array<
@@ -402,13 +400,13 @@ export type PROJECTS_QUERY_RESULT = Array<{
   > | null;
   featured: boolean | null;
   repositoryUrl: string | null;
-  liveUrl: string | null;
-  order: number | null;
+  liveUrl: null;
+  order: null;
 }>;
 
 // Source: ../portfolio/src/lib/sanity/queries.ts
 // Variable: SKILL_GROUPS_QUERY
-// Query: *[_type == "skillGroup"] | order(order asc) {_id, category, techStack, order}
+// Query: *[_type == "skillGroup"] | order(order asc) {_id, category, techStack, icon}
 export type SKILL_GROUPS_QUERY_RESULT = Array<{
   _id: string;
   category: string | null;
@@ -417,7 +415,7 @@ export type SKILL_GROUPS_QUERY_RESULT = Array<{
       _key: string;
     } & TechStack
   > | null;
-  order: null;
+  icon: "cpu" | "globe" | "layers" | "paintBrush" | "wrench" | "zap" | null;
 }>;
 
 // Query TypeMap
@@ -428,6 +426,6 @@ declare module "@sanity/client" {
     '*[_type == "differential"] | order(order asc) {_id, title, description, metric, icon}': DIFFERENTIALS_QUERY_RESULT;
     '*[_type == "experience"] | order(order asc) {_id, jobTitle, employer, startDate, endDate, current, description, location, achievements, techStack, order}': EXPERIENCES_QUERY_RESULT;
     '*[_type == "project"] | order(order asc) {_id, name, slug, tagline, description, techStack, metrics, featured, repositoryUrl, liveUrl, order}': PROJECTS_QUERY_RESULT;
-    '*[_type == "skillGroup"] | order(order asc) {_id, category, techStack, order}': SKILL_GROUPS_QUERY_RESULT;
+    '*[_type == "skillGroup"] | order(order asc) {_id, category, techStack, icon}': SKILL_GROUPS_QUERY_RESULT;
   }
 }

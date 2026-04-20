@@ -31,20 +31,15 @@ export function SkillCard({ skillGroup, delay }: SkillCardProps) {
     globe: GlobeIcon,
     wrench: WrenchIcon,
   };
+
   const SkillGroupIcon = SkillGroupIconMap[skillGroup.icon ?? "layers"];
 
   return (
     <RevealCard threshold={0.06} rootMargin="-40px 0px" delay={delay}>
       <CardHeader>
         <CardTitle className="flex items-center gap-3">
-          <IconBox
-          // className=""
-          // style={{ background: group.iconBg }}
-          >
-            <SkillGroupIcon
-              size={15}
-              // style={{ color: group.iconColor }}
-            />
+          <IconBox>
+            <SkillGroupIcon size={15} />
           </IconBox>
           <h3 className="font-semibold">{skillGroup.category}</h3>
         </CardTitle>
