@@ -27,12 +27,13 @@ export default function RootLayout({ children }: LayoutProps) {
       )}
     >
       <GoogleTagManager gtmId={process.env.GOOGLE_TAG_MANAGER_ID ?? ""} />
-      <Script
-        src={`https://t.contentsquare.net/uxa/${process.env.HOTJAR_ID ?? ""}.js`}
-        strategy="afterInteractive"
-      />
 
       <body>
+        <Script
+          src={`https://t.contentsquare.net/uxa/${process.env.HOTJAR_ID ?? ""}.js`}
+          strategy="afterInteractive"
+        />
+
         <ThemeProvider>
           <div className="min-h-svh">
             <CursorGlow />
