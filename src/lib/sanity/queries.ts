@@ -17,5 +17,5 @@ export const PROJECTS_QUERY = defineQuery(
 );
 
 export const SKILL_GROUPS_QUERY = defineQuery(
-  `*[_type == "skillGroup"] | order(order asc) {_id, category, techStack, icon}`,
+  `*[_type == "skillGroup"] | order(order asc) {_id, category, techStack, icon, colorSchema}`,
 );

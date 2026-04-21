@@ -28,6 +28,8 @@ export type SkillGroup = {
     } & TechStack
   >;
   icon?: "layers" | "paintBrush" | "cpu" | "zap" | "globe" | "wrench";
+  order?: number;
+  colorSchema?: "blue" | "violet" | "green" | "yellow" | "red" | "gray";
 };
 
 export type Project = {

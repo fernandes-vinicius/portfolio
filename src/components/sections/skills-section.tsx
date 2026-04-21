@@ -21,6 +21,10 @@ type SkillsSectionProps = {
 export function SkillsSection({ skillGroups }: SkillsSectionProps) {
   const headerRef = useScrollReveal();
 
+  const sortedSkillGroups = skillGroups.sort(
+    (a, b) => (a?.order ?? 0) - (b?.order ?? 0),
+  );
+
   return (
     <Section id="skills">
       <SectionDivider />
@@ -36,7 +40,7 @@ export function SkillsSection({ skillGroups }: SkillsSectionProps) {
         </SectionHeader>
 
         <SectionContent className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {skillGroups.map((group, i) => (
+          {sortedSkillGroups.map((group, i) => (
             <SkillCard key={group._id} skillGroup={group} delay={i * 0.07} />
           ))}
         </SectionContent>
