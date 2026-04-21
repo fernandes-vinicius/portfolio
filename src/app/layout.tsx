@@ -1,6 +1,7 @@
 import "./globals.css";
 
 import { GoogleTagManager } from "@next/third-parties/google";
+import Script from "next/script";
 import { CursorGlow } from "@/components/cursor-glow";
 import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
@@ -26,6 +27,11 @@ export default function RootLayout({ children }: LayoutProps) {
       )}
     >
       <GoogleTagManager gtmId={process.env.GOOGLE_TAG_MANAGER_ID ?? ""} />
+      <Script
+        id="hotjar-script"
+        strategy="afterInteractive"
+        src={`https://t.contentsquare.net/uxa/${process.env.HOTJAR_ID ?? ""}.js`}
+      />
 
       <body>
         <ThemeProvider>
