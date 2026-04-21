@@ -1,5 +1,6 @@
 import "./globals.css";
 
+import { GoogleTagManager } from "@next/third-parties/google";
 import { CursorGlow } from "@/components/cursor-glow";
 import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
@@ -24,6 +25,8 @@ export default function RootLayout({ children }: LayoutProps) {
         "font-sans",
       )}
     >
+      <GoogleTagManager gtmId={process.env.GOOGLE_TAG_MANAGER_ID ?? ""} />
+
       <body>
         <ThemeProvider>
           <div className="min-h-svh">
