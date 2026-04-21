@@ -28,9 +28,8 @@ export default function RootLayout({ children }: LayoutProps) {
     >
       <GoogleTagManager gtmId={process.env.GOOGLE_TAG_MANAGER_ID ?? ""} />
       <Script
-        id="hotjar-script"
-        strategy="afterInteractive"
         src={`https://t.contentsquare.net/uxa/${process.env.HOTJAR_ID ?? ""}.js`}
+        strategy="afterInteractive"
       />
 
       <body>
