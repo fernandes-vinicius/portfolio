@@ -23,14 +23,14 @@ export function Footer() {
               aria-hidden="true"
               className="size-1 rounded-full bg-muted-foreground opacity-75"
             />
-            <span className="text-muted-foreground text-xs opacity-75">
+            <span className="text-muted-foreground text-xs">
               Vinícius Fernandes
               <span aria-hidden="true"> · </span>
               Frontend Engineer
             </span>
           </SectionContent>
 
-          <p className="text-muted-foreground text-xs opacity-50">
+          <p className="text-muted-foreground text-xs">
             <small>
               Built with Next.js
               <span aria-hidden="true"> · </span>
