@@ -55,13 +55,13 @@ export function ProjectCard({ project, delay }: ProjectCardProps) {
 
       <CardContent className="flex flex-1 flex-col">
         {/* Description */}
-        <p className="mb-5 flex-1 text-muted-foreground text-sm leading-relaxed">
+        <p className="flex-1 text-muted-foreground text-sm leading-relaxed">
           {project.description}
         </p>
 
         {/* Metrics */}
         {project.metrics && project.metrics.length > 0 && (
-          <div className="mb-5 flex gap-6">
+          <div className="my-5 flex gap-6">
             {project.metrics.map(({ value, label }) => (
               <div key={label} className="flex items-center gap-2">
                 <TrendingUpIcon size={12} className="text-primary" />
