@@ -23,6 +23,10 @@ export function DifferentialsSection({
 }: DifferentialsSectionProps) {
   const headerRef = useScrollReveal();
 
+  const sortedDifferentials = differentials.sort(
+    (a, b) => (a?.order ?? 0) - (b?.order ?? 0),
+  );
+
   return (
     <Section id="differentials">
       <SectionDivider />
@@ -37,7 +41,7 @@ export function DifferentialsSection({
         </SectionHeader>
 
         <SectionContent className="grid grid-cols-1 gap-4 md:grid-cols-2">
-          {differentials.map((differential, i) => (
+          {sortedDifferentials.map((differential, i) => (
             <DifferentialCard
               key={differential._id}
               differential={differential}
