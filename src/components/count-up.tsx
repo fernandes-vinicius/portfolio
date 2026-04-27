@@ -18,7 +18,12 @@ export function formatNumberShort(value: number) {
   return value.toString();
 }
 
-export function CountUp({ end, suffix = "", duration = 2.75, ...props }: CountUpProps) {
+export function CountUp({
+  end,
+  suffix = "",
+  duration = 2.75,
+  ...props
+}: CountUpProps) {
   const reduced = useReducedMotion();
   return (
     <ReactCountUp
