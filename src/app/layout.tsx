@@ -1,47 +1,21 @@
 import "./globals.css";
 
 import { GoogleTagManager } from "@next/third-parties/google";
-import Script from "next/script";
-import { CursorGlow } from "@/components/cursor-glow";
-import { Footer } from "@/components/footer";
-import { Header } from "@/components/header";
-import { NoiseTexture } from "@/components/noise-texture";
-import { ThemeProvider } from "@/components/theme-provider";
-import { fontMono, fontSans } from "@/config/fonts";
-import { baseMetadata, siteConfig } from "@/config/seo";
-import { env } from "@/lib/env";
-import { cn } from "@/lib/utils";
-import type { LayoutProps } from "@/types";
+import { ThemeProvider } from "@/providers/theme-provider";
+import { CursorGlow } from "@/shared/components/effects/cursor-glow";
+import { NoiseTexture } from "@/shared/components/effects/noise-texture";
+import { Footer } from "@/shared/components/layout/footer";
+import { Header } from "@/shared/components/layout/header";
+import { StructuredData } from "@/shared/components/structured-data";
+import { fontMono, fontSans } from "@/shared/config/fonts";
+import { baseMetadata } from "@/shared/config/seo";
+import { env } from "@/shared/lib/env";
+import { buildSiteJsonLd } from "@/shared/lib/json-ld";
+import { cn } from "@/shared/lib/utils";
 
 export const metadata = baseMetadata;
 
-export default function RootLayout({ children }: LayoutProps) {
-  const jsonLd = {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "WebSite",
-        "@id": `${siteConfig.url}#website`,
-        url: siteConfig.url,
-        name: siteConfig.name,
-        description: siteConfig.description,
-        inLanguage: siteConfig.locale.replace("_", "-"),
-        publisher: { "@id": `${siteConfig.url}#person` },
-      },
-      {
-        "@type": "Person",
-        "@id": `${siteConfig.url}#person`,
-        name: siteConfig.name,
-        url: siteConfig.url,
-        sameAs: [
-          siteConfig.twitter.startsWith("@")
-            ? `https://x.com/${siteConfig.twitter.slice(1)}`
-            : `https://x.com/${siteConfig.twitter}`,
-        ],
-      },
-    ],
-  };
-
+export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="en"
@@ -56,13 +30,7 @@ export default function RootLayout({ children }: LayoutProps) {
       <GoogleTagManager gtmId={env.GOOGLE_TAG_MANAGER_ID} />
 
       <body>
-        <Script
-          id="json-ld"
-          type="application/ld+json"
-          strategy="beforeInteractive"
-        >
-          {JSON.stringify(jsonLd)}
-        </Script>
+        <StructuredData data={buildSiteJsonLd()} />
         <ThemeProvider>
           <div className="min-h-svh">
             <CursorGlow />

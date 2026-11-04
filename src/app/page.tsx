@@ -1,44 +1,33 @@
-import { ContactSection } from "@/components/sections/contact-section";
-import { DifferentialsSection } from "@/components/sections/differentials-section";
-import { ExperienceSection } from "@/components/sections/experience-section";
-import { HeroSection } from "@/components/sections/hero-section";
-import { ProjectsSection } from "@/components/sections/projects-section";
-import { SkillsSection } from "@/components/sections/skills-section";
-import { StatsSection } from "@/components/sections/stats-section";
-import { TechMarquee } from "@/components/tech-marquee";
-import { client } from "@/lib/sanity/client";
-import {
-  DIFFERENTIALS_QUERY,
-  EXPERIENCES_QUERY,
-  PROFILE_QUERY,
-  PROJECTS_QUERY,
-  SKILL_GROUPS_QUERY,
-} from "@/lib/sanity/queries";
-import type {
-  Differential,
-  Experience,
-  Profile,
-  Project,
-  SkillGroup,
-} from "@/lib/sanity/types";
-
-const queryOptions = { next: { revalidate: 60 } };
+import { notFound } from "next/navigation";
+import { ContactSection } from "@/features/contact";
+import { DifferentialsSection } from "@/features/differentials";
+import { getDifferentials } from "@/features/differentials/services/differential-service";
+import { ExperienceSection } from "@/features/experience";
+import { getExperiences } from "@/features/experience/services/experience-service";
+import { HeroSection, StatsSection, TechMarquee } from "@/features/profile";
+import { getProfile } from "@/features/profile/services/profile-service";
+import { ProjectsSection } from "@/features/projects";
+import { getProjects } from "@/features/projects/services/project-service";
+import { SkillsSection } from "@/features/skills";
+import { getSkillGroups } from "@/features/skills/services/skill-service";
 
 export default async function HomePage() {
   const [profile, experiences, projects, skillGroups, differentials] =
     await Promise.all([
-      client.fetch<Profile>(PROFILE_QUERY, {}, queryOptions),
-      client.fetch<Experience[]>(EXPERIENCES_QUERY, {}, queryOptions),
-      client.fetch<Project[]>(PROJECTS_QUERY, {}, queryOptions),
-      client.fetch<SkillGroup[]>(SKILL_GROUPS_QUERY, {}, queryOptions),
-      client.fetch<Differential[]>(DIFFERENTIALS_QUERY, {}, queryOptions),
+      getProfile(),
+      getExperiences(),
+      getProjects(),
+      getSkillGroups(),
+      getDifferentials(),
     ]);
+
+  if (!profile) notFound();
 
   return (
     <main>
       <HeroSection profile={profile} />
-      <TechMarquee techStack={profile.techStack || []} />
-      <StatsSection metrics={profile.metrics || []} />
+      <TechMarquee techStack={profile.techStack ?? []} />
+      <StatsSection metrics={profile.metrics ?? []} />
       <ExperienceSection experiences={experiences} />
       <ProjectsSection projects={projects} />
       <SkillsSection skillGroups={skillGroups} />
@@ -46,7 +35,7 @@ export default async function HomePage() {
       <ContactSection
         email={profile.email}
         phone={profile.phone}
-        socialLinks={profile.socialLinks || []}
+        socialLinks={profile.socialLinks ?? []}
       />
     </main>
   );
