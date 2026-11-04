@@ -19,7 +19,7 @@ type StatsSectionProps = {
   metrics: ProfileMetric[];
 };
 
-export function StatsSection({ metrics = [] }: StatsSectionProps) {
+export function StatsSection({ metrics }: StatsSectionProps) {
   return (
     <Section className="py-20">
       <SectionDivider />

@@ -383,12 +383,13 @@ export type EXPERIENCES_QUERY_RESULT = Array<{
 
 // Source: ../portfolio/src/lib/sanity/queries.ts
 // Variable: PROJECTS_QUERY
-// Query: *[_type == "project"] | order(order asc) {_id, name, tagline, description, techStack, metrics, featured, repositoryUrl, demoUrl, order}
+// Query: *[_type == "project"] | order(order asc) {_id, name, tagline, description, thumbnail, techStack, metrics, featured, repositoryUrl, demoUrl, order}
 export type PROJECTS_QUERY_RESULT = Array<{
   _id: string;
   name: string | null;
   tagline: string | null;
   description: string | null;
+  thumbnail: string | null;
   techStack: Array<
     {
       _key: string;
@@ -427,7 +428,7 @@ declare module "@sanity/client" {
     '*[_type == "profile"][0]{_id, title, firstName, lastName, jobTarget, headline, email, phone, available, socialLinks, metrics, techStack}': PROFILE_QUERY_RESULT;
     '*[_type == "differential"] | order(order asc) {_id, title, description, metric, icon}': DIFFERENTIALS_QUERY_RESULT;
     '*[_type == "experience"] | order(order asc) {_id, jobTitle, employer, startDate, endDate, current, description, location, achievements, techStack}': EXPERIENCES_QUERY_RESULT;
-    '*[_type == "project"] | order(order asc) {_id, name, tagline, description, techStack, metrics, featured, repositoryUrl, demoUrl, order}': PROJECTS_QUERY_RESULT;
+    '*[_type == "project"] | order(order asc) {_id, name, tagline, description, thumbnail, techStack, metrics, featured, repositoryUrl, demoUrl, order}': PROJECTS_QUERY_RESULT;
     '*[_type == "skillGroup"] | order(order asc) {_id, category, techStack, icon, colorSchema}': SKILL_GROUPS_QUERY_RESULT;
   }
 }

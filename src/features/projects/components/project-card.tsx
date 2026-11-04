@@ -1,3 +1,4 @@
+import { ProjectCover } from "@/features/projects/components/project-cover";
 import type { ProjectItem } from "@/features/projects/types/project-types";
 import {
   CodeIcon,
@@ -6,7 +7,6 @@ import {
 } from "@/shared/components/icons";
 import { RevealCard } from "@/shared/components/reveal-card";
 import { TechTag } from "@/shared/components/tech-tag";
-import { Badge } from "@/shared/components/ui/badge";
 import { Button } from "@/shared/components/ui/button";
 import {
   CardAction,
@@ -23,49 +23,75 @@ type ProjectCardProps = {
 
 export function ProjectCard({ project, delay }: ProjectCardProps) {
   return (
-    <RevealCard threshold={0.06} rootMargin="-40px 0px" delay={delay}>
-      {/* Colored top line */}
-      <div className="absolute top-0 left-0 h-px w-full bg-primary/70" />
+    <RevealCard
+      threshold={0.06}
+      rootMargin="-40px 0px"
+      delay={delay}
+      className="gap-5 pt-0"
+    >
+      <ProjectCover project={project} />
 
       <CardHeader>
-        <CardTitle className="flex items-center gap-2">
+        <CardTitle>
           <h3 className="font-bold">{project.name}</h3>
-          {project.featured && <Badge variant="tertiary">Featured</Badge>}
         </CardTitle>
 
-        <CardDescription>
-          <p>{project.tagline}</p>
-        </CardDescription>
+        {project.tagline && (
+          <CardDescription>
+            <p>{project.tagline}</p>
+          </CardDescription>
+        )}
 
-        <CardAction className="flex translate-y-1 items-center gap-1.5 opacity-0 transition-all duration-200 group-hover:translate-y-0 group-hover:opacity-100">
-          <Button asChild size="icon-sm" variant="ghost" aria-label="View code">
-            <a
-              target="_blank"
-              rel="noopener noreferrer"
-              href={project.repositoryUrl}
+        <CardAction className="flex translate-y-1 items-center gap-1.5 opacity-0 transition-all duration-200 group-focus-within:translate-y-0 group-focus-within:opacity-100 group-hover:translate-y-0 group-hover:opacity-100">
+          {project.repositoryUrl && (
+            <Button
+              asChild
+              size="icon-sm"
+              variant="ghost"
+              aria-label={`${project.name} source code, opens in new tab`}
             >
-              <CodeIcon />
-            </a>
-          </Button>
-          <Button asChild size="icon-sm" variant="ghost" aria-label="Live demo">
-            <a target="_blank" rel="noopener noreferrer" href={project.demoUrl}>
-              <ExternalLinkIcon />
-            </a>
-          </Button>
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                href={project.repositoryUrl}
+              >
+                <CodeIcon />
+              </a>
+            </Button>
+          )}
+          {project.demoUrl && (
+            <Button
+              asChild
+              size="icon-sm"
+              variant="ghost"
+              aria-label={`${project.name} live demo, opens in new tab`}
+            >
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                href={project.demoUrl}
+              >
+                <ExternalLinkIcon />
+              </a>
+            </Button>
+          )}
         </CardAction>
       </CardHeader>
 
       <CardContent className="flex flex-1 flex-col">
-        {/* Description */}
-        <p className="flex-1 text-muted-foreground text-sm leading-relaxed">
+        {/* Description — clamped so cards in a row keep the same rhythm */}
+        <p
+          className="mb-5 line-clamp-3 flex-1 text-muted-foreground text-sm leading-relaxed"
+          title={project.description ?? undefined}
+        >
           {project.description}
         </p>
 
         {/* Metrics */}
         {project.metrics && project.metrics.length > 0 && (
-          <div className="my-5 flex gap-6">
-            {project.metrics.map(({ value, label }) => (
-              <div key={label} className="flex items-center gap-2">
+          <div className="mb-5 flex gap-6">
+            {project.metrics.map(({ _key, value, label }) => (
+              <div key={_key} className="flex items-center gap-2">
                 <TrendingUpIcon size={12} className="text-primary" />
                 <div>
                   <p className="font-bold text-foreground text-sm leading-none tracking-tight">
@@ -86,11 +112,17 @@ export function ProjectCard({ project, delay }: ProjectCardProps) {
               <TechTag key={t._key}>{t.title}</TechTag>
             ))}
           </div>
-          <Button asChild size="xs" variant="link">
-            <a target="_blank" rel="noopener noreferrer" href={project.demoUrl}>
-              View <ExternalLinkIcon />
-            </a>
-          </Button>
+          {project.demoUrl && (
+            <Button asChild size="xs" variant="link">
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                href={project.demoUrl}
+              >
+                View <ExternalLinkIcon />
+              </a>
+            </Button>
+          )}
         </div>
       </CardContent>
     </RevealCard>

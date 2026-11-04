@@ -128,7 +128,7 @@ app  ──►  features  ──►  shared
 | ----------------- | ------------------------------------------------------------------------ |
 | `components/`     | Seção e cards da feature. São Server Components por padrão.              |
 | `services/`       | Query GROQ (`defineQuery`) + função `getX()`. Começa com `import "server-only"`. |
-| `types/`          | Tipo do resultado da query (`Pick` do tipo do documento gerado pelo TypeGen). |
+| `types/`          | Alias do tipo gerado pelo TypeGen para a query (`PROJECTS_QUERY_RESULT[number]`). |
 | `utils/`          | Funções puras (ordenação, mapeamentos). Sem React, sem I/O.              |
 | `index.ts`        | Barrel **client-safe**: exporta componentes e tipos, **nunca** services. |
 
@@ -188,8 +188,26 @@ O Studio **não** fica neste repositório. Aqui só ficam as queries e os tipos.
 
 ### Tipos
 
-- `src/shared/lib/sanity/types.ts` é **gerado** pelo Sanity TypeGen (`sanity typegen generate`) a partir do schema do Studio. Não edite à mão: mudou o schema, gere de novo e substitua o arquivo.
-- Cada feature declara o tipo do **resultado da sua query** em `types/` como `Pick<Documento, campos da projeção>`. Mudou a projeção da query? Atualize o `Pick` junto.
+- `src/shared/lib/sanity/types.ts` é **gerado** pelo Sanity TypeGen (`sanity typegen generate`), que roda no repositório do Studio. Ele gera os tipos dos documentos e também um tipo `*_QUERY_RESULT` para cada `defineQuery`, junto com o mapa `SanityQueries`. Não edite esse arquivo à mão.
+- Cada feature só cria **aliases** desses tipos em `types/` (ex.: `ProjectItem = PROJECTS_QUERY_RESULT[number]`). Assim, campos ausentes vêm como `null`, igual ao que o GROQ devolve.
+- O TypeGen do Studio precisa ler as queries nos caminhos novos. No `sanity-typegen.json` (ou `sanity.cli.ts`) do Studio, o `path` deve apontar para `../portfolio/src/features/**/services/*.ts`. O caminho antigo era `src/lib/sanity/queries.ts`.
+- Mudou uma query ou o schema? Gere o arquivo de novo no Studio e copie para cá.
+
+### Thumbnails dos projetos
+
+O campo `thumbnail` do documento `project` guarda o caminho da capa do card. Pode ser um arquivo local (`/images/projects/<slug>.webp`), que passa pelo otimizador do `next/image`, ou uma URL absoluta, servida sem otimização. Projeto sem thumbnail mostra uma capa de fallback com o nome.
+
+As capas no estilo YouTube são geradas por `scripts/project-thumbnails/generate.mjs`:
+
+```bash
+npm run thumbnails              # gera todas
+npm run thumbnails -- listify   # gera só uma
+```
+
+- Título, cores, selo e tecnologias de cada projeto ficam no array `projects` dentro do script.
+- A captura do app usada dentro da thumb fica em `scripts/project-thumbnails/sources/<slug>.webp`.
+- É preciso ter o Google Chrome instalado.
+- O otimizador de imagens do Next guarda cache por URL. Se você regerar uma imagem com o mesmo nome, limpe `.next/dev/cache/images` localmente. Em produção, prefira um nome de arquivo novo e atualize o `thumbnail` no Sanity.
 
 ### Revalidação
 

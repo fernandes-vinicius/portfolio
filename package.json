@@ -8,7 +8,8 @@
     "start": "next start",
     "lint": "biome check",
     "format": "biome format --write",
-    "typecheck": "next typegen && tsc --noEmit"
+    "typecheck": "next typegen && tsc --noEmit",
+    "thumbnails": "node scripts/project-thumbnails/generate.mjs"
   },
   "dependencies": {
     "@next/third-parties": "^16.2.4",
@@ -41,6 +42,7 @@
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "playwright-core": "^1.48.2",
     "postcss": "^8",
     "tailwindcss": "^4",
     "typescript": "^5"

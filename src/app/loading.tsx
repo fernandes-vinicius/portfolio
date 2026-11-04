@@ -105,7 +105,8 @@ function ProjectsSkeleton() {
               key={key}
               className="overflow-hidden rounded-xl border border-border"
             >
-              <Skeleton className="h-48 w-full rounded-none" />
+              <Skeleton className="h-8 w-full rounded-none" />
+              <Skeleton className="aspect-video w-full rounded-none opacity-70" />
               <div className="flex flex-col gap-3 p-6">
                 <Skeleton className="h-5 w-40" />
                 <Skeleton className="h-3 w-full" />

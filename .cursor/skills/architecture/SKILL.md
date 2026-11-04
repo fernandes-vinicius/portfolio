@@ -21,7 +21,7 @@ src/
 ├── features/<nome>/
 │   ├── components/ # seção + cards (Server Components)
 │   ├── services/   # <nome>-service.ts: defineQuery + getX() via sanityFetch — `import "server-only"`
-│   ├── types/      # <nome>-types.ts: Pick<DocumentoGerado, campos da projeção>
+│   ├── types/      # <nome>-types.ts: alias do *_QUERY_RESULT gerado pelo TypeGen
 │   ├── utils/      # funções puras
 │   └── index.ts    # barrel client-safe (componentes + tipos, NUNCA services)
 ├── shared/

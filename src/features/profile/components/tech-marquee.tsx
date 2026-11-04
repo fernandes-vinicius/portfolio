@@ -4,7 +4,7 @@ type TechMarqueeProps = {
   techStack: ProfileTech[];
 };
 
-export function TechMarquee({ techStack = [] }: TechMarqueeProps) {
+export function TechMarquee({ techStack }: TechMarqueeProps) {
   const items = [
     ...techStack.map((tech) => tech.title),
     ...techStack.map((tech) => tech.title),

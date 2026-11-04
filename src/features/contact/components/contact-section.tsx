@@ -23,34 +23,42 @@ import {
   CardTitle,
 } from "@/shared/components/ui/card";
 
+const WHATSAPP_GREETING =
+  "Hi! I just saw your website and would like to talk 🙂";
+
 type ContactSectionProps = {
-  email?: string;
-  phone?: string;
+  email?: string | null;
+  phone?: string | null;
   socialLinks: ContactSocialLink[];
 };
 
 export function ContactSection(props: ContactSectionProps) {
-  const { email, phone, socialLinks = [] } = props;
+  const { email, phone, socialLinks } = props;
 
-  const channels =
-    email && phone
-      ? [
-          {
-            Icon: MailIcon,
-            label: "Email",
-            href: `mailto:${email}`,
-            sub: "Best for project inquiries",
-            external: false,
-          },
-          {
-            Icon: MessageCircleIcon,
-            label: "WhatsApp",
-            href: `https://wa.me/${phone}?text=Hi!%20I%20just%20saw%20your%20website%20and%20would%20like%20to%20talk%20%F0%9F%99%82`,
-            sub: "Quick conversations",
-            external: true,
-          },
-        ]
-      : [];
+  // Each channel depends only on its own field, so a missing email never
+  // breaks the WhatsApp CTA (and vice versa).
+  // wa.me only accepts digits (no "+", spaces or dashes).
+  const whatsappNumber = phone?.replace(/\D/g, "");
+  const whatsappHref = whatsappNumber
+    ? `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(WHATSAPP_GREETING)}`
+    : null;
+
+  const channels = [
+    email && {
+      Icon: MailIcon,
+      label: "Email",
+      href: `mailto:${email}`,
+      sub: "Best for project inquiries",
+      external: false,
+    },
+    whatsappHref && {
+      Icon: MessageCircleIcon,
+      label: "WhatsApp",
+      href: whatsappHref,
+      sub: "Quick conversations",
+      external: true,
+    },
+  ].filter((channel) => !!channel);
 
   const socials = socialLinks.map(({ platform, label, url }) => ({
     Icon: getSocialIcon(platform),
@@ -108,10 +116,10 @@ export function ContactSection(props: ContactSectionProps) {
                 ))}
               </div>
 
-              {phone && (
+              {whatsappHref && (
                 <CTAButton asChild>
                   <a
-                    href={channels[1].href}
+                    href={whatsappHref}
                     aria-label="Say hello on WhatsApp, opens in new tab"
                     target="_blank"
                     rel="noopener noreferrer"
